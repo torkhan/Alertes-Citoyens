@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Motifs{% endblock %}
+
+{% block body %}
+    <h1>Motifs</h1>
+
+    <table class="table">
+        <tbody>
+
+            <tr>
+                <th>Motif</th>
+                <td>{{ motif.motifType }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('motif_index') }}">Retour à la liste</a>
+
+    <a class="btn btn-warning" href="{{ path('motif_edit', {'id': motif.id}) }}">Editer</a>
+
+    {{ include('motif/_delete_form.html.twig') }}
+{% endblock %}

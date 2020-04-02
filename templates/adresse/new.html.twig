@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer une nouvelle adresse{% endblock %}
+
+{% block body %}
+    <h1>Créer une nouvelle adresse</h1>
+
+    {{ include('adresse/_form.html.twig') }}
+
+    <a class="btn btn-primary" href="{{ path('adresse_index') }}">Retour à la liste</a>
+{% endblock %}

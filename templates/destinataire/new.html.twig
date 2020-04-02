@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+    <div class="container w-75">
+        <h1>Formulaire d'incription </h1>
+        <div class="text-center border rounded mt-5 mb-5">
+            <p>Pour recevoir nos alertes merci de remplir le formulaire ci-dessous.</p>
+            <p>Après validation de nos équipes vous recevrez un mail ou sms (selon votre choix) vous confirmant votre inscription</p>
+        </div>
+        {{ include('destinataire/_form.html.twig') }}
+        <p class="vousDevez">(Vous devez accepter les conditions générales pour pouvoir valider votre inscription.)</p>
+        <p class="vousDevez">(Vos données seront stockées sur nos serveurs et ne feront jamais l'objet d'un usage autre que ce service)</p>
+        {# <a class="btn btn-primary" href="{{ path('destinataire_index') }}">retour à la liste</a>#}
+    </div>
+{% endblock %}
+
+ {% block stylesheets %}
+     <script src="{{ asset("libs/js/inscription.js") }}"></script>
+     <link rel="stylesheet" href="{{ asset("libs/css/inscription.css") }}">
+ {% endblock %}

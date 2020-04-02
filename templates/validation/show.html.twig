@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Validations{% endblock %}
+
+{% block body %}
+    <h1>Validations</h1>
+
+    <table class="table">
+        <tbody>
+
+            <tr>
+                <th>Etat des Validations</th>
+                <td>{{ validation.etatValidation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('validation_index') }}">Retour à la liste</a>
+
+    <a class="btn btn-warning" href="{{ path('validation_edit', {'id': validation.id}) }}">Editer</a>
+
+    {{ include('validation/_delete_form.html.twig') }}
+{% endblock %}

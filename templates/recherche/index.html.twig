@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche{% endblock %}
+
+{% block body %}
+
+    <div class="bg-dark mb-3 py-2 text-white">
+        <div class="d-flex justify-content-around text-center">
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-3">
+                    {{ form_label(form.nomDestinataire) }}
+                    {{ form_widget(form.nomDestinataire) }}
+                </div>
+                <div class="col-4">
+                    {{ form_label(form.nomRueDestinataire1) }}
+                    {{ form_widget(form.nomRueDestinataire1) }}
+                </div>
+                <div class="col-3">
+                    {{ form_label(form.idAdresse) }}
+                    {{ form_widget(form.idAdresse) }}
+                </div>
+                <div class="col-2">
+                    <div class="mt-3">
+                        <button class="btn btn-success">{{ button_label|default('Valider') }}</button>
+                    </div>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+    <a href="{{ path("recherche") }}">liste complète</a>
+
+    <div class="my-5 text-center">
+        <h1>Liste des destinataires</h1>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Adresse Mail</th>
+            <th>Numéro téléphone</th>
+            <th>Numéro rue</th>
+            <th>Adresse</th>
+            <th>Complément adresse</th>
+            <th>Code Postal</th>
+            <th>Ville</th>
+            <th>Ok Mail</th>
+            <th>Ok Sms</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for result in results %}
+            <tr>
+                <td>{{ result.nomDestinataire }}</td>
+                <td>{{ result.prenomDestinataire }}</td>
+                <td>{{ result.adresseMailDestinataire ? result.adresseMailDestinataire : "Non renseigné" }}</td>
+                <td>{{ result.numeroTelephoneDestinataire ? result.numeroTelephoneDestinataire : "Non renseigné" }}</td>
+                <td>{{ result.numeroRueDestinataire }}</td>
+                <td>{{ result.nomRueDestinataire1 }}</td>
+                <td>{{ result.nomRueDestinataire2 }}</td>
+
+                <td>{{ result.idAdresse.cp }}</td>
+                <td>{{ result.idAdresse.nomVille }}</td>
+
+
+                <td>{{ result.okMailDestinataire ? "Oui" : "Non" }}</td>
+                <td>{{ result.okSmsDestinataire ? "Oui" : "Non" }}</td>
+
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="16">Aucun destinaire ne correspond à votre recherche</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}

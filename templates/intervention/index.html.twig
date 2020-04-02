@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des interventions{% endblock %}
+
+{% block body %}
+
+    <h1>Liste des interventions</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Nom de l'intervention</th>
+                <th>Rue(s) concernée(s)</th>
+                <th>Ville(s) concernée(s)</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Commentaire</th>
+                <th>Date de modification</th>
+                <th>Type d'intervention</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for intervention in interventions %}
+            <tr>
+
+                <td>{{ intervention.nomIntervention }}</td>
+                <td>{{ intervention.rueIntervention }}</td>
+                <td>{{ intervention.villeIntervention }}</td>
+                <td>{{ intervention.longitude }}</td>
+                <td>{{ intervention.latitude }}</td>
+                <td>{{ intervention.dateDebutIntervention ? intervention.dateDebutIntervention|date('d-m-Y H:i:s') : '' }}</td>
+                <td>{{ intervention.dateFinIntervention ? intervention.dateFinIntervention|date('d-m-Y H:i:s') : '' }}</td>
+                <td>{{ intervention.commentaireIntervention }}</td>
+                <td>{{ intervention.dateModificationIntervention ? intervention.dateModificationIntervention|date('d-m-Y H:i:s') : '' }}</td>
+                <td>{{ intervention.idTypeIntervention.interventionType }}</td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('intervention_show', {'id': intervention.id}) }}">Voir</a>
+                    <a class="btn btn-warning" href="{{ path('intervention_edit', {'id': intervention.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" href="{{ path('intervention_new') }}">Créer une intervention</a>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Motifs{% endblock %}
+
+{% block body %}
+    <h1>Motifs</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Motif</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for motif in motifs %}
+            <tr>
+
+                <td>{{ motif.motifType }}</td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('motif_show', {'id': motif.id}) }}">Voir</a>
+                    <a class="btn btn-warning" href="{{ path('motif_edit', {'id': motif.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" href="{{ path('motif_new') }}">Créer un nouveau motif</a>
+{% endblock %}

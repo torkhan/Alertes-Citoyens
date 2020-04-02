@@ -1,0 +1,56 @@
+/* General modifications */
+
+body {
+    font-size: 1.2em;
+}
+
+h1 {
+    color: #e51b23;
+    font-size: 1.4em;
+}
+
+h2  {
+    color: #e51b23;
+    font-size: 1.3em;
+}
+
+.logo {
+    height: 85px;
+}
+
+/* Navbar modifications */
+
+#navbar{
+    background-color: #e51b23;
+    padding: 0 10px;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+
+}
+
+#navbar button {
+    border: solid 1px white;
+}
+
+#navbar button:focus, button:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.logoNavbar {
+    height: 60px;
+}
+
+/* footer modifications */
+
+#footer{
+    background-color: #AAAAAA;
+}
+
+/* main container modification */
+#mainContainer {
+    margin-top: 85px;
+}

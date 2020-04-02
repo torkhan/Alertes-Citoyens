@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un nouveau type d'ntervention{% endblock %}
+
+{% block body %}
+    <h1>Créer un nouveau type d'ntervention</h1>
+
+    {{ include('type_intervention/_form.html.twig') }}
+
+    <a class="btn btn-primary" href="{{ path('type_intervention_index') }}">Retour à la liste</a>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des validations{% endblock %}
+
+{% block body %}
+    <h1>liste des validations</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Etat des Validations</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for validation in validations %}
+            <tr>
+
+                <td>{{ validation.etatValidation }}</td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('validation_show', {'id': validation.id}) }}">Voir</a>
+                    <a class="btn btn-warning" href="{{ path('validation_edit', {'id': validation.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" href="{{ path('validation_new') }}">Créer une nouvelle validation</a>
+{% endblock %}

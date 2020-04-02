@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des destinataires{% endblock %}
+
+{% block body %}
+    <h1>Liste des destinataires</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Adresse Mail</th>
+                <th>Numéro téléphone</th>
+                <th>Numéro rue</th>
+                <th>Adresse</th>
+                <th>Complément adresse</th>
+                <th>Code Postal</th>
+                <th>Ville</th>
+                <th>Type</th>
+                <th>Ok Mail</th>
+                <th>Ok Sms</th>
+                <th>Accord Rgpd</th>
+                <th>Date d'enregistrement</th>
+                <th>Date de validation</th>
+                <th>Date de modification</th>
+                <th>Statut</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for destinataire in destinataires %}
+           {% dump(destinataire) %}
+            <tr>
+                <td>{{ destinataire.nomDestinataire }}</td>
+                <td>{{ destinataire.prenomDestinataire }}</td>
+                <td>{{ destinataire.adresseMailDestinataire }}</td>
+                <td>{{ destinataire.numeroTelephoneDestinataire }}</td>
+                <td>{{ destinataire.numeroRueDestinataire }}</td>
+                <td>{{ destinataire.nomRueDestinataire1 }}</td>
+                <td>{{ destinataire.nomRueDestinataire2 }}</td>
+
+                <td>{{ destinataire.idAdresse.cp }}</td>
+                <td>{{ destinataire.idAdresse.nomVille }}</td>
+                <td>{{ destinataire.idTypeDestinataire.destinataireType }}</td>
+
+                <td>{{ destinataire.okMailDestinataire }}</td>
+                <td>{{ destinataire.okSmsDestinataire }}</td>
+                <td>{{ destinataire.accordRgpdDestinataire }}</td>
+               <td>{{ destinataire.dateEnregistrementDestinataire ? destinataire.dateEnregistrementDestinataire|date('d-m-Y H:i:s') : '' }}</td>
+                <td>{{ destinataire.dateValidationDestinataire ? destinataire.dateValidationDestinataire|date('d-m-Y H:i:s') : '' }}</td>
+                <td>{{ destinataire.dateModificationDestinataire ? destinataire.dateModificationDestinataire|date('d-m-Y H:i:s') : '' }}</td>
+                <td>{{ destinataire.statutDestinataire }}</td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('destinataire_show', {'id': destinataire.id}) }}">Voir</a>
+                    <a class="btn btn-warning" href="{{ path('destinataire_edit', {'id': destinataire.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="16">no records found</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" href="{{ path('destinataire_new') }}">Créer un destinataire</a>
+{% endblock %}

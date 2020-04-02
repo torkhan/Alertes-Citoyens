@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Types de destinataires{% endblock %}
+
+{% block body %}
+    <h1>Types de destinataires </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Type de destinataire</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_destinataire in type_destinataires %}
+            <tr>
+
+                <td>{{ type_destinataire.destinataireType }}</td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('type_destinataire_show', {'id': type_destinataire.id}) }}">Voir</a>
+                    <a class="btn btn-warning" href="{{ path('type_destinataire_edit', {'id': type_destinataire.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" href="{{ path('type_destinataire_new') }}">Créer un nouveau type de destinataire</a>
+{% endblock %}

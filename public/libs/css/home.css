@@ -1,0 +1,29 @@
+#slide img {
+    height: 500px;
+}
+
+#accordionInscription .card {
+    border: none!important;
+}
+
+#collapseHeaderInscription {
+    border: solid 1px #AAAAAA;
+    margin-bottom: 2px;
+}
+
+#collapseHeaderInscription button {
+    color: #666666;
+}
+
+#collapseHeaderInscription button:focus, button:active {
+    outline: none;
+    box-shadow: none;
+}
+
+
+#nousFaireConfiance {
+    padding: 20px 0;
+    border: solid 1px black;
+    width: 75%;
+    margin: auto;
+}

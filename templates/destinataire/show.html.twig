@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Destinataire{% endblock %}
+
+{% block body %}
+    <h1>Destinataire</h1>
+
+    <table class="table">
+        <tbody>
+
+            <tr>
+                <th>Nom</th>
+                <td>{{ destinataire.nomDestinataire }}</td>
+            </tr>
+            <tr>
+                <th>Prénom</th>
+                <td>{{ destinataire.prenomDestinataire }}</td>
+            </tr>
+
+            <tr>
+                <th>Adresse Mail</th>
+                <td>{{ destinataire.adresseMailDestinataire }}</td>
+            </tr>
+            <tr>
+                <th>Numéro téléphone</th>
+                <td>{{ destinataire.numeroTelephoneDestinataire }}</td>
+            </tr>
+            <tr>
+                <th>Numéro rue</th>
+                <td>{{ destinataire.numeroRueDestinataire }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ destinataire.nomRueDestinataire1 }}</td>
+            </tr>
+            <tr>
+                <th>Complément adresse</th>
+                <td>{{ destinataire.nomRueDestinataire2 }}</td>
+            </tr>
+            <tr>
+                <th>Ok Mail</th>
+                <td>{{ destinataire.okMailDestinataire }}</td>
+            </tr>
+            <tr>
+                <th>Ok Sms</th>
+                <td>{{ destinataire.okSmsDestinataire }}</td>
+            </tr>
+            <tr>
+                <th>Accord Rgpd</th>
+                <td>{{ destinataire.accordRgpdDestinataire }}</td>
+            </tr>
+            <tr>
+                <th>Date d'enregistrement</th>
+                <td>{{ destinataire.dateEnregistrementDestinataire ? destinataire.dateEnregistrementDestinataire|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date de validation</th>
+                <td>{{ destinataire.dateValidationDestinataire ? destinataire.dateValidationDestinataire|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date de modification</th>
+                <td>{{ destinataire.dateModificationDestinataire ? destinataire.dateModificationDestinataire|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{{ destinataire.statutDestinataire }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('destinataire_index') }}">Retour à la liste</a>
+
+    <a class="btn btn-warning" href="{{ path('destinataire_edit', {'id': destinataire.id}) }}">Editer</a>
+
+    {{ include('destinataire/_delete_form.html.twig') }}
+{% endblock %}
