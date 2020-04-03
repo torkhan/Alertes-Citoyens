@@ -13,6 +13,8 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -28,7 +30,7 @@ class UserType extends AbstractType
                 'label' => "Email",
             ])
 
-            ->add('password', TextType::class,[
+            ->add('password', PasswordType::class,[
                 'required' => true,
                 'label' => "Mot de passe",
                 'constraints' => [
@@ -84,7 +86,7 @@ class UserType extends AbstractType
                 ],
             ])
 
-            ->add('commentaireUtilisateur', TextType::class,[
+            ->add('commentaireUtilisateur', TextareaType::class,[
                 'required' => false,
                 'label' => "Commentaire",
                 'constraints' => [

@@ -33,21 +33,31 @@
     <a href="{{ path("recherche") }}">liste complète</a>
 
     <div class="my-5 text-center">
-        <h1>Liste des destinataires</h1>
+        <h1>Sélection des destinataires</h1>
     </div>
 
     <table class="table">
         <thead>
+
         <tr>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Adresse Mail</th>
-            <th>Numéro téléphone</th>
-            <th>Numéro rue</th>
-            <th>Adresse</th>
-            <th>Complément adresse</th>
-            <th>Code Postal</th>
-            <th>Ville</th>
+            <th>Nom <i class="fa fa-arrows-v" aria-hidden="true"></i>
+            </th>
+            <th>Prénom <i class="fa fa-arrows-v" aria-hidden="true"></i>
+            </th>
+            <th>Adresse Mail <i class="fa fa-arrows-v" aria-hidden="true"></i>
+            </th>
+            <th>Numéro téléphone <i class="fa fa-arrows-v" aria-hidden="true"></i>
+            </th>
+            <th>Numéro rue <i class="fa fa-arrows-v" aria-hidden="true"></i>
+            </th>
+            <th>Adresse <i class="fa fa-arrows-v" aria-hidden="true"></i>
+            </th>
+            <th>Complément adresse
+            </th>
+            <th>Code Postal <i class="fa fa-arrows-v" aria-hidden="true"></i>
+            </th>
+            <th>Ville <i class="fa fa-arrows-v" aria-hidden="true"></i>
+            </th>
             <th>Ok Mail</th>
             <th>Ok Sms</th>
         </tr>
@@ -80,4 +90,8 @@
 
         </tbody>
     </table>
+    {% block stylesheets %}
+        <script src="{{ asset("libs/js/recherche.js") }}"></script>
+        <link rel="stylesheet" href="{{ asset("libs/css/recherche.css") }}">
+    {% endblock %}
 {% endblock %}
