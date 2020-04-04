@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5999bb21-a1de-4801-b02e-0d8edf526ed3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/libs/js/recherche.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/libs/js/recherche.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/recherche/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recherche/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env.dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,13 +176,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmails\config\packages\test" />
+      <recent name="C:\Users\Torkhan\Desktop\alertEmails\public\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmails\config\packages" />
       <recent name="C:\Users\Torkhan\Desktop\alertEmails\public" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmails\config\packages\test" />
-      <recent name="C:\Users\Torkhan\Desktop\alertEmails\public\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -243,6 +245,7 @@
       <workItem from="1585805063280" duration="21945000" />
       <workItem from="1585897825481" duration="8650000" />
       <workItem from="1585907758779" duration="159000" />
+      <workItem from="1585980005100" duration="642000" />
     </task>
     <servers />
   </component>
