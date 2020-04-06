@@ -33,18 +33,18 @@
         </div>
         <div class="row w-50 mx-auto  ">
 
-            {% if is_granted('ROLE_ADMIN') %}
+            {#{% if is_granted('ROLE_ADMIN') %}#}
 
                 <a class="  ml-auto nav-item nav-link" href="{{ path('plateforme_admin') }}">Plateforme de gestion</a>
                 <a class=" ml-auto nav-item nav-link text-right" href="{{ path('app_logout') }}">Deconnexion</a>
 
-            {% else %}
+           {# {% else %}#}
 
 
                 <a class=" ml-auto nav-item nav-link" href="{{ path('app_login') }}">Admin</a>
 
 
-            {% endif %}
+          {#  {% endif %}#}
 
         </div>
     </div>

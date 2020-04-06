@@ -76,4 +76,20 @@ class DestinataireRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function RechercheAccept($idValidation)
+    {
+        $search = $this->createQueryBuilder('d');
+
+        if ($idValidation != null) {
+            $search->andWhere('d.idValidation LIKE :validation');
+            $search->setParameter('nom', "%" . $idValidation . "%");
+        }
+
+
+
+
+
+        $search->orderBy('d.id', 'DESC');
+        return $search->getQuery()->getResult();
+    }
 }

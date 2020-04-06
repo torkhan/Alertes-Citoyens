@@ -2,9 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5999bb21-a1de-4801-b02e-0d8edf526ed3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/libs/js/inscription.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/libs/js/inscription.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/libs/js/recherche.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/libs/js/recherche.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DestinataireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DestinataireController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RechercheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RechercheController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/DestinataireType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/DestinataireType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DestinataireRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DestinataireRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/destinataire/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/destinataire/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/plateforme_admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/plateforme_admin/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/recherche/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recherche/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/forms.fr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/forms.fr.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,18 +186,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Security" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmails\src\Security" />
+      <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmails\config\packages\test" />
+      <recent name="C:\Users\Torkhan\Desktop\alertEmails\public\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmails\config\packages" />
       <recent name="C:\Users\Torkhan\Desktop\alertEmails\public" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmails\config\packages\test" />
-      <recent name="C:\Users\Torkhan\Desktop\alertEmails\public\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -243,6 +260,10 @@
       <workItem from="1585805063280" duration="21945000" />
       <workItem from="1585897825481" duration="8650000" />
       <workItem from="1585907758779" duration="159000" />
+      <workItem from="1586151947586" duration="5879000" />
+      <workItem from="1586157883044" duration="73000" />
+      <workItem from="1586158046860" duration="23922000" />
+      <workItem from="1586185193420" duration="16000" />
     </task>
     <servers />
   </component>
@@ -262,10 +283,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="721" y="187" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1585584338594" />
-    <state x="672" y="457" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585819481487">
+    <state x="672" y="457" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586160114428">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="672" y="457" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1585819481487" />
+    <state x="672" y="457" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1586160114428" />
     <state x="2220" y="772" width="449" height="266" key="ComposerInitDialogKey" timestamp="1584957430288">
       <screen x="1920" y="21" width="1050" height="1680" />
     </state>
@@ -279,10 +300,10 @@
     </state>
     <state x="554" y="401" key="FileChooserDialogImpl/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1585743135608" />
     <state x="2223" y="645" key="FileChooserDialogImpl/0.0.1920.1080/1920.21.1050.1680@1920.21.1050.1680" timestamp="1584966471125" />
-    <state x="638" y="310" key="NewPhpClassDialog" timestamp="1585819440359">
+    <state x="638" y="310" key="NewPhpClassDialog" timestamp="1586160547254">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="638" y="310" key="NewPhpClassDialog/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1585819440359" />
+    <state x="638" y="310" key="NewPhpClassDialog/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1586160547254" />
     <state x="0" y="191" key="SettingsEditor" timestamp="1585216587617">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -292,10 +313,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1585742602450" />
-    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1585754241966">
+    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1586157956019">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1585754241966" />
+    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1586157956019" />
     <state x="661" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585901005852">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -305,6 +326,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="716" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1585742604893" />
+    <state x="642" y="112" key="refactoring.ChangeSignatureDialog" timestamp="1586184220433">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="642" y="112" key="refactoring.ChangeSignatureDialog/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1586184220433" />
     <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1585234777350">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

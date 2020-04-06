@@ -36,7 +36,7 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $user -> setRoles(['SUPER_ADMIN']);
+            $user -> setRoles(['ADMIN']);
 
             $date = new \DateTime('now');
             $date->setTimezone(new \DateTimeZone('Europe/Paris'));
