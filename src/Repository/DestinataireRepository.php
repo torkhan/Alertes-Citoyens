@@ -5,6 +5,9 @@ namespace App\Repository;
 use App\Entity\Destinataire;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
+use http\Client\Response;
+use Symfony\Component\Validator\Constraints\All;
 
 /**
  * @method Destinataire|null find($id, $lockMode = null, $lockVersion = null)
@@ -51,45 +54,46 @@ class DestinataireRepository extends ServiceEntityRepository
     // /**
     //  * @return Destinataire[] Returns an array of Destinataire objects
     //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('d')
-            ->andWhere('d.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('d.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Destinataire
+    public function findByExampleField(EntityManagerInterface $em): Response
     {
-        return $this->createQueryBuilder('d')
-            ->andWhere('d.exampleField = :val')
-            ->setParameter('val', $value)
+        $queryBuilder = $em->getRepository(Destinataire::class)->createQueryBuilder('d');
+        $qb = $em->createQueryBuilder();
+        $queryBuilder->andWhere('d.idValidation = :1');
+        $jobs = $queryBuilder->getQuery()->getResult();
+        $qb->select('u')
+            ->from('Destinaire', 'u')
+            ->where('u.id = ?1');
+    }
+
+
+
+    public function findOneBySomeField($idValidation): ?Destinataire
+    {
+       /* return $this->createQueryBuilder('d')
+            ->andWhere('d.idValidation = :1')
+            ->setParameter('val', $idValidation)
             ->getQuery()
             ->getOneOrNullResult()
-        ;
+        ;*/
     }
-    */
-    public function RechercheAccept($idValidation)
+
+    public function RechercheAccept( $idValidation): ?Destinataire
     {
-        $search = $this->createQueryBuilder('d');
+        return $this->createQueryBuilder('d')
+            ->andWhere('d.idValidation = :1')
+            ->setParameter('val', $idValidation);
+            /*->getQuery();*/
+       /*
+             $search->select('d')
+                 ->from(Destinataire::class,'d')
+                 ->where($idValidation = 1);*/
 
-        if ($idValidation != null) {
-            $search->andWhere('d.idValidation LIKE :validation');
-            $search->setParameter('nom', "%" . $idValidation . "%");
-        }
 
 
-
-
-
+/*
         $search->orderBy('d.id', 'DESC');
-        return $search->getQuery()->getResult();
+        return $search->getQuery()->getResult();*/
+
     }
 }

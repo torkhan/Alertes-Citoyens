@@ -80,3 +80,5 @@ function triTableau() {
 
     tbody.innerHTML = "<tr>"+colonne.join("</tr><tr>")+"</tr>"; //l'affiche
 }
+
+

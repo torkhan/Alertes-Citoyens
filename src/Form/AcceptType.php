@@ -24,4 +24,8 @@ class AcceptType extends AbstractType
             'data_class' => Destinataire::class,
         ]);
     }
+
+    public function getIdValidation()
+    {
+    }
 }

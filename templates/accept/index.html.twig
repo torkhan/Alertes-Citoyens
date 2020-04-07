@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AcceptController!{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
     <div class="my-5 text-center">
@@ -31,10 +31,12 @@
             </th>
             <th>Ok Mail</th>
             <th>Ok Sms</th>
+
         </tr>
         </thead>
         <tbody>
         {% for result in results %}
+
             <tr>
                 <td>{{ result.nomDestinataire }}</td>
                 <td>{{ result.prenomDestinataire }}</td>
@@ -52,6 +54,8 @@
                 <td>{{ result.okSmsDestinataire ? "Oui" : "Non" }}</td>
 
 
+
+
             </tr>
         {% else %}
             <tr>
@@ -61,4 +65,8 @@
 
         </tbody>
     </table>
+    {% block stylesheets %}
+        <script src="{{ asset("libs/js/recherche.js") }}"></script>
+        <link rel="stylesheet" href="{{ asset("libs/css/recherche.css") }}">
+    {% endblock %}
 {% endblock %}

@@ -18,21 +18,18 @@ class AcceptController extends AbstractController
      */
     public function index(Request $request, DestinataireRepository $destinataireRepository): Response
     {
-        $accept = new Destinataire();
+        $recherche = new AcceptType();
 
-        $formAccept = $this->createForm(AcceptType::class, $accept);
+        $formAccept = $this->createForm(AcceptType::class);
         $formAccept->handleRequest($request);
-
-        $idValidation = $accept->getIdValidation(1);
-
-
-        $results = $destinataireRepository->RechercheAccept($idValidation);
-
+        $idValidation = $recherche->getIdValidation();
+        $results = $destinataireRepository->findByExampleField();
 
         return $this->render('accept/index.html.twig', [
             'controller_name' => 'acceptController',
             'form' => $formAccept->createView(),
             'results' => $results,
+
         ]);
     }
 }
