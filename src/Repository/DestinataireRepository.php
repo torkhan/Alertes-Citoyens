@@ -55,45 +55,44 @@ class DestinataireRepository extends ServiceEntityRepository
     //  * @return Destinataire[] Returns an array of Destinataire objects
     //  */
 
-    public function findByExampleField(EntityManagerInterface $em): Response
-    {
-        $queryBuilder = $em->getRepository(Destinataire::class)->createQueryBuilder('d');
-        $qb = $em->createQueryBuilder();
-        $queryBuilder->andWhere('d.idValidation = :1');
-        $jobs = $queryBuilder->getQuery()->getResult();
-        $qb->select('u')
-            ->from('Destinaire', 'u')
-            ->where('u.id = ?1');
-    }
-
-
-
-    public function findOneBySomeField($idValidation): ?Destinataire
-    {
-       /* return $this->createQueryBuilder('d')
-            ->andWhere('d.idValidation = :1')
-            ->setParameter('val', $idValidation)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;*/
-    }
-
-    public function RechercheAccept( $idValidation): ?Destinataire
+  /*  public function findByExampleField(EntityManagerInterface $em): Response
     {
         return $this->createQueryBuilder('d')
-            ->andWhere('d.idValidation = :1')
-            ->setParameter('val', $idValidation);
-            /*->getQuery();*/
-       /*
-             $search->select('d')
-                 ->from(Destinataire::class,'d')
-                 ->where($idValidation = 1);*/
+            ->andWhere('d.exampleField = :val')
+            ->setParameter('val', $value)
+            ->orderBy('d.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+            ;
+    }*/
 
 
 
-/*
-        $search->orderBy('d.id', 'DESC');
+    public function findOneBySomeField($idValidation)
+    {
+        $search = $this->createQueryBuilder('d');
+        if($idValidation !== null){
+            $search->andWhere('d.idValidation = 1');
+            /*$search->setParameter('idValidation', $idValidation);*/
+
+        }
+
+        return $search->getQuery()->getResult();
+    }
+
+    public function RechercheAccept($idValidation)
+    {
+        /*$search = $this->createQueryBuilder('d');
+        if($idValidation !== null){
+            $search->Where('d.idValidation.id = :1');
+            $search->setParameter('idValidation', "%".$idValidation."%");
+
+        }dd($idValidation);
+
         return $search->getQuery()->getResult();*/
 
+
     }
+
 }

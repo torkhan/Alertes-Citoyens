@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Destinataire;
+use App\Entity\Validation;
 use App\Form\AcceptType;
 use App\Repository\DestinataireRepository;
 use App\Repository\ValidationRepository;
@@ -15,20 +16,26 @@ class AcceptController extends AbstractController
 {
     /**
      * @Route("/accept", name="accept")
+     * @param Request $request
+     * @param DestinataireRepository $destinataireRepository
+     * @param ValidationRepository $validationRepository
+     * @return Response
      */
-    public function index(Request $request, DestinataireRepository $destinataireRepository): Response
+    public function index(Request $request, DestinataireRepository $destinataireRepository, ValidationRepository $validationRepository): Response
     {
-        $recherche = new AcceptType();
+       $recherche = new AcceptType();
 
         $formAccept = $this->createForm(AcceptType::class);
         $formAccept->handleRequest($request);
-        $idValidation = $recherche->getIdValidation();
-        $results = $destinataireRepository->findByExampleField();
+        $results = $destinataireRepository->findOneBySomeField($validationRepository->find(1));
+
+
 
         return $this->render('accept/index.html.twig', [
             'controller_name' => 'acceptController',
             'form' => $formAccept->createView(),
             'results' => $results,
+
 
         ]);
     }
