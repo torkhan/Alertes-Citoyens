@@ -2,16 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5999bb21-a1de-4801-b02e-0d8edf526ed3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/libs/js/accept.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/mail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/swiftmailer.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/swiftmailer.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/libs/js/recherche.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/libs/js/recherche.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AcceptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AcceptController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DestinataireRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DestinataireRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/SecurityAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/SecurityAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accept/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accept/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/plateforme_admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/plateforme_admin/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +45,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -182,14 +186,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmailsCedric\src\config" />
+      <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmails\config\packages" />
+      <recent name="C:\Users\Torkhan\Desktop\alertEmails\public" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmails\src\Security" />
       <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmails\config\packages\test" />
       <recent name="C:\Users\Torkhan\Desktop\alertEmails\public\images" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmails\config\packages" />
-      <recent name="C:\Users\Torkhan\Desktop\alertEmails\public" />
     </key>
   </component>
   <component name="RunManager">
@@ -262,6 +267,10 @@
       <workItem from="1586250911365" duration="3907000" />
       <workItem from="1586266827869" duration="3478000" />
       <workItem from="1586323263910" duration="27379000" />
+      <workItem from="1586412268586" duration="600000" />
+      <workItem from="1586414729897" duration="701000" />
+      <workItem from="1586415710379" duration="10735000" />
+      <workItem from="1586434149105" duration="9822000" />
     </task>
     <servers />
   </component>
@@ -336,9 +345,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="894" y="118" key="refactoring.ChangeSignatureDialog/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1586329394713" />
-    <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1585234777350">
+    <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1586425789977">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1585234777350" />
+    <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1586425789977" />
   </component>
 </project>

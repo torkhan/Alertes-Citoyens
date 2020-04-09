@@ -39,4 +39,21 @@ class AcceptController extends AbstractController
 
         ]);
     }
+    public function accept( Request $request, DestinataireRepository $destinataireRepository) : Response
+    {
+        if(isset($_POST['submit'])){
+
+            if(!empty($_POST['checkboxes'])) {
+
+                $id = ($_POST['idDestinataires']);
+
+               dd($id);
+
+
+                }
+
+            }
+
+
+    }
 }

@@ -6,7 +6,7 @@
 
 
     <div class="example-wrapper">
-        <h1  class="my-4">Hello {{ "$nom de l admin" }}! </h1>
+        <h1  class="my-4">Hello {{ app.user.nomUtilisateur }} {{ app.user.prenomUtilisateur }}! </h1>
 
         <h2 class="text-center mb-4">Bienvenue sur votre palteforme de gestion</h2>
         <p class="text-center">Vous pourrez ici crééer votre alerte et l'envoyer aux souscripteurs concernés, valider les demandes de soucription et gérer l'intégralité des ressources</p>

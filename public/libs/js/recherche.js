@@ -35,17 +35,17 @@ function ready(maFonction) {
 ready(Initialise);
 
 function triTableau() {
-    
+
     let col = this.getAttribute("data-tri");
     this.setAttribute("data-tri", (col==="0") ? "1" : "0");
-    
+
     [].forEach.call( this.parentNode.querySelectorAll("th"), function(Th) {Th.classList.remove("selection");});
-    
+
     this.className = "selection";
     // Ajuste la flèche
-   /* this.querySelector("span").className = (col==="0") ? "flecheAsc" : "flecheDesc";*/
+    /* this.querySelector("span").className = (col==="0") ? "flecheAsc" : "flecheDesc";*/
 
-    
+
     let tbody = this.parentNode.parentNode.parentNode.getElementsByTagName("tbody")[0];
     let ligne = tbody.rows;
     let nbrLigne = ligne.length;
@@ -80,5 +80,4 @@ function triTableau() {
 
     tbody.innerHTML = "<tr>"+colonne.join("</tr><tr>")+"</tr>"; //l'affiche
 }
-
 

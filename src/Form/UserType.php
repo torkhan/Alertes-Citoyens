@@ -32,6 +32,7 @@ class UserType extends AbstractType
 
             ->add('password', PasswordType::class,[
                 'required' => true,
+                'mapped' => false,
                 'label' => "Mot de passe",
                 'constraints' => [
 

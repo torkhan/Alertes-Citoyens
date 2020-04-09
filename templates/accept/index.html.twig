@@ -31,6 +31,7 @@
             </th>
             <th>Ok Mail</th>
             <th>Ok Sms</th>
+            <th>Select all<input type="checkbox" name="checkAll" class="checkAll" ><label for="selectAll"></label></th>
 
         </tr>
         </thead>
@@ -52,11 +53,14 @@
 
                 <td>{{ result.okMailDestinataire ? "Oui" : "Non" }}</td>
                 <td>{{ result.okSmsDestinataire ? "Oui" : "Non" }}</td>
+                <td><input type="checkbox" name="checkboxes" class="checkboxes"><label for="check"></label></td>
 
 
 
 
             </tr>
+
+
         {% else %}
             <tr>
                 <td colspan="16">Aucun destinaire ne correspond à votre recherche</td>
@@ -64,9 +68,12 @@
         {% endfor %}
 
         </tbody>
+        <a class="btn btn-success my-2 float-right" href="{{ path('accept') }}" type="submit">Accepter</a>
     </table>
+
     {% block stylesheets %}
-        <script src="{{ asset("libs/js/recherche.js") }}"></script>
+        <script src="{{ asset("libs/js/accept.js") }}"></script>
+
         <link rel="stylesheet" href="{{ asset("libs/css/recherche.css") }}">
     {% endblock %}
 {% endblock %}
