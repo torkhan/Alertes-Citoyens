@@ -3,10 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Destinataire;
-use App\Entity\Validation;
 use App\Form\DestinataireType;
 use App\Repository\DestinataireRepository;
-use App\Repository\ValidationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -39,16 +37,9 @@ class DestinataireController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
 
-
-
-
-
             $date = new \DateTime('now');
             $date->setTimezone(new \DateTimeZone('Europe/Paris'));
             $destinataire -> setDateEnregistrementDestinataire($date);
-
-
-
 
             $entityManager->persist($destinataire);
             $entityManager->flush();

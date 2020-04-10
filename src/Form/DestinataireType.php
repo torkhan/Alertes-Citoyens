@@ -5,10 +5,8 @@ namespace App\Form;
 use App\Entity\Adresse;
 use App\Entity\Destinataire;
 use App\Entity\TypeDestinataire;
-use App\Entity\Validation;
 use App\Repository\AdresseRepository;
 use App\Repository\TypeDestinataireRepository;
-use App\Repository\ValidationRepository;
 use Doctrine\ORM\Query\Expr\Select;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -148,19 +146,6 @@ class DestinataireType extends AbstractType
                 'required' => true,
                 'label' => 'je souhaite recevoir mon alerte par SMS'
             ])
-            ->add('idValidation',EntityType::class,[
-                'class' => Validation::class,
-                'label' => '.',
-
-
-                'query_builder' => function (ValidationRepository $er) {
-                    return $er->createQueryBuilder('v')
-                    ->getFirstResult();
-                },
-
-
-            ])
-
             ->add('accordRgpdDestinataire', CheckboxType::class,[
 
                 'label' => "J'accepte les conditions d'utilisation",

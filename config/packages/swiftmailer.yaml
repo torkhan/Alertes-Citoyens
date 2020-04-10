@@ -5,13 +5,7 @@ swiftmailer:
     transport: gmail
     auth_mode: login
     port: 465
-    host: localhost
+    host: 127.0.0.1
     username: 'torkhan2706@gmail.com'
     password: 'Coleengarou654!'
-    encryption: ssl
-    stream_options:
-        ssl:
-            allow_self_signed: true
-            verify_peer: false
-            verify_peer_name: false
 

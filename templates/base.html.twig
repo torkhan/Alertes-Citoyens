@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
 
-    <link rel="icon" type="image/png" href="{{ asset("libs/images/logoAlertezMoiRouge.png") }}"/>
+    <link rel="icon" type="image/png" href="{{ asset("public/images/logoAlertezMoiRouge.png") }}"/>
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ asset("libs/css/base.css") }}">
-
+    <link rel="stylesheet" href="{{ asset("public/css/base.css") }}">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     {% block stylesheets %}
     {% endblock %}
 </head>
 <body>
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="navbar">
-    <a class="navbar-brand" href="{{ path("home") }}"><img class="logoNavbar" src="{{ asset("libs/images/logoAlertezMoiBlanc.png") }}"
+    <a class="navbar-brand" href="{{ path("home") }}"><img class="logoNavbar" src="{{ asset("public/images/logoAlertezMoiBlanc.png") }}"
                                                            alt="Logo Alertez-Moi"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,20 +31,20 @@
             <a class="nav-item nav-link" href="{{ path('destinataire_new') }}">Recevoir les alertes !</a>
         </div>
         <div class="row w-50 mx-auto  ">
-
+{#
             {% if is_granted('ROLE_ADMIN') %}
-
+#}
                 <a class="  ml-auto nav-item nav-link" href="{{ path('plateforme_admin') }}">Plateforme de gestion</a>
                 <a class=" ml-auto nav-item nav-link text-right" href="{{ path('app_logout') }}">Deconnexion</a>
-
+{#
             {% else %}
-
-
+#}
+{#
                 <a class=" ml-auto nav-item nav-link" href="{{ path('app_login') }}">Admin</a>
-
-
+#}
+{#
             {% endif %}
-
+#}
         </div>
     </div>
 </nav>
@@ -60,7 +59,7 @@
 <footer class="mt-5" id="footer">
     <div class="d-flex justify-content-around align-items-center py-3 text-center flex-column flex-md-row">
         <div class="col-12 col-md-2 pb-5 pb-md-0">
-            <img class="logo" src="{{ asset("libs/images/logoAlertezMoiBlanc.png") }}" alt="Logo Alertez moi !">
+            <img class="logo" src="{{ asset("public/images/logoAlertezMoiBlanc.png") }}" alt="Logo Alertez moi !">
         </div>
         <div class="col-12 col-md-8">
             <h4>INFOS</h4>

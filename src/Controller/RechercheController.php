@@ -29,7 +29,8 @@ class RechercheController extends AbstractController
 
         $results = $destinataireRepository->RechercheDestinataire($nomDestinataire, $rueDestinataire, $villeDestinataire);
 
-
+        dump($results);
+        dump($villeDestinataire);
         return $this->render('recherche/index.html.twig', [
             'controller_name' => 'RechercheController',
             'form' => $formRecherche->createView(),

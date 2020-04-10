@@ -5,20 +5,14 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
-use App\Security\SecurityAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
-
-
 
 /**
  * @Route("/user")
  */
-
 class UserController extends AbstractController
 {
     /**
@@ -33,12 +27,8 @@ class UserController extends AbstractController
 
     /**
      * @Route("/new", name="user_new", methods={"GET","POST"})
-     * @param Request $request
-     * @param UserPasswordEncoderInterface $encoder
-     * @return Response
-     * @throws \Exception
      */
-    public function new(Request $request, UserPasswordEncoderInterface $encoder): Response
+    public function new(Request $request): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
@@ -46,14 +36,10 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $user -> setRoles(['ROLE_ADMIN']);
-
+            $user -> setRoles([]);
             $date = new \DateTime('now');
             $date->setTimezone(new \DateTimeZone('Europe/Paris'));
             $user -> setCreateAt($date);
-
-            $passwordEncoded = $encoder->encodePassword($user, $user->getPassword());
-            $user->setPassword($passwordEncoded);
 
 
             $entityManager->persist($user);
@@ -90,10 +76,6 @@ class UserController extends AbstractController
             $date = new \DateTime('now');
             $date->setTimezone(new \DateTimeZone('Europe/Paris'));
             $user -> setDateModificationUtilisateur($date);
-/*
-            $hash = $encoder->encodePassword($user, $user->getPassword());
-
-            $user->setPassword($hash);*/
 
             $this->getDoctrine()->getManager()->flush();
 

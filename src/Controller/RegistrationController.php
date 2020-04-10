@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Controller;
-autowire: true; # or define your controller constructor and configure its arguments explicitly
-    tags: ['controller.service_arguments'];
 
 use App\Entity\User;
 use App\Form\RegistrationFormType;
@@ -31,7 +29,7 @@ class RegistrationController extends AbstractController
             $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,
-                    $form->get('Password')->getData()
+                    $form->get('plainPassword')->getData()
                 )
             );
 

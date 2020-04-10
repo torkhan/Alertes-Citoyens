@@ -8,9 +8,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
 use Symfony\Component\Security\Core\Exception\InvalidCsrfTokenException;
 use Symfony\Component\Security\Core\Security;
@@ -51,8 +49,7 @@ class SecurityAuthenticator extends AbstractFormLoginAuthenticator implements Pa
             'email' => $request->request->get('email'),
             'password' => $request->request->get('password'),
             'csrf_token' => $request->request->get('_csrf_token'),
-
-        ];dump( $credentials);
+        ];
         $request->getSession()->set(
             Security::LAST_USERNAME,
             $credentials['email']
@@ -78,14 +75,10 @@ class SecurityAuthenticator extends AbstractFormLoginAuthenticator implements Pa
 
         return $user;
     }
-    
 
     public function checkCredentials($credentials, UserInterface $user)
     {
-       /* dump($user, $credentials);
-        dd($this->passwordEncoder->isPasswordValid($user, $credentials['password']));*/
         return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
-        /*return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);*/
     }
 
     /**
@@ -93,7 +86,6 @@ class SecurityAuthenticator extends AbstractFormLoginAuthenticator implements Pa
      */
     public function getPassword($credentials): ?string
     {
-        dump($credentials);
         return $credentials['password'];
     }
 
@@ -111,12 +103,4 @@ class SecurityAuthenticator extends AbstractFormLoginAuthenticator implements Pa
     {
         return $this->urlGenerator->generate('app_login');
     }
-
-    /**
-     * @inheritDoc
-     */
-   /* public function checkCredentials($credentials, UserInterface $user)
-    {
-        // TODO: Implement checkCredentials() method.
-    }*/
 }

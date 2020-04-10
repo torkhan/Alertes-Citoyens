@@ -25,13 +25,12 @@
                 <th>Date de validation</th>
                 <th>Date de modification</th>
                 <th>Statut</th>
-               {<th>Validation</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for destinataire in destinataires %}
-
+           {% dump(destinataire) %}
             <tr>
                 <td>{{ destinataire.nomDestinataire }}</td>
                 <td>{{ destinataire.prenomDestinataire }}</td>
@@ -52,7 +51,6 @@
                 <td>{{ destinataire.dateValidationDestinataire ? destinataire.dateValidationDestinataire|date('d-m-Y H:i:s') : '' }}</td>
                 <td>{{ destinataire.dateModificationDestinataire ? destinataire.dateModificationDestinataire|date('d-m-Y H:i:s') : '' }}</td>
                 <td>{{ destinataire.statutDestinataire }}</td>
-                <td>{{ destinataire.idValidation.etatValidation }}</td>
                 <td>
                     <a class="btn btn-info" href="{{ path('destinataire_show', {'id': destinataire.id}) }}">Voir</a>
                     <a class="btn btn-warning" href="{{ path('destinataire_edit', {'id': destinataire.id}) }}">Editer</a>
