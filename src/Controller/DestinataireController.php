@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Destinataire;
+use App\Entity\Validation;
 use App\Form\DestinataireType;
 use App\Repository\DestinataireRepository;
+use App\Repository\ValidationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -75,10 +77,27 @@ class DestinataireController extends AbstractController
             $date = new \DateTime('now');
             $date->setTimezone(new \DateTimeZone('Europe/Paris'));
             $destinataire -> setDateModificationDestinataire($date);
-            $destinataire -> setDateValidationDestinataire($date);
+            /*$destinataire -> setDateValidationDestinataire($date);*/
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('destinataire_index');
+        }else{
+
+                if(isset($_Post['checkboxes'])){
+                    $form->getData();
+
+                    $date = new \DateTime('now');
+                    $date->setTimezone(new \DateTimeZone('Europe/Paris'));
+                    $destinataire -> setDateValidationDestinataire($date);
+
+                    $destinataire ->setIdValidation(2);
+                    $this->getDoctrine()->getManager()->flush();
+
+
+
+                    return $this->redirectToRoute('plateforme_index');
+                }
+
         }
 
         return $this->render('destinataire/edit.html.twig', [

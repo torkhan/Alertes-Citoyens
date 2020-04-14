@@ -11,9 +11,9 @@
 
                 <th>Email</th>
                 <th>Role</th>
-                <th>Mode de passe</th>
+
                 <th>Statut</th>
-                <th>Login</th>
+
                 <th>Créé le</th>
                 <th>Nom de l'utilisateur</th>
                 <th>Prenom de l'utilisateur</th>
@@ -29,9 +29,9 @@
 
                 <td>{{ user.email }}</td>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.password }}</td>
+
                 <td>{{ user.statut ? 'Yes' : 'No' }}</td>
-                <td>{{ user.username }}</td>
+
                 <td>{{ user.createAt ? user.createAt|date('d-m-Y H:i:s') : '' }}</td>
                 <td>{{ user.nomUtilisateur }}</td>
                 <td>{{ user.prenomUtilisateur }}</td>

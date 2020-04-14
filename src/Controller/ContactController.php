@@ -56,7 +56,7 @@ class ContactController extends AbstractController
             $message->setContentType("text/html");
             $mailer->send($message);
 
-            return $this->redirectToRoute('home');
+           /* return $this->redirectToRoute('home');*/
 
         }
 

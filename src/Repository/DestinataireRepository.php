@@ -5,6 +5,9 @@ namespace App\Repository;
 use App\Entity\Destinataire;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
+use http\Client\Response;
+use Symfony\Component\Validator\Constraints\All;
 
 /**
  * @method Destinataire|null find($id, $lockMode = null, $lockVersion = null)
@@ -51,8 +54,8 @@ class DestinataireRepository extends ServiceEntityRepository
     // /**
     //  * @return Destinataire[] Returns an array of Destinataire objects
     //  */
-    /*
-    public function findByExampleField($value)
+
+  /*  public function findByExampleField(EntityManagerInterface $em): Response
     {
         return $this->createQueryBuilder('d')
             ->andWhere('d.exampleField = :val')
@@ -61,19 +64,35 @@ class DestinataireRepository extends ServiceEntityRepository
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
-        ;
-    }
-    */
+            ;
+    }*/
 
-    /*
-    public function findOneBySomeField($value): ?Destinataire
+
+
+    public function findOneBySomeField($idValidation)
     {
-        return $this->createQueryBuilder('d')
-            ->andWhere('d.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $search = $this->createQueryBuilder('d');
+        if($idValidation !== null){
+            $search->andWhere('d.idValidation = 1');
+
+
+        }
+
+        return $search->getQuery()->getResult();
     }
-    */
+
+    public function RechercheAccept($idValidation)
+    {
+        /*$search = $this->createQueryBuilder('d');
+        if($idValidation !== null){
+            $search->Where('d.idValidation.id = :1');
+            $search->setParameter('idValidation', "%".$idValidation."%");
+
+        }dd($idValidation);
+
+        return $search->getQuery()->getResult();*/
+
+
+    }
+
 }

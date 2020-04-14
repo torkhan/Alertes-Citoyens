@@ -28,7 +28,7 @@ class InterventionType extends AbstractType
 
                     new Assert\Length([
                         'min' => 3,
-                        'minMessage' => "Le nom de l'intervension doit contenir au minimum {{3}} charactères",
+                        'minMessage' => 'Votre rue doit contenir au minimum {{3}} charactères',
                         'max' => 150,
                         'maxMessage' => 'votre rue ne peux contenir que {{150}} charactères au maximum'
                     ]),
@@ -37,7 +37,7 @@ class InterventionType extends AbstractType
             ->add('rueIntervention', TextType::class,[
                 'required' => true,
                 'label' => "rue(s) concernée(s)",
-                /*'constraints' => [
+                'constraints' => [
 
                     new Assert\Length([
                         'min' => 3,
@@ -45,12 +45,12 @@ class InterventionType extends AbstractType
                         'max' => 150,
                         'maxMessage' => 'votre rue ne peux contenir que {{150}} charactères au maximum'
                     ]),
-                ],*/
+                ],
             ])
             ->add('villeIntervention', TextType::class,[
                 'required' => true,
                 'label' => "Ville(s) concernée(s)",
-               /* 'constraints' => [
+                'constraints' => [
 
                     new Assert\Length([
                         'min' => 3,
@@ -58,7 +58,7 @@ class InterventionType extends AbstractType
                         'max' => 150,
                         'maxMessage' => 'votre rue ne peux contenir que {{150}} charactères au maximum'
                     ]),
-                ],*/
+                ],
             ])
             ->add('longitude', TextType::class,[
                 'required' => false,
@@ -71,14 +71,10 @@ class InterventionType extends AbstractType
             ->add('dateDebutIntervention', DateType::class,[
                 'required' => true,
                 'label' => "Date de début",
-                'widget' => 'single_text',
-                'format' => 'yyyy-MM-dd',
             ])
             ->add('dateFinIntervention', DateType::class,[
                 'required' => false,
                 'label' => "Date de fin",
-                'widget' => 'single_text',
-                'format' => 'yyyy-MM-dd',
             ])
             ->add('commentaireIntervention', TextType::class,[
                 'required' => false,
@@ -100,7 +96,7 @@ class InterventionType extends AbstractType
                 'label' => 'Type d\'intervention?',
                 'query_builder' => function (TypeInterventionRepository $er) {
                     return $er->createQueryBuilder('v')
-                        ->orderBy('v.interventionType', 'DESC');
+                        ->orderBy('v.interventionType', 'ASC');
                 },
                 'choice_label' => 'interventionType',
             ])

@@ -32,17 +32,17 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="json")
      */
-    private $roles = [];
+    private $roles = ['ADMIN'];
 
     /**
-     * @var string The hashed password
+     * @var string The hashed Password
      * @ORM\Column(type="string")
      * @Assert\Regex(pattern="/[a-zA-Z0-9,. \""éèêçàùï=;!?]+$/", message="Le champs ne doit pas contenir de caractères spéciaux '!?;=. autorisés")
      */
     private $password;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $statut;
 
@@ -295,4 +295,16 @@ class User implements UserInterface
 
         return $this;
     }
+
+    /**
+     * @inheritDoc
+     */
+   /* public function getPassword()
+    {
+        // TODO: Implement getPassword() method.
+    }
+
+    public function setPassword(string $encodePassword)
+    {
+    }*/
 }

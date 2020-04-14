@@ -1,37 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Recherche{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
-
-    <div class="bg-dark mb-3 py-2 text-white">
-        <div class="d-flex justify-content-around text-center">
-            {{ form_start(form) }}
-            <div class="row">
-                <div class="col-3">
-                    {{ form_label(form.nomDestinataire) }}
-                    {{ form_widget(form.nomDestinataire) }}
-                </div>
-                <div class="col-4">
-                    {{ form_label(form.nomRueDestinataire1) }}
-                    {{ form_widget(form.nomRueDestinataire1) }}
-                </div>
-                <div class="col-3">
-                    {{ form_label(form.idAdresse) }}
-                    {{ form_widget(form.idAdresse) }}
-                </div>
-                <div class="col-2">
-                    <div class="mt-3">
-                        <button class="btn btn-success">{{ button_label|default('Valider') }}</button>
-                    </div>
-                </div>
-            </div>
-            {{ form_end(form) }}
-        </div>
-    </div>
-
-    <a href="{{ path("recherche") }}">liste complète</a>
-
     <div class="my-5 text-center">
         <h1>Sélection des destinataires</h1>
     </div>
@@ -40,6 +11,7 @@
         <thead>
 
         <tr>
+            <th>Id</th>
             <th>Nom <i class="fa fa-arrows-v" aria-hidden="true"></i>
             </th>
             <th>Prénom <i class="fa fa-arrows-v" aria-hidden="true"></i>
@@ -60,11 +32,15 @@
             </th>
             <th>Ok Mail</th>
             <th>Ok Sms</th>
+            <th>Select all<input type="checkbox" name="checkAll" class="checkAll" ><label for="selectAll"></label></th>
+
         </tr>
         </thead>
         <tbody>
         {% for result in results %}
+
             <tr>
+                <td>{{ result.id }}</td>
                 <td>{{ result.nomDestinataire }}</td>
                 <td>{{ result.prenomDestinataire }}</td>
                 <td>{{ result.adresseMailDestinataire ? result.adresseMailDestinataire : "Non renseigné" }}</td>
@@ -79,19 +55,30 @@
 
                 <td>{{ result.okMailDestinataire ? "Oui" : "Non" }}</td>
                 <td>{{ result.okSmsDestinataire ? "Oui" : "Non" }}</td>
+                <td><input type="checkbox" name="checkboxes[result.id]" class="checkboxes"><label for="check"></label></td>
+
+
 
 
             </tr>
+
+
         {% else %}
             <tr>
                 <td colspan="16">Aucun destinaire ne correspond à votre recherche</td>
             </tr>
         {% endfor %}
-
+        <a class="btn btn-success my-2 float-right" href="*" type="submit"  >Accepter</a>
+{#
+        <a class="btn btn-success my-2 float-right" href="{{ path('accept_valide',{'id': result.id}) }}" type="submit"  >Accepter</a>
+#}
         </tbody>
+
     </table>
+
     {% block stylesheets %}
-        <script src="{{ asset("libs/js/recherche.js") }}"></script>
+        <script src="{{ asset("libs/js/accept.js") }}"></script>
+
         <link rel="stylesheet" href="{{ asset("libs/css/recherche.css") }}">
     {% endblock %}
 {% endblock %}
