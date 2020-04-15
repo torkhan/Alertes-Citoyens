@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
 
-    <link rel="icon" type="image/png" href="{{ asset("libs/images/logoAlertezMoiRouge.png") }}"/>
+    <link rel="icon" type="image/png" href="{{ asset("images/logoAlertezMoiRouge.png") }}"/>
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ asset("libs/css/base.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/base.css") }}">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     {% block stylesheets %}
@@ -18,7 +18,7 @@
 </head>
 <body>
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="navbar">
-    <a class="navbar-brand" href="{{ path("home") }}"><img class="logoNavbar" src="{{ asset("libs/images/logoAlertezMoiBlanc.png") }}"
+    <a class="navbar-brand" href="{{ path("home") }}"><img class="logoNavbar" src="{{ asset("images/logoAlertezMoiBlanc.png") }}"
                                                            alt="Logo Alertez-Moi"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +60,7 @@
 <footer class="mt-5" id="footer">
     <div class="d-flex justify-content-around align-items-center py-3 text-center flex-column flex-md-row">
         <div class="col-12 col-md-2 pb-5 pb-md-0">
-            <img class="logo" src="{{ asset("libs/images/logoAlertezMoiBlanc.png") }}" alt="Logo Alertez moi !">
+            <img class="logo" src="{{ asset("images/logoAlertezMoiBlanc.png") }}" alt="Logo Alertez moi !">
         </div>
         <div class="col-12 col-md-8">
             <h4>INFOS</h4>

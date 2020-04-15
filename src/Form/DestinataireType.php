@@ -148,7 +148,7 @@ class DestinataireType extends AbstractType
                 'required' => true,
                 'label' => 'je souhaite recevoir mon alerte par SMS'
             ])
-            ->add('idValidation',EntityType::class,[
+            /*->add('idValidation',EntityType::class,[
                 'class' => Validation::class,
                 'label' => '.',
 
@@ -159,7 +159,7 @@ class DestinataireType extends AbstractType
                 },
 
 
-            ])
+            ])*/
 
             ->add('accordRgpdDestinataire', CheckboxType::class,[
 

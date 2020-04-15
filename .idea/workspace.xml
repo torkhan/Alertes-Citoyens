@@ -2,54 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5999bb21-a1de-4801-b02e-0d8edf526ed3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AccordCguController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccordCguController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/inscription.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/inscription.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AcceptValideController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DestinataireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DestinataireController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PlateformeAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PlateformeAdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RechercheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RechercheController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ContactType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContactType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/DestinataireFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/DestinataireFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/DestinataireType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/DestinataireType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/InterventionType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/InterventionType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/MotifType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MotifType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/AdresseRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AdresseRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ContactRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ContactRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/DestinataireRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DestinataireRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/InterventionRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/InterventionRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MessageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MessageRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MotifRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MotifRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ServiceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ServiceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TypeDestinataireRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TypeDestinataireRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TypeInterventionRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TypeInterventionRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TypeMessageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TypeMessageRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TypeServiceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TypeServiceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/ValidationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ValidationRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/SecurityAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/SecurityAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accept/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accept/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accept_valide/index.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/destinataire/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/destinataire/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/destinataire/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/destinataire/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/plateforme_admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/plateforme_admin/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/recherche/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recherche/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,6 +179,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -308,6 +275,7 @@
       <workItem from="1586879155641" duration="126000" />
       <workItem from="1586879578447" duration="414000" />
       <workItem from="1586880011814" duration="167000" />
+      <workItem from="1586931402523" duration="13806000" />
     </task>
     <servers />
   </component>
@@ -365,10 +333,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1585742602450" />
-    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1586340386877">
+    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1586937360468">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1586340386877" />
+    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1586937360468" />
     <state x="661" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585901005852">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

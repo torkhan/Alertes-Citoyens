@@ -74,10 +74,16 @@ class DestinataireRepository extends ServiceEntityRepository
         $search = $this->createQueryBuilder('d');
         if($idValidation !== null){
             $search->andWhere('d.idValidation = 1');
-
-
         }
+        return $search->getQuery()->getResult();
+    }
+    public function setValidation($idValidation)
+    {
+        $search = $this->createQueryBuilder('d');
+        if($idValidation !== null){
 
+            $search->andWhere('d.idValidation = 1');
+        }
         return $search->getQuery()->getResult();
     }
 

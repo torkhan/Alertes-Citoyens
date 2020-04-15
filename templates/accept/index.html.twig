@@ -68,7 +68,7 @@
                 <td colspan="16">Aucun destinaire ne correspond à votre recherche</td>
             </tr>
         {% endfor %}
-        <a class="btn btn-success my-2 float-right" href="*" type="submit"  >Accepter</a>
+        <a class="btn btn-success my-2 float-right" href="{{ path('accept_valide') }}" type="submit"  >Accepter</a>
 {#
         <a class="btn btn-success my-2 float-right" href="{{ path('accept_valide',{'id': result.id}) }}" type="submit"  >Accepter</a>
 #}
@@ -77,8 +77,8 @@
     </table>
 
     {% block stylesheets %}
-        <script src="{{ asset("libs/js/accept.js") }}"></script>
+        <script src="{{ asset("js/accept.js") }}"></script>
 
-        <link rel="stylesheet" href="{{ asset("libs/css/recherche.css") }}">
+        <link rel="stylesheet" href="{{ asset("css/recherche.css") }}">
     {% endblock %}
 {% endblock %}

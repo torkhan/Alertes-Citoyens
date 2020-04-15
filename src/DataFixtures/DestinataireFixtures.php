@@ -93,5 +93,11 @@ class DestinataireFixtures extends Fixture
 //        $manager->persist($destinataire4);
 //
 //        $manager->flush();
+        $destinataire = new Destinataire();
+        $destinataire->setIdValidation(1);
+
+        $manager->persist($destinataire);
+        $manager->flush();
+
     }
 }

@@ -43,6 +43,7 @@ class DestinataireController extends AbstractController
             $date->setTimezone(new \DateTimeZone('Europe/Paris'));
             $destinataire -> setDateEnregistrementDestinataire($date);
 
+
             $entityManager->persist($destinataire);
             $entityManager->flush();
 

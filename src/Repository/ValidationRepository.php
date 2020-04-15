@@ -23,6 +23,7 @@ class ValidationRepository extends ServiceEntityRepository
     //  * @return Validation[] Returns an array of Validation objects
     //  */
     /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('v')
@@ -47,4 +48,5 @@ class ValidationRepository extends ServiceEntityRepository
         ;
     }
     */
+
 }

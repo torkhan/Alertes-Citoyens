@@ -22,12 +22,12 @@ class AcceptValideController extends AbstractController
      */
     public function index(Request $request) : Response
     {
-$destinataire = new Destinataire();
+        $destinataire = new Destinataire();
         $form = $this->createForm(DestinataireType::class, $destinataire);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            if(isset($_Post['checkboxes'])){
-                $form->getData();
+          /*  if(isset($_Post['checkboxes'])){
+                $form->getData();*/
 
                 $date = new \DateTime('now');
                 $date->setTimezone(new \DateTimeZone('Europe/Paris'));
@@ -40,11 +40,11 @@ $destinataire = new Destinataire();
 
                 return $this->redirectToRoute('plateforme_index');
             }
-        }
+
 
         return $this->render('accept_valide/index.html.twig', [
 
-             'controller_name' => 'AcceptValideController',
-         ]);
+            'controller_name' => 'AcceptValideController',
+        ]);
     }
 }

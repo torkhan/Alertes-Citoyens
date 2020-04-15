@@ -118,5 +118,8 @@ $(document).ready(function(){
     });
 
 });
+$(document).ready(function(){
+    $('#destinataire_idValidation').hide();
+});
 
 
