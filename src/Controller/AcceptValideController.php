@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Destinataire;
 use App\Entity\Validation;
 use App\Form\DestinataireType;
+use App\Repository\ValidationRepository;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,31 +21,32 @@ class AcceptValideController extends AbstractController
      * @return Response
      * @throws Exception
      */
-    public function index(Request $request) : Response
+    public function index(Request $request,ValidationRepository $validationRepository) : Response
     {
         $destinataire = new Destinataire();
-        $form = $this->createForm(DestinataireType::class, $destinataire);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-          /*  if(isset($_Post['checkboxes'])){
-                $form->getData();*/
+      /*  $form = $this->createForm(DestinataireType::class, $destinataire);
+        $form->handleRequest($request);*/
+        /*if ($form->isSubmitted() && $form->isValid()) {*/
+           /*if(isset($_Post['submit'])){
 
-                $date = new \DateTime('now');
-                $date->setTimezone(new \DateTimeZone('Europe/Paris'));
-                $destinataire -> setDateValidationDestinataire($date);
 
-                $destinataire ->setIdValidation(2);
+            $date = new \DateTime('now');
+            $date->setTimezone(new \DateTimeZone('Europe/Paris'));
+            $destinataire -> setDateModificationDestinataire($date);
+            $destinataire -> setDateValidationDestinataire($date);
+            $validation = $validationRepository->find(2);
+            $destinataire->setIdValidation($validation);
                 $this->getDoctrine()->getManager()->flush();
 
 
 
-                return $this->redirectToRoute('plateforme_index');
-            }
+                return $this->redirectToRoute('plateforme_admin');
+            }*/
 
-
-        return $this->render('accept_valide/index.html.twig', [
+        /*return $this->redirectToRoute('plateforme_admin');*/
+        /*return $this->render('accept_valide/index.html.twig', [
 
             'controller_name' => 'AcceptValideController',
-        ]);
+        ]);*/
     }
 }

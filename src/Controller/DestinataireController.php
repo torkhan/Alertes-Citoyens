@@ -30,7 +30,7 @@ class DestinataireController extends AbstractController
     /**
      * @Route("/new", name="destinataire_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, ValidationRepository $validationRepository): Response
     {
         $destinataire = new Destinataire();
         $form = $this->createForm(DestinataireType::class, $destinataire);
@@ -42,6 +42,8 @@ class DestinataireController extends AbstractController
             $date = new \DateTime('now');
             $date->setTimezone(new \DateTimeZone('Europe/Paris'));
             $destinataire -> setDateEnregistrementDestinataire($date);
+            $validation = $validationRepository->find(1);
+            $destinataire->setIdValidation($validation);
 
 
             $entityManager->persist($destinataire);
@@ -69,7 +71,7 @@ class DestinataireController extends AbstractController
     /**
      * @Route("/{id}/edit", name="destinataire_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Destinataire $destinataire): Response
+    public function edit(Request $request, Destinataire $destinataire, ValidationRepository $validationRepository): Response
     {
         $form = $this->createForm(DestinataireType::class, $destinataire);
         $form->handleRequest($request);
@@ -78,7 +80,9 @@ class DestinataireController extends AbstractController
             $date = new \DateTime('now');
             $date->setTimezone(new \DateTimeZone('Europe/Paris'));
             $destinataire -> setDateModificationDestinataire($date);
-            /*$destinataire -> setDateValidationDestinataire($date);*/
+            $destinataire -> setDateValidationDestinataire($date);
+            $validation = $validationRepository->find(2);
+            $destinataire->setIdValidation($validation);
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('destinataire_index');

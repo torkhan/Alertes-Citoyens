@@ -3,19 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="5999bb21-a1de-4801-b02e-0d8edf526ed3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/inscription.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/inscription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AcceptValideController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/accept.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/accept.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AcceptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AcceptController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AcceptValideController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AcceptValideController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DestinataireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DestinataireController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/DestinataireFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/DestinataireFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/DestinataireType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/DestinataireType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DestinataireRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DestinataireRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ValidationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ValidationRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accept/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accept/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accept_valide/index.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/destinataire/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/_delete_form.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/destinataire/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/destinataire/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/destinataire/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/recherche/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recherche/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,6 +273,7 @@
       <workItem from="1586879578447" duration="414000" />
       <workItem from="1586880011814" duration="167000" />
       <workItem from="1586931402523" duration="13806000" />
+      <workItem from="1587020614637" duration="20967000" />
     </task>
     <servers />
   </component>

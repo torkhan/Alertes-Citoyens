@@ -1,4 +1,4 @@
-$(function(){
+$(function(){//fonction de select all checkboxes
 
     $('.checkAll').click(function(){
 

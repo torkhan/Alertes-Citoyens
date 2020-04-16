@@ -56,7 +56,7 @@
 
                 <td>
                     <a class="btn btn-info" href="{{ path('destinataire_show', {'id': destinataire.id}) }}">Voir</a>
-                    <a class="btn btn-warning" href="{{ path('destinataire_edit', {'id': destinataire.id}) }}">Editer</a>
+                    {#<a class="btn btn-warning" href="{{ path('destinataire_edit', {'id': destinataire.id}) }}">Editer</a>#}
                 </td>
             </tr>
         {% else %}
@@ -68,5 +68,11 @@
         </tbody>
     </table>
 
-    <a class="btn btn-success" href="{{ path('destinataire_new') }}">Créer un destinataire</a>
+   {# <a class="btn btn-success" href="{{ path('destinataire_new') }}">Créer un destinataire</a>#}
+    {% block stylesheets %}
+
+        <script src="{{ asset("js/recherche.js") }}"></script>
+
+
+    {% endblock %}
 {% endblock %}

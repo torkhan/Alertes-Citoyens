@@ -4,7 +4,10 @@
 
 {% block body %}
     <div class="my-5 text-center">
-        <h1>Sélection des destinataires</h1>
+        <h1>Accepter/refuser les destinataires</h1>
+        <p>Vous trouverez ici les destinataires ayant fait leur demande de souscription</p>
+        <p>Vous pouvez les accepter ou les refuser</p>
+        <p>Un Email indiquant votre choix leur sera automatiquement envoyé</p>
     </div>
 
     <table class="table">
@@ -32,7 +35,10 @@
             </th>
             <th>Ok Mail</th>
             <th>Ok Sms</th>
-            <th>Select all<input type="checkbox" name="checkAll" class="checkAll" ><label for="selectAll"></label></th>
+{#
+           <th>Select all<input type="checkbox" name="checkAll" class="checkAll" ><label for="selectAll"></label></th>
+#}
+
 
         </tr>
         </thead>
@@ -55,9 +61,14 @@
 
                 <td>{{ result.okMailDestinataire ? "Oui" : "Non" }}</td>
                 <td>{{ result.okSmsDestinataire ? "Oui" : "Non" }}</td>
+
+{#
                 <td><input type="checkbox" name="checkboxes[result.id]" class="checkboxes"><label for="check"></label></td>
+#}
 
 
+                <td><a href="{{ path ('valider_destinataire', {'id' : result.id})}}" class="btn btn-success " >Valider</a></td>
+                <td><a href="{{ path ('refuser_destinataire', {'id' : result.id})}}" class="btn btn-danger " >Refuser</a></td>
 
 
             </tr>
@@ -68,9 +79,9 @@
                 <td colspan="16">Aucun destinaire ne correspond à votre recherche</td>
             </tr>
         {% endfor %}
-        <a class="btn btn-success my-2 float-right" href="{{ path('accept_valide') }}" type="submit"  >Accepter</a>
+
 {#
-        <a class="btn btn-success my-2 float-right" href="{{ path('accept_valide',{'id': result.id}) }}" type="submit"  >Accepter</a>
+
 #}
         </tbody>
 
@@ -78,6 +89,7 @@
 
     {% block stylesheets %}
         <script src="{{ asset("js/accept.js") }}"></script>
+        <script src="{{ asset("js/recherche.js") }}"></script>
 
         <link rel="stylesheet" href="{{ asset("css/recherche.css") }}">
     {% endblock %}
