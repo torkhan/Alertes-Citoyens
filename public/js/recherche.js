@@ -39,11 +39,10 @@ function triTableau() {
     let col = this.getAttribute("data-tri");
     this.setAttribute("data-tri", (col==="0") ? "1" : "0");
 
-    [].forEach.call( this.parentNode.querySelectorAll("th"), function(Th) {Th.classList.remove("selection");});
+    [].forEach.call( this.parentNode.querySelectorAll(".th"), function(Th) {Th.classList.remove("selection");});
 
     this.className = "selection";
-    // Ajuste la flèche
-    /* this.querySelector("span").className = (col==="0") ? "flecheAsc" : "flecheDesc";*/
+
 
 
     let tbody = this.parentNode.parentNode.parentNode.getElementsByTagName("tbody")[0];
@@ -73,7 +72,7 @@ function triTableau() {
     if (col==0) colonne.reverse();
 
 
-    for(i = 0; i < nbrLigne; i++){ // construit new tab
+    for(i = 0; i < nbrLigne; i++){
         colonne[i] = "<td>"+colonne[i].join("</td><td>")+"</td>";
     }
 

@@ -35,3 +35,4 @@ $(function(){//fonction de select all checkboxes
     });
 
 });
+

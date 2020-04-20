@@ -14,14 +14,14 @@
         <thead>
 
         <tr>
-            <th>Id</th>
+           {# <th>Id</th>#}
             <th>Nom <i class="fa fa-arrows-v" aria-hidden="true"></i>
             </th>
             <th>Prénom <i class="fa fa-arrows-v" aria-hidden="true"></i>
             </th>
-            <th>Adresse Mail <i class="fa fa-arrows-v" aria-hidden="true"></i>
+           {# <th>Adresse Mail <i class="fa fa-arrows-v" aria-hidden="true"></i>
             </th>
-            <th>Numéro téléphone <i class="fa fa-arrows-v" aria-hidden="true"></i>
+            <th>Numéro téléphone <i class="fa fa-arrows-v" aria-hidden="true"></i>#}
             </th>
             <th>Numéro rue <i class="fa fa-arrows-v" aria-hidden="true"></i>
             </th>
@@ -33,24 +33,24 @@
             </th>
             <th>Ville <i class="fa fa-arrows-v" aria-hidden="true"></i>
             </th>
-            <th>Ok Mail</th>
-            <th>Ok Sms</th>
-{#
-           <th>Select all<input type="checkbox" name="checkAll" class="checkAll" ><label for="selectAll"></label></th>
-#}
-
-
+           {# <th>Ok Mail</th>
+            <th>Ok Sms</th>#}
         </tr>
+
+
+
+
+
         </thead>
         <tbody>
         {% for result in results %}
 
             <tr>
-                <td>{{ result.id }}</td>
+               {# <td>{{ result.id }}</td>#}
                 <td>{{ result.nomDestinataire }}</td>
                 <td>{{ result.prenomDestinataire }}</td>
-                <td>{{ result.adresseMailDestinataire ? result.adresseMailDestinataire : "Non renseigné" }}</td>
-                <td>{{ result.numeroTelephoneDestinataire ? result.numeroTelephoneDestinataire : "Non renseigné" }}</td>
+             {#   <td>{{ result.adresseMailDestinataire ? result.adresseMailDestinataire : "Non renseigné" }}</td>
+                <td>{{ result.numeroTelephoneDestinataire ? result.numeroTelephoneDestinataire : "Non renseigné" }}</td>#}
                 <td>{{ result.numeroRueDestinataire }}</td>
                 <td>{{ result.nomRueDestinataire1 }}</td>
                 <td>{{ result.nomRueDestinataire2 }}</td>
@@ -58,13 +58,17 @@
                 <td>{{ result.idAdresse.cp }}</td>
                 <td>{{ result.idAdresse.nomVille }}</td>
 
+{#
 
                 <td>{{ result.okMailDestinataire ? "Oui" : "Non" }}</td>
                 <td>{{ result.okSmsDestinataire ? "Oui" : "Non" }}</td>
-
-{#
-                <td><input type="checkbox" name="checkboxes[result.id]" class="checkboxes"><label for="check"></label></td>
 #}
+
+
+
+                <td><input type="checkbox" name="checkboxes" class="checkboxes"><label for="check"></label></td>
+
+
 
 
                 <td><a href="{{ path ('valider_destinataire', {'id' : result.id})}}" class="btn btn-success " >Valider</a></td>
@@ -86,10 +90,21 @@
         </tbody>
 
     </table>
+    <div class="text-right ">
+        <label for="selectAll">
+            <input type="checkbox" name="checkAll" class="checkAll " >
+        </label>Select all
+
+
+       <a href="{{ path ('valider_all_destinataire')}}" class="btn btn-success  " type="submit" >Valider tous</a>
+        <a href="{{ path ('refuser_all_destinataire')}}" class="btn btn-danger  " type="submit" >Refuser tous</a>
+
+
+    </div>
 
     {% block stylesheets %}
         <script src="{{ asset("js/accept.js") }}"></script>
-        <script src="{{ asset("js/recherche.js") }}"></script>
+
 
         <link rel="stylesheet" href="{{ asset("css/recherche.css") }}">
     {% endblock %}
