@@ -3,7 +3,8 @@
 {% block title %}Liste des messages{% endblock %}
 
 {% block body %}
-    <h1>Liste des messages</h1>
+    <h1 class="text-center">Liste des messages</h1>
+    <div class="container w-75">
 
     <table class="table">
         <thead>
@@ -12,9 +13,9 @@
                 <th>Contenu du message</th>
                 <th>Date d'envoi</th>
                 <th>Statut du message</th>
-                <th>Image1</th>
+               {# <th>Image1</th>
                 <th>Image2</th>
-                <th>Image3</th>
+                <th>Image3</th>#}
                 <th>Date de modification</th>
                 <th>Commentaire</th>
                 <th>Actions</th>
@@ -27,14 +28,14 @@
                 <td>{{ message.contenuMessage }}</td>
                 <td>{{ message.dateEnvoi ? message.dateEnvoi|date('d-m-Y H:i:s') : '' }}</td>
                 <td>{{ message.statutMessage }}</td>
-                <td>{{ message.image1 }}</td>
+                {#<td>{{ message.image1 }}</td>
                 <td>{{ message.image2 }}</td>
-                <td>{{ message.image3 }}</td>
+                <td>{{ message.image3 }}</td>#}
                 <td>{{ message.dateModificationMessage ? message.dateModificationMessage|date('d-m-Y H:i:s') : '' }}</td>
                 <td>{{ message.commentaireMessage }}</td>
                 <td>
                     <a class="btn btn-info" href="{{ path('message_show', {'id': message.id}) }}">Voir</a>
-                    <a class="btn btn-warning" href="{{ path('message_edit', {'id': message.id}) }}">Editer</a>
+                    {#<a class="btn btn-warning" href="{{ path('message_edit', {'id': message.id}) }}">Editer</a>#}
                 </td>
             </tr>
         {% else %}
@@ -46,4 +47,5 @@
     </table>
 
     <a class="btn btn-success mb-4" href="{{ path('message_new') }}">Créer un nouveau message</a>
+    </div>
 {% endblock %}

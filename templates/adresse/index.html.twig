@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des adresses{% endblock %}
+{% block title %}Liste des villes{% endblock %}
 
 {% block body %}
-    <h1>Liste des adresses</h1>
+    <h1 class="text-center mb-4">Liste des villes</h1>
+    <div class="container w-75">
 
     <table class="table">
         <thead>
@@ -12,7 +13,7 @@
                 <th>Ville</th>
                 <th>Cp</th>
                 <th>Departement</th>
-                <th>Actions</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -23,7 +24,7 @@
                 <td>{{ adresse.cp }}</td>
                 <td>{{ adresse.nomDepartement }}</td>
                 <td>
-                    <a class="btn btn-info" href="{{ path('adresse_show', {'id': adresse.id}) }}">Voir</a>
+                    {#<a class="btn btn-info" href="{{ path('adresse_show', {'id': adresse.id}) }}">Voir</a>#}
                     <a class="btn btn-warning" href="{{ path('adresse_edit', {'id': adresse.id}) }}">Editer</a>
                 </td>
             </tr>
@@ -35,5 +36,6 @@
         </tbody>
     </table>
 
-    <a class="btn btn-success" href="{{ path('adresse_new') }}">Créer une nouvelle adresse</a>
+    <a class="btn btn-success" href="{{ path('adresse_new') }}">Ajouter une ville</a>
+    </div>
 {% endblock %}

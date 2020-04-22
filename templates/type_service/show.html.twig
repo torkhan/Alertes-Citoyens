@@ -3,13 +3,14 @@
 {% block title %}Types de Services{% endblock %}
 
 {% block body %}
-    <h1>Types de Services</h1>
+    <h1 class="text-center mb-4">Types de Services</h1>
+    <div class="container w-75">
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ type_service.id }}</td>
+               {# <th>Id</th>#}
+               {# <td>{{ type_service.id }}</td>#}
             </tr>
             <tr>
                 <th>ServiceType</th>
@@ -18,9 +19,10 @@
         </tbody>
     </table>
 
-    <a class="btn btn-primary" href="{{ path('type_service_index') }}">Retour à la liste</a>
+    <a class="btn btn-primary mb-3" href="{{ path('type_service_index') }}">Retour à la liste</a>
 
-    <a class="btn btn-warning" href="{{ path('type_service_edit', {'id': type_service.id}) }}">Editer</a>
+    <a class="btn btn-warning mb-3" href="{{ path('type_service_edit', {'id': type_service.id}) }}">Editer</a>
 
     {{ include('type_service/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

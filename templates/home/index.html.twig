@@ -9,7 +9,7 @@
 {% block body %}
 
     <div class="my-3 text-center">
-        <h1>Alertez - Moi !</h1>
+        <h1 class="mt-5">Alertez - Moi !</h1>
     </div>
 
     <!-- slider -->
@@ -58,29 +58,24 @@
     <!-- subscription form -->
 
     <div id="inscriptionDiv" class="my-6 w-75 mx-auto text-center">
-        <p>
-            Pour vous inscrire, remplissez ce <a href="{{ path('destinataire_new') }}">Formulaire</a>
-        </p>
+
 
         <div id="inscriptionDiv" class="my-4 w-75 mx-auto text-center">
 
             <div class="accordion" id="accordionInscription">
                 <div class="card">
-                    <div class="card-header text-center" id="collapseHeaderInscription">
+                    <div class="card-header text-center text-primary" id="collapseHeaderInscription">
                         <button class="btn" type="button" data-toggle="collapse"
                                 data-target="#collapseContentInscription"
                                 aria-expanded="false" aria-controls="collapseContentInscription">
-                            Je veux m'inscrire et recevoir les alertes !
+                            <p class="text-primary font-weight-bold">Je veux m'inscrire et recevoir les alertes !</p>
                         </button>
                     </div>
                     <div id="collapseContentInscription" class="collapse" aria-labelledby="collapseHeaderInscription"
                          data-parent="#accordionInscription">
                         <div class="card-body mb-2 border border-dark">
-                            <h2>FORMULAIRE</h2>
-                            <p>Nom : </p>
-                            <p>Prénom : </p>
-                            <p>Autre : </p>
-                            <button>M'inscrire</button>
+                            <a class="btn btn-success" href="{{ path('destinataire_new') }}">Inscription
+                            </a>
 
                         </div>
                     </div>

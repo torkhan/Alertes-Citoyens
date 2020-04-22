@@ -36,3 +36,16 @@ $(function(){//fonction de select all checkboxes
 
 });
 
+/*
+$(document).ready(function(){
+    $(".submit").click(function() {
+
+        $.each($("input[type='checkbox']:checked").each(function() {
+            $(this).val('id')
+            })
+        );
+       console.log($(this).val('id'));
+
+        return true;
+    });
+});*/

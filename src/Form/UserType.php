@@ -25,6 +25,32 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('nomUtilisateur', TextType::class,[
+            'required' => true,
+            'label' => "Nom",
+            'constraints' => [
+
+                new Assert\Length([
+                    'min' => 3,
+                    'minMessage' => 'Votre rue doit contenir au minimum {{3}} charactères',
+                    'max' => 50,
+                    'maxMessage' => 'votre rue ne peux contenir que {{50}} charactères au maximum'
+                ]),
+            ],
+        ])
+            ->add('prenomUtilisateur', TextType::class,[
+                'required' => true,
+                'label' => "Prénom",
+                'constraints' => [
+
+                    new Assert\Length([
+                        'min' => 3,
+                        'minMessage' => 'Votre rue doit contenir au minimum {{3}} charactères',
+                        'max' => 50,
+                        'maxMessage' => 'votre rue ne peux contenir que {{50}} charactères au maximum'
+                    ]),
+                ],
+            ])
             ->add('email', EmailType::class,[
                 'required' => true,
                 'label' => "Email",
@@ -60,32 +86,7 @@ class UserType extends AbstractType
             ])
 
 
-            ->add('nomUtilisateur', TextType::class,[
-                'required' => true,
-                'label' => "Nom",
-                'constraints' => [
 
-                    new Assert\Length([
-                        'min' => 3,
-                        'minMessage' => 'Votre rue doit contenir au minimum {{3}} charactères',
-                        'max' => 50,
-                        'maxMessage' => 'votre rue ne peux contenir que {{50}} charactères au maximum'
-                    ]),
-                ],
-            ])
-            ->add('prenomUtilisateur', TextType::class,[
-                'required' => true,
-                'label' => "Prénom",
-                'constraints' => [
-
-                    new Assert\Length([
-                        'min' => 3,
-                        'minMessage' => 'Votre rue doit contenir au minimum {{3}} charactères',
-                        'max' => 50,
-                        'maxMessage' => 'votre rue ne peux contenir que {{50}} charactères au maximum'
-                    ]),
-                ],
-            ])
 
             ->add('commentaireUtilisateur', TextareaType::class,[
                 'required' => false,

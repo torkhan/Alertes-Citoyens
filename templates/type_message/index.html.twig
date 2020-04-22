@@ -3,13 +3,13 @@
 {% block title %}Type de messages{% endblock %}
 
 {% block body %}
-    <h1>Types de messages index</h1>
-
+    <h1 class="text-center mb-4">Titres des alertes</h1>
+<div class="container w-75">
     <table class="table">
         <thead>
             <tr>
 
-                <th>MessageType</th>
+                <th>Titres</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -19,7 +19,7 @@
                
                 <td>{{ type_message.messageType }}</td>
                 <td>
-                    <a class="btn btn-info" href="{{ path('type_message_show', {'id': type_message.id}) }}">Voir</a>
+                    {#<a class="btn btn-info" href="{{ path('type_message_show', {'id': type_message.id}) }}">Voir</a>#}
                     <a class="btn btn-warning" href="{{ path('type_message_edit', {'id': type_message.id}) }}">editer</a>
                 </td>
             </tr>
@@ -32,4 +32,6 @@
     </table>
 
     <a class="btn btn-success" href="{{ path('type_message_new') }}">Créer nouveau type de message</a>
+
+</div>
 {% endblock %}

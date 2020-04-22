@@ -40,9 +40,9 @@ class DestinataireType extends AbstractType
                     ]),
                     new Assert\Length([
                         'min' => 3,
-                        'minMessage' => 'Votre nom doit contenir au minimum {{3}} charactères',
+                        'minMessage' => 'Votre nom doit contenir au minimum 3 charactères',
                         'max' => 50,
-                        'maxMessage' => 'votre nom ne peux contenir que {{50}} charactères au maximum'
+                        'maxMessage' => 'votre nom ne peux contenir que 50 charactères au maximum'
                     ]),
                 ],
             ])
@@ -85,9 +85,9 @@ class DestinataireType extends AbstractType
                     ]),
                     new Assert\Length([
                         'min' => 1,
-                        'minMessage' => 'Votre numéro doit contenir au minimum {{1}} charactère',
+                        'minMessage' => 'Votre numéro doit contenir au minimum 1 charactère',
                         'max' => 20,
-                        'maxMessage' => 'votre numéro ne peux contenir que {{20}} charactères au maximum'
+                        'maxMessage' => 'votre numéro ne peux contenir que 20 charactères au maximum'
                     ]),
                 ],
             ])
@@ -100,9 +100,9 @@ class DestinataireType extends AbstractType
                     ]),
                     new Assert\Length([
                         'min' => 3,
-                        'minMessage' => 'Votre rue doit contenir au minimum {{3}} charactères',
+                        'minMessage' => 'Votre rue doit contenir au minimum 3 charactères',
                         'max' => 150,
-                        'maxMessage' => 'votre rue ne peux contenir que {{150}} charactères au maximum'
+                        'maxMessage' => 'votre rue ne peux contenir que 150 charactères au maximum'
                     ]),
                 ],
             ])
@@ -113,9 +113,9 @@ class DestinataireType extends AbstractType
 
                     new Assert\Length([
                         'min' => 3,
-                        'minMessage' => 'Votre rue doit contenir au minimum {{3}} charactères',
+                        'minMessage' => 'Votre rue doit contenir au minimum 3 charactères',
                         'max' => 150,
-                        'maxMessage' => 'votre rue ne peux contenir que {{150}} charactères au maximum'
+                        'maxMessage' => 'votre rue ne peux contenir que 150 charactères au maximum'
                     ]),
                 ],
             ])

@@ -36,4 +36,6 @@ class RechercheController extends AbstractController
             'results' => $results,
         ]);
     }
+
+
 }

@@ -3,9 +3,11 @@
 {% block title %}Créer un nouveau type de destinataire{% endblock %}
 
 {% block body %}
-    <h1>Créer un nouveau type de destinataire</h1>
+    <h1 class="text-center mb-4">Créer un nouveau type de destinataire</h1>
+    <div class="container w-75">
 
     {{ include('type_destinataire/_form.html.twig') }}
 
-    <a class="btn btn-primary" href="{{ path('type_destinataire_index') }}">Retour à la liste</a>
+    <a class="btn btn-primary my-3" href="{{ path('type_destinataire_index') }}">Retour à la liste</a>
+    </div>
 {% endblock %}

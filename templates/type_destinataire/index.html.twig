@@ -3,8 +3,8 @@
 {% block title %}Types de destinataires{% endblock %}
 
 {% block body %}
-    <h1>Types de destinataires </h1>
-
+    <h1 class="text-center mb-4">Types de destinataires </h1>
+<div class="container w-75">
     <table class="table">
         <thead>
             <tr>
@@ -32,4 +32,5 @@
     </table>
 
     <a class="btn btn-success" href="{{ path('type_destinataire_new') }}">Créer un nouveau type de destinataire</a>
+</div>
 {% endblock %}

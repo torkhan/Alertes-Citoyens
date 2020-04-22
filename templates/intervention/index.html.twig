@@ -4,7 +4,8 @@
 
 {% block body %}
 
-    <h1>Liste des interventions</h1>
+    <h1 class="text-center mb-4">Liste des interventions</h1>
+    <div class="container w-75">
 
     <table class="table">
         <thead>
@@ -13,12 +14,12 @@
                 <th>Nom de l'intervention</th>
                 <th>Rue(s) concernée(s)</th>
                 <th>Ville(s) concernée(s)</th>
-                <th>Longitude</th>
-                <th>Latitude</th>
+               {# <th>Longitude</th>
+                <th>Latitude</th>#}
                 <th>Date de début</th>
                 <th>Date de fin</th>
-                <th>Commentaire</th>
-                <th>Date de modification</th>
+                {#<th>Commentaire</th>
+                <th>Date de modification</th>#}
                 <th>Type d'intervention</th>
                 <th>Actions</th>
             </tr>
@@ -30,16 +31,16 @@
                 <td>{{ intervention.nomIntervention }}</td>
                 <td>{{ intervention.rueIntervention }}</td>
                 <td>{{ intervention.villeIntervention }}</td>
-                <td>{{ intervention.longitude }}</td>
-                <td>{{ intervention.latitude }}</td>
+                {#<td>{{ intervention.longitude }}</td>
+                <td>{{ intervention.latitude }}</td>#}
                 <td>{{ intervention.dateDebutIntervention ? intervention.dateDebutIntervention|date('d-m-Y H:i:s') : '' }}</td>
                 <td>{{ intervention.dateFinIntervention ? intervention.dateFinIntervention|date('d-m-Y H:i:s') : '' }}</td>
-                <td>{{ intervention.commentaireIntervention }}</td>
-                <td>{{ intervention.dateModificationIntervention ? intervention.dateModificationIntervention|date('d-m-Y H:i:s') : '' }}</td>
+               {# <td>{{ intervention.commentaireIntervention }}</td>
+                <td>{{ intervention.dateModificationIntervention ? intervention.dateModificationIntervention|date('d-m-Y H:i:s') : '' }}</td>#}
                 <td>{{ intervention.idTypeIntervention.interventionType }}</td>
                 <td>
-                    <a class="btn btn-info" href="{{ path('intervention_show', {'id': intervention.id}) }}">Voir</a>
-                    <a class="btn btn-warning" href="{{ path('intervention_edit', {'id': intervention.id}) }}">Editer</a>
+                    <a class="btn btn-info mb-2" href="{{ path('intervention_show', {'id': intervention.id}) }}">Voir</a>
+                    <a class="btn btn-warning mb-2" href="{{ path('intervention_edit', {'id': intervention.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}
@@ -51,4 +52,5 @@
     </table>
 
     <a class="btn btn-success" href="{{ path('intervention_new') }}">Créer une intervention</a>
+    </div>
 {% endblock %}

@@ -3,7 +3,8 @@
 {% block title %}Types d'interventions {% endblock %}
 
 {% block body %}
-    <h1>Types d'nterventions </h1>
+    <h1 class="text-center mb-4">Types d'nterventions </h1>
+    <div class="container w-75">
 
     <table class="table">
         <thead>
@@ -19,7 +20,7 @@
 
                 <td>{{ type_intervention.interventionType }}</td>
                 <td>
-                    <a class="btn btn-info" href="{{ path('type_intervention_show', {'id': type_intervention.id}) }}">Voir</a>
+                   {# <a class="btn btn-info" href="{{ path('type_intervention_show', {'id': type_intervention.id}) }}">Voir</a>#}
                     <a class="btn btn-warning" href="{{ path('type_intervention_edit', {'id': type_intervention.id}) }}">Editer</a>
                 </td>
             </tr>
@@ -32,4 +33,5 @@
     </table>
 
     <a class="btn btn-success" href="{{ path('type_intervention_new') }}">Créer nouveau type d'intervention</a>
+    </div>
 {% endblock %}

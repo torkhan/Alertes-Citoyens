@@ -3,9 +3,11 @@
 {% block title %}Créer un Message{% endblock %}
 
 {% block body %}
-    <h1>Créer un Message</h1>
+    <h1 class="text-center mb-4">Créer un Message</h1>
+    <div class="container w-75">
 
     {{ include('message/_form.html.twig') }}
 
     <a class="btn btn-primary my-4 ml-auto" href="{{ path('message_index') }}">Liste des messages</a>
+    </div>
 {% endblock %}

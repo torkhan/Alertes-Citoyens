@@ -33,7 +33,7 @@
     <a href="{{ path("recherche") }}">liste complète</a>
 
     <div class="my-5 text-center">
-        <h1>Sélection des destinataires</h1>
+        <h1>Sélectionez les destinataires</h1>
     </div>
 
     <table class="table">
@@ -60,7 +60,9 @@
             </th>
             <th>Ok Mail</th>
             <th>Ok Sms</th>
+{#
             <th>Select all<input type="checkbox" name="checkAll" class="checkAll" ><label for="selectAll"></label></th
+#}
         </tr>
         </thead>
         <tbody>
@@ -80,7 +82,7 @@
 
                 <td>{{ result.okMailDestinataire ? "Oui" : "Non" }}</td>
                 <td>{{ result.okSmsDestinataire ? "Oui" : "Non" }}</td>
-                <td><input type="checkbox" name="checkboxes[result.id]" class="checkboxes"><label for="check"></label></td>
+               {# <td><input type="checkbox" name="checkboxes[result.id]" class="checkboxes"><label for="check"></label></td>#}
 
 
             </tr>
@@ -93,6 +95,14 @@
         </tbody>
     </table>
 
+    <div class="text-center">
+        <h2 class="my-4 text-center">Créez votre alerte</h2>
+    </div>
+
+    <div class="text-center">
+        <h2 class="my-4 text-center">Envoyez l'alerte</h2>
+    </div>
+
 
 
 
@@ -100,8 +110,8 @@
 
 
     {% block stylesheets %}
-       {# <script src="{{ asset("js/recherche.js") }}"></script>#}
-        <script src="{{ asset("js/accept.js") }}"></script>
+        <script src="{{ asset("js/recherche.js") }}"></script>
+
         <link rel="stylesheet" href="{{ asset("css/recherche.css") }}">
     {% endblock %}
 {% endblock %}

@@ -3,28 +3,29 @@
 {% block title %}Liste des destinataires{% endblock %}
 
 {% block body %}
-    <h1>Liste des destinataires</h1>
+    <h1 class="text-center mb-4">Liste des destinataires</h1>
+    <div class="container w-75">
 
     <table class="table">
         <thead>
             <tr>
                 <th>Nom</th>
                 <th>Prénom</th>
-                <th>Adresse Mail</th>
-                <th>Numéro téléphone</th>
+               {# <th>Adresse Mail</th>
+                <th>Numéro téléphone</th>#}
                 <th>Numéro rue</th>
                 <th>Adresse</th>
                 <th>Complément adresse</th>
                 <th>Code Postal</th>
                 <th>Ville</th>
                 <th>Type</th>
-                <th>Ok Mail</th>
+               {# <th>Ok Mail</th>
                 <th>Ok Sms</th>
                 <th>Accord Rgpd</th>
                 <th>Date d'enregistrement</th>
                 <th>Date de validation</th>
                 <th>Date de modification</th>
-                <th>Statut</th>
+                <th>Statut</th>#}
                <th>Validation</th>
                 <th>Actions</th>
             </tr>
@@ -35,8 +36,8 @@
             <tr>
                 <td>{{ destinataire.nomDestinataire }}</td>
                 <td>{{ destinataire.prenomDestinataire }}</td>
-                <td>{{ destinataire.adresseMailDestinataire }}</td>
-                <td>{{ destinataire.numeroTelephoneDestinataire }}</td>
+               {# <td>{{ destinataire.adresseMailDestinataire }}</td>
+                <td>{{ destinataire.numeroTelephoneDestinataire }}</td>#}
                 <td>{{ destinataire.numeroRueDestinataire }}</td>
                 <td>{{ destinataire.nomRueDestinataire1 }}</td>
                 <td>{{ destinataire.nomRueDestinataire2 }}</td>
@@ -45,13 +46,13 @@
                 <td>{{ destinataire.idAdresse.nomVille }}</td>
                 <td>{{ destinataire.idTypeDestinataire.destinataireType }}</td>
 
-                <td>{{ destinataire.okMailDestinataire }}</td>
+                {#<td>{{ destinataire.okMailDestinataire }}</td>
                 <td>{{ destinataire.okSmsDestinataire }}</td>
                 <td>{{ destinataire.accordRgpdDestinataire }}</td>
-               <td>{{ destinataire.dateEnregistrementDestinataire ? destinataire.dateEnregistrementDestinataire|date('d-m-Y H:i:s') : '' }}</td>
+                <td>{{ destinataire.dateEnregistrementDestinataire ? destinataire.dateEnregistrementDestinataire|date('d-m-Y H:i:s') : '' }}</td>
                 <td>{{ destinataire.dateValidationDestinataire ? destinataire.dateValidationDestinataire|date('d-m-Y H:i:s') : '' }}</td>
                 <td>{{ destinataire.dateModificationDestinataire ? destinataire.dateModificationDestinataire|date('d-m-Y H:i:s') : '' }}</td>
-                <td>{{ destinataire.statutDestinataire }}</td>
+                <td>{{ destinataire.statutDestinataire }}</td>#}
                 <td>{{ destinataire.idValidation }}</td>
 
                 <td>
@@ -69,6 +70,7 @@
     </table>
 
    {# <a class="btn btn-success" href="{{ path('destinataire_new') }}">Créer un destinataire</a>#}
+    </div>
     {% block stylesheets %}
 
         <script src="{{ asset("js/recherche.js") }}"></script>
