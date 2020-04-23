@@ -92,24 +92,29 @@
             </tbody>
 
         </table>
-        <div class="text-right ">
-            {# <label for="selectAll">
-                 <input type="checkbox" name="checkAll" class="checkAll " >
-             </label>Select all#}
+        <div class="d-flex">
+            <div class="p-2 mr-auto">
+                <a class="  btn btn-primary" href="{{ path('plateforme_admin') }}">Retour plateforme</a>
+            </div>
+            <div class="p-2 " >
+                {# <label for="selectAll">
+                     <input type="checkbox" name="checkAll" class="checkAll " >
+                 </label>Select all#}
 
 
-            <a href="{{ path ('valider_all_destinataire')}}" class="btn btn-success submit" type="submit"  >Valider tous</a>
-            <a href="{{ path ('refuser_all_destinataire')}}" class="btn btn-danger" type="submit" >Refuser tous</a>
+                <a href="{{ path ('valider_all_destinataire')}}" class="btn btn-success submit " type="submit"  >Valider tous</a>
+                <a href="{{ path ('refuser_all_destinataire')}}" class="btn btn-danger ml-auto" type="submit" >Refuser tous</a>
 
 
+            </div>
         </div>
     </div>
-        {% block stylesheets %}
-            <script src="{{ asset("js/accept.js") }}"></script>
-            <script src="{{ asset("js/recherche.js") }}"></script>
+    {% block stylesheets %}
+        <script src="{{ asset("js/accept.js") }}"></script>
+        <script src="{{ asset("js/recherche.js") }}"></script>
 
 
-            <link rel="stylesheet" href="{{ asset("css/recherche.css") }}">
-        {% endblock %}
+        <link rel="stylesheet" href="{{ asset("css/recherche.css") }}">
+    {% endblock %}
 
 {% endblock %}

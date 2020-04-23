@@ -3,6 +3,7 @@
 {% block title %}Recherche{% endblock %}
 
 {% block body %}
+    <div class="container w-75">
 
     <div class="bg-dark mb-3 py-2 text-white">
         <div class="d-flex justify-content-around text-center">
@@ -44,10 +45,10 @@
             </th>
             <th>Prénom <i class="fa fa-arrows-v" aria-hidden="true"></i>
             </th>
-            <th>Adresse Mail <i class="fa fa-arrows-v" aria-hidden="true"></i>
+           {# <th>Adresse Mail <i class="fa fa-arrows-v" aria-hidden="true"></i>
             </th>
             <th>Numéro téléphone <i class="fa fa-arrows-v" aria-hidden="true"></i>
-            </th>
+            </th>#}
             <th>Numéro rue <i class="fa fa-arrows-v" aria-hidden="true"></i>
             </th>
             <th>Adresse <i class="fa fa-arrows-v" aria-hidden="true"></i>
@@ -58,8 +59,8 @@
             </th>
             <th>Ville <i class="fa fa-arrows-v" aria-hidden="true"></i>
             </th>
-            <th>Ok Mail</th>
-            <th>Ok Sms</th>
+           {# <th>Ok Mail</th>
+            <th>Ok Sms</th>#}
 {#
             <th>Select all<input type="checkbox" name="checkAll" class="checkAll" ><label for="selectAll"></label></th
 #}
@@ -70,8 +71,8 @@
             <tr>
                 <td>{{ result.nomDestinataire }}</td>
                 <td>{{ result.prenomDestinataire }}</td>
-                <td>{{ result.adresseMailDestinataire ? result.adresseMailDestinataire : "Non renseigné" }}</td>
-                <td>{{ result.numeroTelephoneDestinataire ? result.numeroTelephoneDestinataire : "Non renseigné" }}</td>
+               {# <td>{{ result.adresseMailDestinataire ? result.adresseMailDestinataire : "Non renseigné" }}</td>
+                <td>{{ result.numeroTelephoneDestinataire ? result.numeroTelephoneDestinataire : "Non renseigné" }}</td>#}
                 <td>{{ result.numeroRueDestinataire }}</td>
                 <td>{{ result.nomRueDestinataire1 }}</td>
                 <td>{{ result.nomRueDestinataire2 }}</td>
@@ -79,9 +80,9 @@
                 <td>{{ result.idAdresse.cp }}</td>
                 <td>{{ result.idAdresse.nomVille }}</td>
 
-
+{#
                 <td>{{ result.okMailDestinataire ? "Oui" : "Non" }}</td>
-                <td>{{ result.okSmsDestinataire ? "Oui" : "Non" }}</td>
+                <td>{{ result.okSmsDestinataire ? "Oui" : "Non" }}</td>#}
                {# <td><input type="checkbox" name="checkboxes[result.id]" class="checkboxes"><label for="check"></label></td>#}
 
 
@@ -96,7 +97,9 @@
     </table>
 
     <div class="text-center">
-        <h2 class="my-4 text-center">Créez votre alerte</h2>
+        <h2 class="my-4 text-center">Selectionnez votre alerte</h2>
+
+
     </div>
 
     <div class="text-center">
@@ -114,4 +117,5 @@
 
         <link rel="stylesheet" href="{{ asset("css/recherche.css") }}">
     {% endblock %}
+    </div>
 {% endblock %}

@@ -6,9 +6,19 @@
     <h1 class="text-center mb-4">Message</h1>
     <div class="container w-75">
 
-    <table class="table">
-        <tbody>
-
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Titre du message</th>
+                <td>{{ message.idTypeMessage.messageType}}</td></tr>
+            <tr>
+                <th>Intrevention</th>
+                <td>{{ message.idIntervention.nomIntervention }}</td>
+            </tr>
+            <tr>
+                <th>Type d'intervention</th>
+                <td>{{ message.idTypeIntervention.interventionType }}</td>
+            </tr>
             <tr>
                 <th>Contenu du message</th>
                 <td>{{ message.contenuMessage }}</td>
@@ -33,21 +43,25 @@
                 <th>Image3</th>
                 <td>{{ message.image3 }}</td>
             </tr>
-            <tr>
+            {#<tr>
                 <th>Date de modification</th>
                 <td>{{ message.dateModificationMessage ? message.dateModificationMessage|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
+            </tr>#}
             <tr>
                 <th>Commentaire</th>
                 <td>{{ message.commentaireMessage }}</td>
             </tr>
-        </tbody>
-    </table>
+            <tr>
+                <th>Envoyé par</th>
+                <td>{{ message.idUtilisateur.nomUtilisateur }}</td>
+            </tr>
+            </tbody>
+        </table>
 
-    <a class="btn btn-primary mb-3" href="{{ path('message_index') }}">Retour à la liste</a>
+        <a class="btn btn-primary mb-3" href="{{ path('message_index') }}">Retour à la liste</a>
 
-    {#<a class="btn btn-warning mb-3" href="{{ path('message_edit', {'id': message.id}) }}">Modifier</a>#}
+        {#<a class="btn btn-warning mb-3" href="{{ path('message_edit', {'id': message.id}) }}">Modifier</a>#}
 
-   {# {{ include('message/_delete_form.html.twig') }}#}
+        {# {{ include('message/_delete_form.html.twig') }}#}
     </div>
 {% endblock %}

@@ -2,42 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5999bb21-a1de-4801-b02e-0d8edf526ed3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/js/message.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/accept.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/accept.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AcceptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AcceptController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RechercheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RechercheController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/DestinataireType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/DestinataireType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/MessageType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MessageType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DestinataireRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DestinataireRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accept/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accept/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/adresse/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adresse/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/adresse/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adresse/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/destinataire/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/destinataire/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/intervention/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/intervention/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/intervention/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/intervention/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/intervention/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/intervention/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/message/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/message/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/message/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/message/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/message/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/message/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/message/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/message/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/plateforme_admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/plateforme_admin/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/recherche/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recherche/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/type_destinataire/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/type_destinataire/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/type_destinataire/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/type_destinataire/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/type_destinataire/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/type_destinataire/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/type_destinataire/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/type_destinataire/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/type_intervention/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/type_intervention/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/type_intervention/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/type_intervention/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/type_message/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/type_message/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/type_message/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/type_message/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/type_service/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/type_service/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/type_service/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/type_service/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/type_service/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/type_service/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/forms.fr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/forms.fr.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,11 +176,11 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -225,18 +204,6 @@
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -303,11 +270,13 @@
       <workItem from="1587363616034" duration="27664000" />
       <workItem from="1587449902876" duration="19543000" />
       <workItem from="1587537249654" duration="21572000" />
+      <workItem from="1587623334513" duration="15000" />
+      <workItem from="1587623882873" duration="16159000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1930" y="559" key="#CLI_Interpreters" timestamp="1584975014766">
@@ -347,19 +316,19 @@
     </state>
     <state x="554" y="401" key="FileChooserDialogImpl/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1586266860046" />
     <state x="2223" y="645" key="FileChooserDialogImpl/0.0.1920.1080/1920.21.1050.1680@1920.21.1050.1680" timestamp="1584966471125" />
-    <state x="638" y="310" key="NewPhpClassDialog" timestamp="1586337744998">
+    <state x="638" y="310" key="NewPhpClassDialog" timestamp="1587629324546">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="638" y="310" key="NewPhpClassDialog/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1586337744998" />
+    <state x="638" y="310" key="NewPhpClassDialog/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1587629324546" />
     <state x="0" y="191" key="SettingsEditor" timestamp="1585216587617">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="0" y="191" key="SettingsEditor/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1585216587617" />
     <state x="1920" y="475" key="SettingsEditor/0.0.1920.1080/1920.21.1050.1680@1920.21.1050.1680" timestamp="1584975255903" />
-    <state width="623" height="498" key="SwitcherDM" timestamp="1587457877556">
+    <state width="623" height="498" key="SwitcherDM" timestamp="1587625548286">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="623" height="498" key="SwitcherDM/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1587457877556" />
+    <state width="623" height="498" key="SwitcherDM/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1587625548286" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1587396039875">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -373,10 +342,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="716" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1585742604893" />
-    <state x="894" y="118" key="refactoring.ChangeSignatureDialog" timestamp="1586329394713">
+    <state x="894" y="118" key="refactoring.ChangeSignatureDialog" timestamp="1587645118534">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="894" y="118" key="refactoring.ChangeSignatureDialog/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1586329394713" />
+    <state x="894" y="118" key="refactoring.ChangeSignatureDialog/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1587645118534" />
     <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1586425789977">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

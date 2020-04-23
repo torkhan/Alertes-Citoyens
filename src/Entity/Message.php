@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Form\InterventionType;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -87,6 +88,22 @@ class Message
      * @ORM\JoinColumn(nullable=true)
      */
     private $idIntervention;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\TypeIntervention", inversedBy="messages")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $idTypeIntervention;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $dateDebutIntervention;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $dateFinIntervention;
 
     public function getId(): ?int
     {
@@ -233,6 +250,42 @@ class Message
     public function setIdIntervention(?Intervention $idIntervention): self
     {
         $this->idIntervention = $idIntervention;
+
+        return $this;
+    }
+
+    public function getIdTypeIntervention(): ?TypeIntervention
+    {
+        return $this->idTypeIntervention;
+    }
+
+    public function setIdTypeIntervention(?TypeIntervention $idTypeIntervention): self
+    {
+        $this->idTypeIntervention = $idTypeIntervention;
+
+        return $this;
+    }
+
+    public function getDateDebutIntervention(): ?\DateTimeInterface
+    {
+        return $this->dateDebutIntervention;
+    }
+
+    public function setDateDebutIntervention(?\DateTimeInterface $dateDebutIntervention): self
+    {
+        $this->dateDebutIntervention = $dateDebutIntervention;
+
+        return $this;
+    }
+
+    public function getDateFinIntervention(): ?\DateTimeInterface
+    {
+        return $this->dateFinIntervention;
+    }
+
+    public function setDateFinIntervention(?\DateTimeInterface $dateFinIntervention): self
+    {
+        $this->dateFinIntervention = $dateFinIntervention;
 
         return $this;
     }

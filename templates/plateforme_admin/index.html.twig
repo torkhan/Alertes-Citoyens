@@ -68,14 +68,19 @@
 
     </div>
     <div class="text-center">
-        <h2 class="my-4">4-Créer et envoyer une alerte</h2>
-        <a class="my-4  btn btn-primary" href={{ path('recherche')}}>Je crée une alerte</a>
+        <h2 class="my-4">4-Créer votre alerte</h2>
+        {#<a class="my-4  btn btn-primary" href={{ path('recherche')}}>Je crée une alerte</a>#}
+        <a class="btn btn-success my-2" href={{ path('message_index')}}>Je crée une alerte</a>
+    </div>
+    <div class="text-center my-5">
+        <h2 class="my-4 text-center">5-Envoyer votre alerte</h2>
+        <a class="my-4  btn btn-primary" href={{ path('recherche')}}>Envoyer l'alerte</a>
     </div>
 
     <div class="text-center">
         <h2 class="my-4 text-center">Gestion des ressources</h2>
     </div>
-    <div class="row d-flex justify-content-around my-5">               <a class="btn btn-success my-2" href={{ path('message_index')}}>Gestion des messages</a>
+    <div class="row d-flex justify-content-around my-5">
 
 
         <a class="btn btn-success my-2" href={{ path('type_destinataire_index')}}>Gestion des types de destinataire</a>

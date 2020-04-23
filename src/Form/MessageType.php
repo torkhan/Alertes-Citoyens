@@ -27,9 +27,42 @@ class MessageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('contenuMessage', TextType::class,[
+
+
+            ->add('idTypeMessage',EntityType::class,[
+            'class' => TypeMessage::class,
+            'label' => 'Titre message',
+            'query_builder' => function (TypeMessageRepository $er) {
+                return $er->createQueryBuilder('v')
+                    ->orderBy('v.messageType', 'ASC');
+            },
+            'choice_label' => 'messageType',
+        ])
+            ->add('idIntervention',EntityType::class,[
+            'class' => Intervention::class,
+            'label' => 'Intervention',
+            'query_builder' => function (InterventionRepository $er) {
+                return $er->createQueryBuilder('v')
+                    ->orderBy('v.nomIntervention', 'ASC');
+            },
+            'choice_label' => 'nomIntervention',
+        ])
+            ->add('idTypeIntervention',EntityType::class,[
+                'class' => TypeIntervention::class,
+                'label' => 'Type de l\'intervention',
+                'query_builder' => function (TypeInterventionRepository $er) {
+                    return $er->createQueryBuilder('v')
+                        ->orderBy('v.interventionType', 'ASC');
+                },
+                'choice_label' => 'interventionType',
+            ])
+            ->add('dateEnvoi', DateType::class,[
                 'required' => true,
-                'label' => "Contenu du message",
+                'label' => "Date d'envoi"
+            ])
+            ->add('contenuMessage', TextType::class,[
+                'required' => false,
+                'label' => "Précisions (par ex: heures de début et fin..)",
                 'constraints' => [
 
                     new Assert\Length([
@@ -40,11 +73,20 @@ class MessageType extends AbstractType
                     ]),
                 ],
             ])
-            /*->add('dateEnvoi', DateType::class,[
+            ->add('dateDebutIntervention', DateType::class,[
+
                 'required' => true,
-                'label' => "Date d'envoi"
-            ])*/
-            ->add('statutMessage', TextType::class,[
+                'label' => "Date de début",
+
+            ])
+            ->add('dateFinIntervention', DateType::class,[
+
+                'required' => true,
+                'label' => "Date de fin prévue",
+
+            ])
+
+            /*->add('statutMessage', TextType::class,[
                 'required' => true,
                 'label' => "Statut du message",
                 'constraints' => [
@@ -56,7 +98,7 @@ class MessageType extends AbstractType
                         'maxMessage' => 'votre rue ne peux contenir que {{150}} charactères au maximum'
                     ]),
                 ],
-            ])
+            ])*/
             ->add('image1', FileType::class,[
                 'required' => false,
                 'label' => "Image 1",
@@ -95,16 +137,8 @@ class MessageType extends AbstractType
                 },
                 'choice_label' => 'nomUtilisateur',
             ])
-            ->add('idTypeMessage',EntityType::class,[
-                'class' => TypeMessage::class,
-                'label' => 'Type message',
-                'query_builder' => function (TypeMessageRepository $er) {
-                    return $er->createQueryBuilder('v')
-                        ->orderBy('v.messageType', 'ASC');
-                },
-                'choice_label' => 'messageType',
-            ])
-            ->add('idDestinataire',EntityType::class,[
+
+            /*->add('idDestinataire',EntityType::class,[
                 'class' => Destinataire::class,
                 'label' => 'Destinataires',
                 'query_builder' => function (DestinataireRepository $er) {
@@ -112,16 +146,8 @@ class MessageType extends AbstractType
                         ->orderBy('v.nomDestinataire', 'ASC');
                 },
                 'choice_label' => 'nomDestinataire',
-            ])
-            ->add('idIntervention',EntityType::class,[
-                'class' => Intervention::class,
-                'label' => 'Intervention',
-                'query_builder' => function (InterventionRepository $er) {
-                    return $er->createQueryBuilder('v')
-                        ->orderBy('v.nomIntervention', 'ASC');
-                },
-                'choice_label' => 'nomIntervention',
-            ])
+            ])*/
+
         ;
     }
 

@@ -23,7 +23,7 @@ class DestinataireRepository extends ServiceEntityRepository
     }
 
 
-    public function RechercheDestinataire($nom, $rue, $ville)
+    public function RechercheDestinataire($nom, $rue, $ville, $idvalidation)
     {
         $search = $this->createQueryBuilder('d');
 
