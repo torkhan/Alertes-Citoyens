@@ -6,7 +6,7 @@
 
 <div class="container w-100 ">
     <div class="example-wrapper">
-        <h1  class="my-4">Hello {{ app.user.nomUtilisateur }} {{ app.user.prenomUtilisateur }}! </h1>
+        <h1  class="my-4">Bonjour {{ app.user.nomUtilisateur }} {{ app.user.prenomUtilisateur }}! </h1>
 
         <h2 class="text-center mb-4">Bienvenue sur votre palteforme de gestion</h2>
         <p class="text-center">Vous pourrez ici crééer votre alerte et l'envoyer aux souscripteurs concernés, valider les demandes de soucription et gérer l'intégralité des ressources</p>
@@ -88,13 +88,13 @@
         <a class="btn btn-success my-2" href={{ path('destinataire_index')}}>Gestion des destinataires</a>
     </div>
     <div class="row d-flex justify-content-around my-5">
-    {#
+
               {% if is_granted('ROLE_SUPER_ADMIN') %}
-      #}
+
         <a class="btn btn-warning my-2" href={{ path('user_index')}}>Gestion des administrateurs</a>
-        {#
-                {% end if %}
-        #}
+
+                {% endif %}
+
     </div>
 </div>
 {% endblock %}

@@ -35,7 +35,7 @@ class User implements UserInterface
     private $roles = ['ADMIN'];
 
     /**
-     * @var string The hashed Password
+     * @var string The hashed password
      * @ORM\Column(type="string")
      * @Assert\Regex(pattern="/[a-zA-Z0-9,. \""éèêçàùï=;!?]+$/", message="Le champs ne doit pas contenir de caractères spéciaux '!?;=. autorisés")
      */
@@ -47,7 +47,7 @@ class User implements UserInterface
     private $statut;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255,nullable=true)
      * @Assert\Regex(pattern="/[a-zA-Z0-9,. \""éèêçàùï=;!?]+$/", message="Le champs ne doit pas contenir de caractères spéciaux")
      */
     private $username;

@@ -90,7 +90,8 @@ class UserController extends AbstractController
             $date = new \DateTime('now');
             $date->setTimezone(new \DateTimeZone('Europe/Paris'));
             $user -> setDateModificationUtilisateur($date);
-/*
+
+            /*$encoder = 0;
             $hash = $encoder->encodePassword($user, $user->getPassword());
 
             $user->setPassword($hash);*/

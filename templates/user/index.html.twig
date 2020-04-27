@@ -12,7 +12,7 @@
                 <th>Nom de l'utilisateur</th>
                 <th>Prenom de l'utilisateur</th>
                 <th>Email</th>
-                {#<th>Role</th>#}
+                <th>Role</th>
 
                 {#<th>Statut</th>#}
 
@@ -30,7 +30,7 @@
                 <td>{{ user.nomUtilisateur }}</td>
                 <td>{{ user.prenomUtilisateur }}</td>
                 <td>{{ user.email }}</td>
-                {#<td>{{ user.roles ? user.roles|json_encode : '' }}</td>#}
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
 
                {# <td>{{ user.statut ? 'Yes' : 'No' }}</td>#}
 
@@ -41,7 +41,9 @@
                 {#<td>{{ user.idService.nomService }}</td>#}
                 <td>
                     <a class="btn btn-info mb-3" href="{{ path('user_show', {'id': user.id}) }}">Voir</a>
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
                     <a class="btn btn-warning mb-3" href="{{ path('user_edit', {'id': user.id}) }}">Editer</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}

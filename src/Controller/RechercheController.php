@@ -28,10 +28,11 @@ class RechercheController extends AbstractController
         $nomDestinataire = $recherche->getNomDestinataire();
         $rueDestinataire = $recherche->getNomRueDestinataire1();
         $villeDestinataire = $recherche->getIdAdresse();
-        $idValidation = $recherche->getIdValidation();
 
 
-        $results = $destinataireRepository->RechercheDestinataire($nomDestinataire, $rueDestinataire, $villeDestinataire, $idValidation);
+
+
+        $results = $destinataireRepository->RechercheDestinataire($nomDestinataire, $rueDestinataire, $villeDestinataire);
 
 
         return $this->render('recherche/index.html.twig', [
@@ -39,7 +40,7 @@ class RechercheController extends AbstractController
             'form' => $formRecherche->createView(),
             'results' => $results,
         ]);
-    }
 
+    }
 
 }

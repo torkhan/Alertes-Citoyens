@@ -23,10 +23,10 @@ class DestinataireRepository extends ServiceEntityRepository
     }
 
 
-    public function RechercheDestinataire($nom, $rue, $ville, $idvalidation)
+    public function RechercheDestinataire($nom, $rue, $ville)
     {
         $search = $this->createQueryBuilder('d');
-
+        $search->andWhere('d.idValidation = 2');
         if ($nom != null) {
             $search->andWhere('d.nomDestinataire LIKE :nom');
             $search->setParameter('nom', "%" . $nom . "%");
@@ -44,8 +44,9 @@ class DestinataireRepository extends ServiceEntityRepository
         }
 
 
+
 //        $search->andWhere('d.statutDestinataire = 1');
-//        $search->andWhere('d.etatValidation = "accepté"');
+
         $search->orderBy('d.id', 'DESC');
         return $search->getQuery()->getResult();
     }

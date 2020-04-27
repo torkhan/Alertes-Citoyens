@@ -71,7 +71,7 @@ class UserType extends AbstractType
                 ],
             ])
             /*->add('statut')*/
-            ->add('username', TextType::class,[
+            /*->add('username', TextType::class,[
                 'required' => true,
                 'label' => "Login",
                 'constraints' => [
@@ -83,7 +83,7 @@ class UserType extends AbstractType
                         'maxMessage' => 'votre rue ne peux contenir que {{50}} charactères au maximum'
                     ]),
                 ],
-            ])
+            ])*/
 
 
 
