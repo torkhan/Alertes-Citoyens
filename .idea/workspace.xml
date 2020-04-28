@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5999bb21-a1de-4801-b02e-0d8edf526ed3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AcceptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AcceptController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RechercheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RechercheController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DestinataireRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DestinataireRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/intervention/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/intervention/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/plateforme_admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/plateforme_admin/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/recherche/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recherche/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/new.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,6 +265,7 @@
       <workItem from="1587707526828" duration="4996000" />
       <workItem from="1587962210911" duration="5442000" />
       <workItem from="1587967687541" duration="7005000" />
+      <workItem from="1588052979373" duration="11669000" />
     </task>
     <servers />
   </component>

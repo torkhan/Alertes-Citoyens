@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <a href="{{ path("recherche") }}">liste complète</a>
+    <a href="{{ path("recherche") }}">Liste complète</a>
 
     <div class="my-5 text-center">
         <h1>Sélectionez les destinataires</h1>
@@ -103,6 +103,11 @@
         <h2 class="my-4 text-center">Selectionnez votre alerte</h2>
 
 
+    <select name="selectMessage" id="selectMessage"></select>
+        {% for selectMessage in selectMessage %}
+            <option value="{{ selectMessage.idTypeMessage.messageType }}"></option>
+    
+        {% endfor %}
     </div>
 
     <div class="text-center">
