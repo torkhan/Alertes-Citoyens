@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
 use App\Security\SecurityAuthenticator;
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -36,7 +37,7 @@ class UserController extends AbstractController
      * @param Request $request
      * @param UserPasswordEncoderInterface $encoder
      * @return Response
-     * @throws \Exception
+     * @throws Exception
      */
     public function new(Request $request, UserPasswordEncoderInterface $encoder): Response
     {
@@ -46,7 +47,7 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $user -> setRoles(['ROLE_ADMIN']);
+            /*$user -> setRoles(['ROLE_ADMIN']);*/
 
             $date = new \DateTime('now');
             $date->setTimezone(new \DateTimeZone('Europe/Paris'));

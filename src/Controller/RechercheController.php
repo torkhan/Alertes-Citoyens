@@ -25,7 +25,7 @@ class RechercheController extends AbstractController
     public function index(Request $request, MessageRepository $messageRepository, DestinataireRepository $destinataireRepository, ValidationRepository $validationRepository): Response
     {
         $recherche = new Destinataire();
-
+$message = $messageRepository->findAll();
         $formRecherche = $this->createForm(RechercheType::class, $recherche);
         $formRecherche->handleRequest($request);
 
@@ -34,17 +34,19 @@ class RechercheController extends AbstractController
         $rueDestinataire = $recherche->getNomRueDestinataire1();
         $villeDestinataire = $recherche->getIdAdresse();
 
-        $results = $destinataireRepository->RechercheDestinataire($nomDestinataire, $rueDestinataire, $villeDestinataire, );
+        $results = $destinataireRepository->RechercheDestinataire($nomDestinataire, $rueDestinataire, $villeDestinataire );
 
-        $selectMessage = $messageRepository->findAll();
-
-
-
+       /* $selectMessage = $messageRepository->findAll();*/
+/*dump($message[0]->);*/
+/*dump($selectMessage->getId());
+dump($message->getContenuMessage());
+dump($message);*/
+        dump($message);
         return $this->render('recherche/index.html.twig', [
             'controller_name' => 'RechercheController',
             'form' => $formRecherche->createView(),
             'results' => $results,
-            'selectMessage' => $selectMessage ,
+            'selectMessage' => $message ,
             /*dd($selectMessage),*/
         ]);
 

@@ -14,14 +14,12 @@ $(function(){//fonction de select all checkboxes
 
     });
 
-
-
     $(".checkboxes").click(function(){
 
         let nombreDeCheckboxes = $(".checkboxes").length;
 
         let nombreDeCheckboxesChecked = $('.checkboxes:checked').length;
-
+        console.log($(".checkboxes").getAttribute('checked'));
         if(nombreDeCheckboxes == nombreDeCheckboxesChecked) {
 
             $(".checkAll").prop("checked", true);

@@ -81,7 +81,7 @@
 {#
                 <td>{{ result.okMailDestinataire ? "Oui" : "Non" }}</td>
                 <td>{{ result.okSmsDestinataire ? "Oui" : "Non" }}</td>#}
-                <td><input type="checkbox" name="checkboxes[result.id]" class="checkboxes"><label for="check"></label></td>
+                <td><input type="checkbox" name="checkboxes[{{ result.id }}]" value="{{ result.id }}" class="checkboxes"><label for="check"></label></td>
             </tr>
 
 
@@ -103,11 +103,13 @@
         <h2 class="my-4 text-center">Selectionnez votre alerte</h2>
 
 
-    <select name="selectMessage" id="selectMessage"></select>
+    <select name="selectMessage" id="selectMessage">
         {% for selectMessage in selectMessage %}
-            <option value="{{ selectMessage.idTypeMessage.messageType }}"></option>
+            <option value="{{ selectMessage.idTypeMessage.messageType }}">{{ selectMessage.idTypeMessage.messageType }} {{ selectMessage.idTypeIntervention.interventionType }}</option>
+
     
         {% endfor %}
+    </select>
     </div>
 
     <div class="text-center">
