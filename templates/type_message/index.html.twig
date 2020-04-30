@@ -3,20 +3,20 @@
 {% block title %}Type de messages{% endblock %}
 
 {% block body %}
-    <h1 class="text-center mb-4">Titres des alertes</h1>
+<h1 class="text-center mb-4">Titres des alertes</h1>
 <div class="container w-75">
     <table class="table">
         <thead>
-            <tr>
+        <tr>
 
-                <th>Titres</th>
-                <th>Actions</th>
-            </tr>
+            <th>Titres</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for type_message in type_messages %}
             <tr>
-               
+
                 <td>{{ type_message.messageType }}</td>
                 <td>
                     {#<a class="btn btn-info" href="{{ path('type_message_show', {'id': type_message.id}) }}">Voir</a>#}
@@ -30,8 +30,11 @@
         {% endfor %}
         </tbody>
     </table>
+    <div class="d-flex">
+        <div class="p-2 mr-auto">
+            <a class="  btn btn-primary" href="{{ path('plateforme_admin') }}">Retour plateforme</a>
 
-    <a class="btn btn-success" href="{{ path('type_message_new') }}">Créer nouveau type de message</a>
-
-</div>
-{% endblock %}
+            <a class="btn btn-success" href="{{ path('type_message_new') }}">Créer nouveau titre de message</a>
+        </div>
+    </div>
+    {% endblock %}

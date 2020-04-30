@@ -38,7 +38,7 @@ class MessageController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $date = new \DateTime('now');
             $date->setTimezone(new \DateTimeZone('Europe/Paris'));
-            $message -> setDateEnvoi($date);
+            $message -> setDateModificationMessage($date);
 
             $entityManager->persist($message);
             $entityManager->flush();

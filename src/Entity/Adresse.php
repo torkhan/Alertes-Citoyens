@@ -42,6 +42,8 @@ class Adresse
      */
     private $destinataires;
 
+
+
     public function __construct()
     {
         $this->destinataires = new ArrayCollection();
@@ -118,4 +120,6 @@ class Adresse
 
         return $this;
     }
+
+
 }

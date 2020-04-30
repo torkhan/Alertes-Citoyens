@@ -32,7 +32,7 @@
         </div>
         <div class="row w-50 mx-auto  ">
 
-            {% if is_granted('ROLE_ADMIN', 'ROLE_USER') %}
+            {% if is_granted('ROLE_USER') %}
 
                 <a class="  ml-auto nav-item nav-link" href="{{ path('plateforme_admin') }}">Plateforme de gestion</a>
                 <a class="  mx-auto nav-item nav-link text-right" href="{{ path('app_logout') }}">Deconnexion</a>

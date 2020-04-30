@@ -6,6 +6,7 @@ $(function(){//fonction de select all checkboxes
 
             $(".checkboxes").prop("checked", true);
 
+
         } else {
 
             $(".checkboxes").prop("checked", false);
@@ -19,8 +20,8 @@ $(function(){//fonction de select all checkboxes
         let nombreDeCheckboxes = $(".checkboxes").length;
 
         let nombreDeCheckboxesChecked = $('.checkboxes:checked').length;
-        console.log($(".checkboxes").getAttribute('checked'));
-        if(nombreDeCheckboxes == nombreDeCheckboxesChecked) {
+        console.log($('.checkboxes:checked').val());
+        if(nombreDeCheckboxes === nombreDeCheckboxesChecked) {
 
             $(".checkAll").prop("checked", true);
 
@@ -34,16 +35,10 @@ $(function(){//fonction de select all checkboxes
 
 });
 
-/*
-$(document).ready(function(){
-    $(".submit").click(function() {
-
-        $.each($("input[type='checkbox']:checked").each(function() {
-            $(this).val('id')
-            })
-        );
-       console.log($(this).val('id'));
-
-        return true;
+$('input[type="checkbox"][name="checkboxes"]').change(function() {
+$.post('ajax.php',
+    { checked: this.checked ? '1' : '0' },
+    function(data) {
+        $('.result').html(data);
     });
-});*/
+});

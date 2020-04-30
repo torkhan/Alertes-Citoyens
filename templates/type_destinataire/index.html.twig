@@ -4,33 +4,35 @@
 
 {% block body %}
     <h1 class="text-center mb-4">Types de destinataires </h1>
-<div class="container w-75">
-    <table class="table">
-        <thead>
+    <div class="container w-75">
+        <table class="table">
+            <thead>
             <tr>
 
                 <th>Type de destinataire</th>
                 <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for type_destinataire in type_destinataires %}
-            <tr>
+            </thead>
+            <tbody>
+            {% for type_destinataire in type_destinataires %}
+                <tr>
 
-                <td>{{ type_destinataire.destinataireType }}</td>
-                <td>
-                    <a class="btn btn-info" href="{{ path('type_destinataire_show', {'id': type_destinataire.id}) }}">Voir</a>
-                    <a class="btn btn-warning" href="{{ path('type_destinataire_edit', {'id': type_destinataire.id}) }}">Editer</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a class="btn btn-success" href="{{ path('type_destinataire_new') }}">Créer un nouveau type de destinataire</a>
-</div>
+                    <td>{{ type_destinataire.destinataireType }}</td>
+                    <td>
+                        <a class="btn btn-info" href="{{ path('type_destinataire_show', {'id': type_destinataire.id}) }}">Voir</a>
+                        <a class="btn btn-warning" href="{{ path('type_destinataire_edit', {'id': type_destinataire.id}) }}">Editer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="d-flex">
+            <div class="p-2 mr-auto">
+                <a class="  btn btn-primary" href="{{ path('plateforme_admin') }}">Retour plateforme</a>
+                <a class="btn btn-success" href="{{ path('type_destinataire_new') }}">Créer un nouveau type de destinataire</a>
+            </div></div></div>
 {% endblock %}

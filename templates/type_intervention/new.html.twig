@@ -3,9 +3,11 @@
 {% block title %}Créer un nouveau type d'ntervention{% endblock %}
 
 {% block body %}
-    <h1>Créer un nouveau type d'ntervention</h1>
+    <div class="container w-75">
+    <h1 class="text-center">Créer un nouveau type d'ntervention</h1>
 
     {{ include('type_intervention/_form.html.twig') }}
 
-    <a class="btn btn-primary" href="{{ path('type_intervention_index') }}">Retour à la liste</a>
+    <a class="btn btn-primary mt-3" href="{{ path('type_intervention_index') }}">Retour à la liste</a>
+    </div>
 {% endblock %}

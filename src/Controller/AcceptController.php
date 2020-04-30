@@ -9,6 +9,7 @@ use App\Repository\DestinataireRepository;
 use App\Repository\ValidationRepository;
 
 use Exception;
+use Swift_Mailer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -47,7 +48,7 @@ class AcceptController extends AbstractController
      * @return RedirectResponse
      * @throws Exception
      */
-    public function validerDestinataire($id, Request $request,Destinataire $destinataire, ValidationRepository $validationRepository, \Swift_Mailer $mailer)
+    public function validerDestinataire($id, Request $request,Destinataire $destinataire, ValidationRepository $validationRepository, Swift_Mailer $mailer)
     {
 
 
@@ -85,7 +86,7 @@ class AcceptController extends AbstractController
      * @return RedirectResponse
      * @throws Exception
      */
-    public function refuserDestinataire($id, Request $request,Destinataire $destinataire, ValidationRepository $validationRepository, \Swift_Mailer $mailer)
+    public function refuserDestinataire($id, Request $request,Destinataire $destinataire, ValidationRepository $validationRepository, Swift_Mailer $mailer)
     {
 
         $destinataire = $this->getDoctrine()->getRepository(Destinataire::class)->find($id);
@@ -126,11 +127,11 @@ class AcceptController extends AbstractController
      *
      * @param DestinataireRepository $destinataireRepository
      * @param ValidationRepository $validationRepository
-     * @param \Swift_Mailer $mailer
+     * @param Swift_Mailer $mailer
      * @return RedirectResponse
      * @throws Exception
      */
-    public function validerAllDestinataire(  Request $request,DestinataireRepository $destinataireRepository, ValidationRepository $validationRepository, \Swift_Mailer $mailer)
+    public function validerAllDestinataire(  Request $request,DestinataireRepository $destinataireRepository, ValidationRepository $validationRepository, Swift_Mailer $mailer)
     {
 
         $destinataires = $destinataireRepository->findAll();
@@ -171,11 +172,11 @@ class AcceptController extends AbstractController
      *
      * @param DestinataireRepository $destinataireRepository
      * @param ValidationRepository $validationRepository
-     * @param \Swift_Mailer $mailer
+     * @param Swift_Mailer $mailer
      * @return RedirectResponse
      * @throws Exception
      */
-    public function refuserAllDestinataire( Request $request,DestinataireRepository $destinataireRepository, ValidationRepository $validationRepository, \Swift_Mailer $mailer)
+    public function refuserAllDestinataire( Request $request,DestinataireRepository $destinataireRepository, ValidationRepository $validationRepository, Swift_Mailer $mailer)
     {
 
         $destinataires = $destinataireRepository->findAll();
