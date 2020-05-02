@@ -386,4 +386,5 @@ class Destinataire
 
         return $this;
     }
+
 }

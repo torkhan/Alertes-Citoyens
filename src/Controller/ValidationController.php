@@ -23,6 +23,7 @@ class ValidationController extends AbstractController
         return $this->render('validation/index.html.twig', [
             'validations' => $validationRepository->findAll(),
         ]);
+
     }
 
     /**
@@ -53,7 +54,7 @@ class ValidationController extends AbstractController
      */
     public function show(Validation $validation): Response
     {
-        return $this->render('validation/show.html.twig', [
+        return $this->render('validation/question.html.twig', [
             'validation' => $validation,
         ]);
     }

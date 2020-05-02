@@ -63,7 +63,7 @@ class DestinataireController extends AbstractController
      */
     public function show(Destinataire $destinataire): Response
     {
-        return $this->render('destinataire/show.html.twig', [
+        return $this->render('destinataire/index.html.twig', [
             'destinataire' => $destinataire,
         ]);
     }

@@ -89,11 +89,6 @@ class Message
      */
     private $idIntervention;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\TypeIntervention", inversedBy="messages")
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $idTypeIntervention;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -105,16 +100,26 @@ class Message
      */
     private $dateFinIntervention;
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     */
     public function getContenuMessage(): ?string
     {
         return $this->contenuMessage;
     }
 
+    /**
+     * @param string|null $contenuMessage
+     * @return $this
+     */
     public function setContenuMessage(?string $contenuMessage): self
     {
         $this->contenuMessage = $contenuMessage;
@@ -122,11 +127,18 @@ class Message
         return $this;
     }
 
+    /**
+     * @return \DateTimeInterface|null
+     */
     public function getDateEnvoi(): ?\DateTimeInterface
     {
         return $this->dateEnvoi;
     }
 
+    /**
+     * @param \DateTimeInterface|null $dateEnvoi
+     * @return $this
+     */
     public function setDateEnvoi(?\DateTimeInterface $dateEnvoi): self
     {
         $this->dateEnvoi = $dateEnvoi;
@@ -134,11 +146,18 @@ class Message
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function getStatutMessage()
     {
         return $this->statutMessage;
     }
 
+    /**
+     * @param $statutMessage
+     * @return $this
+     */
     public function setStatutMessage($statutMessage): self
     {
         $this->statutMessage = $statutMessage;
@@ -146,11 +165,18 @@ class Message
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getImage1(): ?string
     {
         return $this->image1;
     }
 
+    /**
+     * @param string|null $image1
+     * @return $this
+     */
     public function setImage1(?string $image1): self
     {
         $this->image1 = $image1;
@@ -158,11 +184,18 @@ class Message
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getImage2(): ?string
     {
         return $this->image2;
     }
 
+    /**
+     * @param string|null $image2
+     * @return $this
+     */
     public function setImage2(?string $image2): self
     {
         $this->image2 = $image2;
@@ -170,11 +203,18 @@ class Message
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getImage3(): ?string
     {
         return $this->image3;
     }
 
+    /**
+     * @param string|null $image3
+     * @return $this
+     */
     public function setImage3(?string $image3): self
     {
         $this->image3 = $image3;
@@ -182,11 +222,18 @@ class Message
         return $this;
     }
 
+    /**
+     * @return \DateTimeInterface|null
+     */
     public function getDateModificationMessage(): ?\DateTimeInterface
     {
         return $this->dateModificationMessage;
     }
 
+    /**
+     * @param \DateTimeInterface|null $dateModificationMessage
+     * @return $this
+     */
     public function setDateModificationMessage(?\DateTimeInterface $dateModificationMessage): self
     {
         $this->dateModificationMessage = $dateModificationMessage;
@@ -194,11 +241,18 @@ class Message
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getCommentaireMessage(): ?string
     {
         return $this->commentaireMessage;
     }
 
+    /**
+     * @param string|null $commentaireMessage
+     * @return $this
+     */
     public function setCommentaireMessage(?string $commentaireMessage): self
     {
         $this->commentaireMessage = $commentaireMessage;
@@ -206,11 +260,18 @@ class Message
         return $this;
     }
 
+    /**
+     * @return User|null
+     */
     public function getIdUtilisateur(): ?User
     {
         return $this->idUtilisateur;
     }
 
+    /**
+     * @param User|null $idUtilisateur
+     * @return $this
+     */
     public function setIdUtilisateur(?User $idUtilisateur): self
     {
         $this->idUtilisateur = $idUtilisateur;
@@ -218,11 +279,18 @@ class Message
         return $this;
     }
 
+    /**
+     * @return TypeMessage|null
+     */
     public function getIdTypeMessage(): ?TypeMessage
     {
         return $this->idTypeMessage;
     }
 
+    /**
+     * @param TypeMessage|null $idTypeMessage
+     * @return $this
+     */
     public function setIdTypeMessage(?TypeMessage $idTypeMessage): self
     {
         $this->idTypeMessage = $idTypeMessage;
@@ -230,11 +298,18 @@ class Message
         return $this;
     }
 
+    /**
+     * @return Destinataire|null
+     */
     public function getIdDestinataire(): ?Destinataire
     {
         return $this->idDestinataire;
     }
 
+    /**
+     * @param Destinataire|null $idDestinataire
+     * @return $this
+     */
     public function setIdDestinataire(?Destinataire $idDestinataire): self
     {
         $this->idDestinataire = $idDestinataire;
@@ -242,11 +317,18 @@ class Message
         return $this;
     }
 
+    /**
+     * @return Intervention|null
+     */
     public function getIdIntervention(): ?Intervention
     {
         return $this->idIntervention;
     }
 
+    /**
+     * @param Intervention|null $idIntervention
+     * @return $this
+     */
     public function setIdIntervention(?Intervention $idIntervention): self
     {
         $this->idIntervention = $idIntervention;
@@ -254,11 +336,18 @@ class Message
         return $this;
     }
 
+    /**
+     * @return TypeIntervention|null
+     */
     public function getIdTypeIntervention(): ?TypeIntervention
     {
         return $this->idTypeIntervention;
     }
 
+    /**
+     * @param TypeIntervention|null $idTypeIntervention
+     * @return $this
+     */
     public function setIdTypeIntervention(?TypeIntervention $idTypeIntervention): self
     {
         $this->idTypeIntervention = $idTypeIntervention;
@@ -266,11 +355,18 @@ class Message
         return $this;
     }
 
+    /**
+     * @return \DateTimeInterface|null
+     */
     public function getDateDebutIntervention(): ?\DateTimeInterface
     {
         return $this->dateDebutIntervention;
     }
 
+    /**
+     * @param \DateTimeInterface|null $dateDebutIntervention
+     * @return $this
+     */
     public function setDateDebutIntervention(?\DateTimeInterface $dateDebutIntervention): self
     {
         $this->dateDebutIntervention = $dateDebutIntervention;
@@ -278,11 +374,18 @@ class Message
         return $this;
     }
 
+    /**
+     * @return \DateTimeInterface|null
+     */
     public function getDateFinIntervention(): ?\DateTimeInterface
     {
         return $this->dateFinIntervention;
     }
 
+    /**
+     * @param \DateTimeInterface|null $dateFinIntervention
+     * @return $this
+     */
     public function setDateFinIntervention(?\DateTimeInterface $dateFinIntervention): self
     {
         $this->dateFinIntervention = $dateFinIntervention;

@@ -48,6 +48,7 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             /*$user -> setRoles(['ROLE_ADMIN']);*/
+            $user -> setRoles(['ROLE_SUPER_ADMIN']);
 
             $date = new \DateTime('now');
             $date->setTimezone(new \DateTimeZone('Europe/Paris'));
@@ -74,7 +75,7 @@ class UserController extends AbstractController
      */
     public function show(User $user): Response
     {
-        return $this->render('user/show.html.twig', [
+        return $this->render('user/question.html.twig', [
             'user' => $user,
         ]);
     }

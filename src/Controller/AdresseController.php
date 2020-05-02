@@ -53,7 +53,7 @@ class AdresseController extends AbstractController
      */
     public function show(Adresse $adresse): Response
     {
-        return $this->render('adresse/show.html.twig', [
+        return $this->render('adresse/question.html.twig', [
             'adresse' => $adresse,
         ]);
     }

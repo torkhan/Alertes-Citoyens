@@ -56,7 +56,7 @@ class InterventionController extends AbstractController
      */
     public function show(Intervention $intervention): Response
     {
-        return $this->render('intervention/show.html.twig', [
+        return $this->render('intervention/question.html.twig', [
             'intervention' => $intervention,
         ]);
     }

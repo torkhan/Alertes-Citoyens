@@ -53,7 +53,7 @@ class MotifController extends AbstractController
      */
     public function show(Motif $motif): Response
     {
-        return $this->render('motif/show.html.twig', [
+        return $this->render('motif/question.html.twig', [
             'motif' => $motif,
         ]);
     }

@@ -7,6 +7,7 @@
     <div class="container w-75">
 
     {{ include('message/_form.html.twig') }}
+        {{ tinymce_init({'use_callback_tinymce_init': true, 'theme': {'simple': {'menubar': false}}}) }}
 
     <a class="btn btn-primary my-4 ml-auto" href="{{ path('message_index') }}">Liste des messages</a>
     </div>

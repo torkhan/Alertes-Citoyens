@@ -6,7 +6,7 @@
     <h1 class="text-center">Liste des messages</h1>
     <div class="container w-75">
 
-        <table class="table">
+        <table class="table-responsive">
             <thead>
             <tr>
                 <th>Titre du message</th>
@@ -20,7 +20,6 @@
                  <th>Image3</th>#}
                 {# <th>Date de modification</th>#}
                 <th>Commentaire</th>
-                <th>Envoyé par</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -29,7 +28,6 @@
                 <tr>
                     <td>{{ message.idTypeMessage.messageType}}</td>
                     <td>{{ message.idIntervention.nomIntervention }}</td>
-                    <td>{{ message.idTypeIntervention.interventionType }}</td>
                     <td>{{ message.contenuMessage }}</td>
                     <td>{{ message.dateEnvoi ? message.dateEnvoi|date('d-m-Y H:i:s') : '' }}</td>
                     <td>{{ message.statutMessage }}</td>

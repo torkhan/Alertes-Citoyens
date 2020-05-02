@@ -88,18 +88,16 @@ class DestinataireRepository extends ServiceEntityRepository
         return $search->getQuery()->getResult();
     }
 
-    public function RechercheAccept($idValidation)
+
+    public function getDestinnateurs($idUtilisateur)
     {
-        /*$search = $this->createQueryBuilder('d');
-        if($idValidation !== null){
-            $search->Where('d.idValidation.id = :1');
-            $search->setParameter('idValidation', "%".$idValidation."%");
-
-        }dd($idValidation);
-
-        return $search->getQuery()->getResult();*/
-
-
+        return $this->createQueryBuilder('d')
+            ->select('d.adresseMailDestinataire')
+            ->andWhere('d.id = :val')
+            ->setParameter('val', $idUtilisateur)
+            ->getQuery()
+            ->getResult()
+            ;
     }
 
 }

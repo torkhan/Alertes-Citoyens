@@ -53,7 +53,7 @@ class TypeDestinataireController extends AbstractController
      */
     public function show(TypeDestinataire $typeDestinataire): Response
     {
-        return $this->render('type_destinataire/show.html.twig', [
+        return $this->render('type_destinataire/question.html.twig', [
             'type_destinataire' => $typeDestinataire,
         ]);
     }

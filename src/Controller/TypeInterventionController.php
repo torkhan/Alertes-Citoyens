@@ -53,7 +53,7 @@ class TypeInterventionController extends AbstractController
      */
     public function show(TypeIntervention $typeIntervention): Response
     {
-        return $this->render('type_intervention/show.html.twig', [
+        return $this->render('type_intervention/question.html.twig', [
             'type_intervention' => $typeIntervention,
         ]);
     }

@@ -2,7 +2,10 @@
 
 namespace App\Repository;
 
+use App\Entity\Intervention;
 use App\Entity\Message;
+use App\Entity\TypeIntervention;
+use App\Entity\TypeMessage;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
@@ -18,6 +21,30 @@ class MessageRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Message::class);
     }
+
+    public function getContentMessage($idTypeMessage){
+        return $this->createQueryBuilder('m')
+            //->where('m.idTypeMessage = t.id ')
+            ->innerJoin(TypeMessage::class, 't', 'WITH', 'm.idTypeMessage = t.id')
+            ->innerJoin(Intervention::class, 'i', 'WITH', 'm.idIntervention = i.id')
+            ->innerJoin(TypeIntervention::class, 'ti', 'WITH', 'ti.id = i.idTypeIntervention')
+            ->andWhere('m.id = :val')
+            ->setParameter('val', $idTypeMessage)
+            ->getQuery()
+            ->getResult();
+
+    }
+
+    public function getMessages(){
+        return $this->createQueryBuilder('m')
+            //->where('m.idTypeMessage = t.id ')
+            ->innerJoin(TypeMessage::class, 't', 'WITH', 'm.idTypeMessage = t.id')
+            ->innerJoin(Intervention::class, 'i', 'WITH', 'm.idIntervention = i.id')
+            ->innerJoin(TypeIntervention::class, 'ti', 'WITH', 'ti.id = i.idTypeIntervention')
+            ->getQuery()
+            ->getResult();
+    }
+
 
     // /**
     //  * @return Message[] Returns an array of Message objects

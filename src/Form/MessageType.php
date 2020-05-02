@@ -13,10 +13,12 @@ use App\Repository\InterventionRepository;
 use App\Repository\TypeInterventionRepository;
 use App\Repository\TypeMessageRepository;
 use App\Repository\UserRepository;
+use Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -27,8 +29,6 @@ class MessageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-
-
             ->add('idTypeMessage',EntityType::class,[
             'class' => TypeMessage::class,
             'label' => 'Titre message',
@@ -47,22 +47,17 @@ class MessageType extends AbstractType
             },
             'choice_label' => 'nomIntervention',
         ])
-            ->add('idTypeIntervention',EntityType::class,[
-                'class' => TypeIntervention::class,
-                'label' => 'Type de l\'intervention',
-                'query_builder' => function (TypeInterventionRepository $er) {
-                    return $er->createQueryBuilder('v')
-                        ->orderBy('v.interventionType', 'ASC');
-                },
-                'choice_label' => 'interventionType',
-            ])
             ->add('dateEnvoi', DateType::class,[
                 'required' => true,
-                'label' => "Date d'envoi"
+                'label' => "Date d'envoi",
+                "widget"=> 'single_text'
             ])
-            ->add('contenuMessage', TextType::class,[
+            ->add('contenuMessage', TextareaType::class,[
                 'required' => false,
-                'label' => "Précisions (par ex: heures de début et fin..)",
+                'attr' => array(
+                    'class' => 'tinymce'// Skip it if you want to use default theme
+                ),
+                'label' => "Votre message :",
                 'constraints' => [
 
                     new Assert\Length([
@@ -77,12 +72,14 @@ class MessageType extends AbstractType
 
                 'required' => true,
                 'label' => "Date de début",
+                "widget"=> 'single_text'
 
             ])
             ->add('dateFinIntervention', DateType::class,[
 
                 'required' => true,
                 'label' => "Date de fin prévue",
+                "widget"=> 'single_text'
 
             ])
 

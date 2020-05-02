@@ -53,7 +53,7 @@ class TypeServiceController extends AbstractController
      */
     public function show(TypeService $typeService): Response
     {
-        return $this->render('type_service/show.html.twig', [
+        return $this->render('type_service/question.html.twig', [
             'type_service' => $typeService,
         ]);
     }

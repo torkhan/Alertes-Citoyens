@@ -53,7 +53,7 @@ class TypeMessageController extends AbstractController
      */
     public function show(TypeMessage $typeMessage): Response
     {
-        return $this->render('type_message/show.html.twig', [
+        return $this->render('type_message/question.html.twig', [
             'type_message' => $typeMessage,
         ]);
     }
