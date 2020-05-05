@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/type/message")
+ * @Route("/admin/type/message")
  */
 class TypeMessageController extends AbstractController
 {
@@ -20,7 +20,7 @@ class TypeMessageController extends AbstractController
      */
     public function index(TypeMessageRepository $typeMessageRepository): Response
     {
-        return $this->render('type_message/index.html.twig', [
+        return $this->render('admin/type_message/index.html.twig', [
             'type_messages' => $typeMessageRepository->findAll(),
         ]);
     }
@@ -42,7 +42,7 @@ class TypeMessageController extends AbstractController
             return $this->redirectToRoute('type_message_index');
         }
 
-        return $this->render('type_message/new.html.twig', [
+        return $this->render('admin/type_message/new.html.twig', [
             'type_message' => $typeMessage,
             'form' => $form->createView(),
         ]);
@@ -53,7 +53,7 @@ class TypeMessageController extends AbstractController
      */
     public function show(TypeMessage $typeMessage): Response
     {
-        return $this->render('type_message/show.html.twig', [
+        return $this->render('admin/type_message/show.html.twig', [
             'type_message' => $typeMessage,
         ]);
     }
@@ -72,7 +72,7 @@ class TypeMessageController extends AbstractController
             return $this->redirectToRoute('type_message_index');
         }
 
-        return $this->render('type_message/edit.html.twig', [
+        return $this->render('admin/vtype_message/edit.html.twig', [
             'type_message' => $typeMessage,
             'form' => $form->createView(),
         ]);

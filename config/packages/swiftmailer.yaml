@@ -1,11 +1,4 @@
 swiftmailer:
     url: '%env(MAILER_URL)%'
-    spool: { type: 'memory' }
-    delivery_addresses: ['torkhan2706@gmail.com']
-    transport: gmail
-    auth_mode: login
-    port: 465
-    host: 127.0.0.1
-    username: 'torkhan2706@gmail.com'
-    password: 'Coleengarou654!'
-
+    disable_delivery: false
+    spool: { type: memory }

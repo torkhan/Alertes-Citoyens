@@ -6,7 +6,7 @@
     <h1 class="text-center mb-4">Liste des destinataires</h1>
     <div class="container w-75">
 
-    <table class="table">
+    <table class="table-responsive">
         <thead>
             <tr>
                 <th>Nom</th>
@@ -68,11 +68,9 @@
 
         </tbody>
     </table>
-        <div class="d-flex">
-            <div class="p-2 mr-auto">
-                <a class="  btn btn-primary" href="{{ path('plateforme_admin') }}">Retour plateforme</a>
+
    {# <a class="btn btn-success" href="{{ path('destinataire_new') }}">Créer un destinataire</a>#}
-    </div></div></div>
+    </div>
     {% block stylesheets %}
 
         <script src="{{ asset("js/recherche.js") }}"></script>

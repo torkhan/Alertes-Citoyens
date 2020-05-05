@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Type de services{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mb-4">Types de services </h1>
+    <div class="container w-75">
+
+    <table class="table-responsive">
+        <thead>
+            <tr>
+               {# <th>Id</th>#}
+                <th>ServiceType</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_service in type_services %}
+            <tr>
+                {#<td>{{ type_service.id }}</td>#}
+                <td>{{ type_service.serviceType }}</td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('type_service_show', {'id': type_service.id}) }}">Voir</a>
+                    <a class="btn btn-warning" href="{{ path('type_service_edit', {'id': type_service.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" href="{{ path('type_service_new') }}">Créer un nouveau type de service</a>
+    </div>
+{% endblock %}

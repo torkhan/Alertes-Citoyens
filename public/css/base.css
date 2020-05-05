@@ -54,3 +54,7 @@ h2  {
 #mainContainer {
     margin-top: 85px;
 }
+
+textarea.form-control{
+    height: 0;
+}

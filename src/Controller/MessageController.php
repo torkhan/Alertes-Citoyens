@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/message")
+ * @Route("/admin/message")
  */
 class MessageController extends AbstractController
 {
@@ -20,7 +20,7 @@ class MessageController extends AbstractController
      */
     public function index(MessageRepository $messageRepository): Response
     {
-        return $this->render('message/index.html.twig', [
+        return $this->render('admin/message/index.html.twig', [
             'messages' => $messageRepository->findAll(),
         ]);
     }
@@ -38,7 +38,7 @@ class MessageController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $date = new \DateTime('now');
             $date->setTimezone(new \DateTimeZone('Europe/Paris'));
-            $message -> setDateModificationMessage($date);
+            $message -> setDateEnvoi($date);
 
             $entityManager->persist($message);
             $entityManager->flush();
@@ -46,7 +46,7 @@ class MessageController extends AbstractController
             return $this->redirectToRoute('message_index');
         }
 
-        return $this->render('message/new.html.twig', [
+        return $this->render('admin/message/new.html.twig', [
             'message' => $message,
             'form' => $form->createView(),
         ]);
@@ -57,7 +57,7 @@ class MessageController extends AbstractController
      */
     public function show(Message $message): Response
     {
-        return $this->render('message/show.html.twig', [
+        return $this->render('admin/message/show.html.twig', [
             'message' => $message,
         ]);
     }
@@ -80,7 +80,7 @@ class MessageController extends AbstractController
             return $this->redirectToRoute('message_index');
         }
 
-        return $this->render('message/edit.html.twig', [
+        return $this->render('admin/message/edit.html.twig', [
             'message' => $message,
             'form' => $form->createView(),
         ]);

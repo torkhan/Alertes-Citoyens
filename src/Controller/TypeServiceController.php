@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/type/service")
+ * @Route("/admin/type/service")
  */
 class TypeServiceController extends AbstractController
 {
@@ -20,7 +20,7 @@ class TypeServiceController extends AbstractController
      */
     public function index(TypeServiceRepository $typeServiceRepository): Response
     {
-        return $this->render('type_service/index.html.twig', [
+        return $this->render('admin/type_service/index.html.twig', [
             'type_services' => $typeServiceRepository->findAll(),
         ]);
     }
@@ -42,7 +42,7 @@ class TypeServiceController extends AbstractController
             return $this->redirectToRoute('type_service_index');
         }
 
-        return $this->render('type_service/new.html.twig', [
+        return $this->render('admin/type_service/new.html.twig', [
             'type_service' => $typeService,
             'form' => $form->createView(),
         ]);
@@ -53,7 +53,7 @@ class TypeServiceController extends AbstractController
      */
     public function show(TypeService $typeService): Response
     {
-        return $this->render('type_service/show.html.twig', [
+        return $this->render('admin/type_service/show.html.twig', [
             'type_service' => $typeService,
         ]);
     }
@@ -72,7 +72,7 @@ class TypeServiceController extends AbstractController
             return $this->redirectToRoute('type_service_index');
         }
 
-        return $this->render('type_service/edit.html.twig', [
+        return $this->render('admin/type_service/edit.html.twig', [
             'type_service' => $typeService,
             'form' => $form->createView(),
         ]);

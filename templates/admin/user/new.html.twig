@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un nouvel utilisateur{% endblock %}
+
+{% block body %}
+    <div class="container w-75">
+    <h1 class="text-center">Créer un nouvel utilisateur</h1>
+
+    {{ include('admin/user/_form.html.twig') }}
+
+    <a class="btn btn-primary mt-3" href="{{ path('user_index') }}">Retour à la liste</a>
+    </div>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset("css/contact.css") }}">
+    {% endblock %}
+{% endblock %}

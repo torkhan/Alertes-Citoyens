@@ -8,11 +8,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class PlateformeAdminController extends AbstractController
 {
     /**
-     * @Route("/plateforme/admin", name="plateforme_admin")
+     * @Route("/admnin/plateforme/admin", name="plateforme_admin")
      */
     public function index()
     {
-        return $this->render('plateforme_admin/index.html.twig', [
+        return $this->render('admin/plateforme_admin/index.html.twig', [
             'controller_name' => 'PlateformeAdminController',
         ]);
     }

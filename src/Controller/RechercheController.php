@@ -3,30 +3,28 @@
 namespace App\Controller;
 
 use App\Entity\Destinataire;
-use App\Entity\Message;
-use Exception;
 use App\Form\RechercheType;
 use App\Repository\DestinataireRepository;
+use App\Repository\InterventionRepository;
 use App\Repository\MessageRepository;
-use App\Repository\ValidationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
+
 class RechercheController extends AbstractController
 {
     /**
-     * @Route("/recherche", name="recherche")
+     * @Route("/admin/recherche", name="recherche")
 
      * @return Response
      */
-    public function index(Request $request, MessageRepository $messageRepository, DestinataireRepository $destinataireRepository, ValidationRepository $validationRepository): Response
+    public function index(Request $request, InterventionRepository $interventionRepository, MessageRepository $messageRepository, DestinataireRepository $destinataireRepository): Response
     {
         $recherche = new Destinataire();
-        $message = $messageRepository->findAll(['id','DESC']);
+        $messages = $messageRepository->getMessages();
 
         $formRecherche = $this->createForm(RechercheType::class, $recherche);
         $formRecherche->handleRequest($request);
@@ -39,91 +37,87 @@ class RechercheController extends AbstractController
         $results = $destinataireRepository->RechercheDestinataire($nomDestinataire, $rueDestinataire, $villeDestinataire );
 
 
-        return $this->render('recherche/index.html.twig', [
+        return $this->render('admin/recherche/index.html.twig', [
             'controller_name' => 'RechercheController',
             'form' => $formRecherche->createView(),
             'results' => $results,
-            'selectMessage' => $message,
-
+            'messages' => $messages ,
         ]);
 
     }
 
     /**
-     * @Route("/recherche/envoyer", name="envoi_message")
+     * @Route("admin/envoyerRecherche", name="envoyerRecherche")
      * @param Request $request
-     * @param Message $message
-     * @param Destinataire $destinataire
      * @param DestinataireRepository $destinataireRepository
-     * @return RedirectResponse
-     * @throws Exception
+     * @param \Swift_Mailer $mailer
+     * @param MessageRepository $messageRepository
+     * @return Response
      */
-    public function selectMess( Request $request, \Swift_Mailer $mailer, MessageRepository $messageRepository, DestinataireRepository $destinataireRepository): Response{
+    function envoyerRecherche(Request $request,
+                              DestinataireRepository $destinataireRepository,
+                              \Swift_Mailer $mailer,
+                              MessageRepository $messageRepository):Response{
+        // recupération des données de la page recherche (les ids)
+        $idUsers = $request->request->get('idUsers');
+        // transformation du string vers tableau
+        $listeDestinataires = array();
 
-       /* if (!isset($_POST["checkboxes"])) {
-            echo "Checkbox was left unchecked.";
-            dd($_POST);
-        } else {
-            echo "Checkbox was checked.";
-            dump($_POST["checkboxes"]);
-        }*/
+        foreach ($idUsers as $key=>$idUtilisateur) {
+            $coordoneeDestinataires = $destinataireRepository->getDestinataires(intval($idUtilisateur));
 
-/*
-        if (is_array($_POST['checkboxes'])){
-
-            $todo = $_POST['checkboxes'];
-dd($todo);
-        } else {
-
-            $todo = array();
-            dd($todo);
-        }*/
-        if (isset($_POST['checkboxes[]'])) {
-            echo 'checked';dd($_POST['']);
-        } else {
-            echo 'not checked';dd($_POST);
+            array_push($listeDestinataires, $coordoneeDestinataires);
         }
 
+        // recupération des données de la page recherche (le message selectionné)
+        $idMessage = $request->request->get('idMessage');
 
-      /*  //récupérer les destinataires concernés
-        $destinataire = $this->getDoctrine()->getRepository(Destinataire::class)->find('$id');//trouver la bonne façon
+        $contentMessage = $messageRepository->getContentMessage(intval($idMessage));
 
-        $nom = $destinataire->getNomDestinataire();
-        $prenom = $destinataire->getPrenomDestinataire();
-        $email = $destinataire->getAdresseMailDestinataire();
+        // recup message
+        $messageRecup = $contentMessage[0]->getContenuMessage();
+        $messageDateEnvoie = $contentMessage[0]->getDateEnvoi();//, "d-M-Y");
+        $dateformatEnvoie = date_format($messageDateEnvoie, "d-m-Y");
 
-        //récuprérer les items du message
+        // recup type message
+        $messageTypeMessage = $contentMessage[0]->getIdTypeMessage()->getMessageType();
 
-        $message = $this->getDoctrine()->getRepository(Message::class)->find('$id');
+        // recup info intervention
+        $nomIntervention = $contentMessage[0]->getIdIntervention()->getNomIntervention();
+        $villeIntervention = $contentMessage[0]->getIdIntervention()->getVilleIntervention();
+        $rueIntervention = $contentMessage[0]->getIdIntervention()->getRueIntervention();
+        $dateDebutIntervention = date_format($contentMessage[0]->getIdIntervention()->getDateDebutIntervention(), "d-M-Y") ;
+        $dateFinIntervention = date_format($contentMessage[0]->getIdIntervention()->getDateFinIntervention(), "d-M-Y") ;
 
-        $titre1 = $message->getIdTypeMessage();
-        $titre2 = $message->getIdIntervention();
-        $titre3 = $message->getIdTypeIntervention();
-        $titre4 = $message->getContenuMessage();
-        $titre5 = $message->getDateDebutIntervention();
-        $titre6 = $message->getDateFinIntervention();
-        $titre7 = $message->getImage1();
-        $titre8 = $message->getImage2();
-        $titre9 = $message->getImage3();
-        $titre10 = $message->getCommentaireMessage();
 
-        $date = new \DateTime('now');
-        $date->setTimezone(new \DateTimeZone('Europe/Paris'));
-        $message -> setDateEnvoi($date);
+        // corps du message
+        $corpsMessage= "";
+        $corpsMessage = "<h2>".$nomIntervention."</h2>";
+        $corpsMessage .= "<p>Date debut de l'intervention : ".$dateDebutIntervention."</p>";
+        $corpsMessage .= "<p>Date de fin de l'intervention : ".$dateFinIntervention."</p>";
+        $corpsMessage .= "<p>Le type d'intervention concerne ".$messageTypeMessage."</p>";
+        $corpsMessage .= "<p>Attention ce message vous concerne</p><p>".$messageRecup."</p><p>Date d'envoie du message : ".$dateformatEnvoie."</p>";
 
-//création du message
-        $alerte= (new \Swift_Message('Nouvelle alerte'))
-            ->setTo([$email => $nom." ".$prenom])
-            ->setFrom('torkhan2706@gmail.com')
 
-            ->setBody("<html lang=><head><meta charset='UTF-8'><title></title></head><body>Envoyé le" ." ".$date->format('d/m/y').'<br/>'.$titre1.'<br/>'.$titre2.'<br/>'.$titre3.'<br/>'.$titre4.'<br/>'.$titre5.'<br/>'.$titre6.'<br/>'.$titre7.'<br/>'.$titre8.'<br/>'.$titre9.'<br/>'.$titre10.'<br/>'."</body></html>")
-        ;
-// Send the message
-        $alerte->setContentType("text/html");
-        $mailer->send($alerte);
-        /*$this->getDoctrine()->getManager()->flush();*/
 
-        return $this->redirectToRoute('plateforme_admin');
+        foreach ($listeDestinataires as $destinataires) {
+            foreach ($destinataires as $key=>$destinataire) {
+                //envoie des messages
+
+                $message = (new \Swift_Message($nomIntervention))
+                    ->setFrom('torkhan2706@gmail.com')
+                    ->setTo($destinataire['adresseMailDestinataire'])
+                    ->setBody($corpsMessage, 'text/html', 'utf-8');
+                $mailer->send($message);
+            }
+        }
+
+        return $this->json([
+            "code" => 200,
+            "envoye" => "ok"
+        ], 200);
+
     }
+
 
 }

@@ -24,6 +24,7 @@ class TypeIntervention
      */
     private $interventionType;
 
+
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Intervention", mappedBy="idTypeIntervention", orphanRemoval=true)
      */

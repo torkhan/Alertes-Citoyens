@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des villes{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mb-4">Liste des villes</h1>
+    <div class="container w-75">
+
+    <table class="table-responsive">
+        <thead>
+            <tr>
+
+                <th>Ville</th>
+                <th>Cp</th>
+                <th>Departement</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for adresse in adresses %}
+            <tr>
+
+                <td>{{ adresse.nomVille }}</td>
+                <td>{{ adresse.cp }}</td>
+                <td>{{ adresse.nomDepartement }}</td>
+                <td>
+                    {#<a class="btn btn-info" href="{{ path('adresse_show', {'id': adresse.id}) }}">Voir</a>#}
+                    <a class="btn btn-warning" href="{{ path('adresse_edit', {'id': adresse.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-success my-4" href="{{ path('adresse_new') }}">Ajouter une ville</a>
+    </div>
+{% endblock %}

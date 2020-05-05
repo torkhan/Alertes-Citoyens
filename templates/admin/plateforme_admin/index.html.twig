@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PlateformeAdminController!{% endblock %}
+
+{% block body %}
+
+
+    <div class="example-wrapper">
+        <h1  class="my-4">Bonjour {{ app.user.nomUtilisateur }} {{ app.user.prenomUtilisateur }}! </h1>
+
+        <h2 class="text-center mb-4">Bienvenue sur votre palteforme de gestion</h2>
+        <p class="text-center">Vous pourrez ici crééer votre alerte et l'envoyer aux souscripteurs concernés, valider les demandes de soucription et gérer l'intégralité des ressources</p>
+    </div>
+
+
+    <div class="text-center my-5">
+        <h2 class="my-4 text-center">1-Gérer les demandes de souscription</h2>
+        <a class="my-4  btn btn-primary" href={{ path('accept')}}>Page demande de souscription</a>
+    </div>
+    <div class="text-center my-5">
+        <h2 class="my-4 text-center">2-Préparer votre alerte</h2>
+        {#<div class="my-4">#}
+
+        <div class="row justify-content-around">
+            <div>
+                <div class="text-center">
+                    <p class="my-2 ml-5">Pour créer ou vérifier vos titres de messages</p>
+                    <a class="btn btn-info my-2" href={{ path('type_message_index')}}>1-Gestion des titres de message</a>
+                </div>
+                <div class="text-center">
+                    <p class="my-2 ml-5">Pour créer ou vérifier les villes concernées</p>
+                    <a class="btn btn-info my-2" href={{ path('adresse_index')}}>3-Gestion des villes</a>
+                </div>
+            </div>
+            <div>
+                <div class="text-center">
+                    <p class="my-2 ml-5">Pour créer ou vérifier vos types d'interventions</p>
+                    <a class="btn btn-info my-2" href={{ path('type_intervention_index')}}>2-Gestion des types d'intervention</a>
+                </div>
+
+                <div class="text-center">
+                    <p class="my-2 ml-5">Pour créer ou vérifier le service concerné</p>
+                    <a class="btn btn-info my-2" href={{ path('type_service_index')}}>4-Gestion des services</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center my-5">
+            <h2 class="my-4 text-center">3-Créer votre intervention</h2>
+        </div>
+        <div class="text-center">                <a class="btn btn-success my-2" href={{ path('intervention_index')}}>Gestion des interventions</a>
+        </div>
+
+
+
+
+        {#
+           <div class="row d-flex justify-content-around my-5">#}
+        {#<a class="btn btn-success my-2" href={{ path('validation_index')}}>Gestion des validations</a>#}
+        {#<a class="btn btn-success my-2" href={{ path('motif_index')}}>Gestion des motifs</a>#}
+        {# </div>
+         <div class="row d-flex justify-content-around my-5">#}
+        {#</div>
+        <div class="row d-flex justify-content-around my-5">#}
+
+        {#
+                </div>
+                </div>#}
+
+    </div>
+    <div class="text-center">
+        <h2 class="my-4">4-Créer votre alerte</h2>
+        {#<a class="my-4  btn btn-primary" href={{ path('recherche')}}>Je crée une alerte</a>#}
+        <a class="btn btn-success my-2" href={{ path('message_index')}}>Je crée une alerte</a>
+    </div>
+    <div class="text-center my-5">
+        <h2 class="my-4 text-center">5-Envoyer votre alerte</h2>
+        <a class="my-4  btn btn-primary" href={{ path('recherche')}}>Envoyer l'alerte</a>
+    </div>
+
+    <div class="text-center">
+        <h2 class="my-4 text-center">Gestion des ressources</h2>
+    </div>
+    <div class="row d-flex justify-content-around my-5">
+
+
+        <a class="btn btn-success my-2" href={{ path('type_destinataire_index')}}>Gestion des types de destinataire</a>
+
+        <a class="btn btn-success my-2" href={{ path('destinataire_index')}}>Gestion des destinataires</a>
+    </div>
+    <div class="row d-flex justify-content-around my-5">
+
+              {% if is_granted('ROLE_SUPER_ADMIN') %}
+
+        <a class="btn btn-warning my-2" href={{ path('user_index')}}>Gestion des administrateurs</a>
+
+                {% endif %}
+
+    </div>
+
+{% endblock %}

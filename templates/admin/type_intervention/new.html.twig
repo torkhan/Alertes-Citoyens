@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un nouveau type d'ntervention{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mb-4">Créer un nouveau type d'ntervention</h1>
+    <div class="container w-75">
+
+    {{ include('admin/type_intervention/_form.html.twig') }}
+
+    <a class="btn btn-primary my-4" href="{{ path('type_intervention_index') }}">Retour à la liste</a>
+    </div>
+{% endblock %}

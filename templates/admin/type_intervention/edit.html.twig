@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edition des types d'interventions{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mb-4">Edition des types d'interventions</h1>
+    <div class="container w-75">
+
+    {{ include('admin/type_intervention/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a class="btn btn-primary my-3" href="{{ path('type_intervention_index') }}">Retour à la liste</a>
+
+    {{ include('admin/type_intervention/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

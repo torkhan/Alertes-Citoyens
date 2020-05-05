@@ -1,0 +1,17 @@
+{{ form_start(form) }}
+   {# {{ form_widget(form) }}#}
+    {{ form_row(form.idTypeMessage) }}
+    {{ form_row(form.idIntervention) }}
+    {{ form_row(form.dateEnvoi) }}
+    {{ form_row(form.contenuMessage) }}
+ {{ tinymce_init({'use_callback_tinymce_init': true, 'theme': {'simple': {'menubar': false}}}) }}
+<textarea class="tinymce"></textarea>
+    {{ form_row(form.dateDebutIntervention) }}
+    {{ form_row(form.dateFinIntervention) }}
+    {{ form_row(form.image1) }}
+    {{ form_row(form.image2) }}
+    {{ form_row(form.image3) }}
+    {{ form_row(form.commentaireMessage) }}
+    {{ form_row(form.idUtilisateur) }}
+    <button class="btn btn-success">{{ button_label|default('Valider') }}</button>
+{{ form_end(form) }}

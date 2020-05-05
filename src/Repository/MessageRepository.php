@@ -2,27 +2,49 @@
 
 namespace App\Repository;
 
+use App\Entity\Intervention;
 use App\Entity\Message;
+use App\Entity\TypeIntervention;
+use App\Entity\TypeMessage;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
  * @method Message|null find($id, $lockMode = null, $lockVersion = null)
  * @method Message|null findOneBy(array $criteria, array $orderBy = null)
- * @method Message[]    findAll(array $orderBy = null)
+ * @method Message[]    findAll()
  * @method Message[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class MessageRepository extends ServiceEntityRepository
 {
-
-
     public function __construct(ManagerRegistry $registry)
     {
-
-
-
         parent::__construct($registry, Message::class);
     }
+
+    public function getContentMessage($idTypeMessage){
+        return $this->createQueryBuilder('m')
+            //->where('m.idTypeMessage = t.id ')
+            ->innerJoin(TypeMessage::class, 't', 'WITH', 'm.idTypeMessage = t.id')
+            ->innerJoin(Intervention::class, 'i', 'WITH', 'm.idIntervention = i.id')
+            ->innerJoin(TypeIntervention::class, 'ti', 'WITH', 'ti.id = i.idTypeIntervention')
+            ->andWhere('m.id = :val')
+            ->setParameter('val', $idTypeMessage)
+            ->getQuery()
+            ->getResult();
+
+    }
+
+    public function getMessages(){
+        return $this->createQueryBuilder('m')
+            //->where('m.idTypeMessage = t.id ')
+            ->innerJoin(TypeMessage::class, 't', 'WITH', 'm.idTypeMessage = t.id')
+            ->innerJoin(Intervention::class, 'i', 'WITH', 'm.idIntervention = i.id')
+            ->innerJoin(TypeIntervention::class, 'ti', 'WITH', 'ti.id = i.idTypeIntervention')
+            ->getQuery()
+            ->getResult();
+    }
+
 
     // /**
     //  * @return Message[] Returns an array of Message objects
@@ -52,15 +74,4 @@ class MessageRepository extends ServiceEntityRepository
         ;
     }
     */
-    public function findMessages($dateModificationMessage)
-    {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.dateModificationMessage = :val')
-            ->setParameter('val', $dateModificationMessage)
-            ->orderBy('m.id', 'DESC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-            ;
-    }
 }

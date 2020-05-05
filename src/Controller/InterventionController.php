@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/intervention")
+ * @Route("/admin/intervention")
  */
 class InterventionController extends AbstractController
 {
@@ -20,7 +20,7 @@ class InterventionController extends AbstractController
      */
     public function index(InterventionRepository $interventionRepository): Response
     {
-        return $this->render('intervention/index.html.twig', [
+        return $this->render('admin/intervention/index.html.twig', [
             'interventions' => $interventionRepository->findAll(),
         ]);
     }
@@ -42,10 +42,10 @@ class InterventionController extends AbstractController
             $entityManager->persist($intervention);
             $entityManager->flush();
 
-            return $this->redirectToRoute('intervention_index');
+            return $this->redirectToRoute('admin/intervention_index');
         }
 
-        return $this->render('intervention/new.html.twig', [
+        return $this->render('admin/intervention/new.html.twig', [
             'intervention' => $intervention,
             'form' => $form->createView(),
         ]);
@@ -56,7 +56,7 @@ class InterventionController extends AbstractController
      */
     public function show(Intervention $intervention): Response
     {
-        return $this->render('intervention/show.html.twig', [
+        return $this->render('admin/intervention/show.html.twig', [
             'intervention' => $intervention,
         ]);
     }
@@ -76,7 +76,7 @@ class InterventionController extends AbstractController
             return $this->redirectToRoute('intervention_index');
         }
 
-        return $this->render('intervention/edit.html.twig', [
+        return $this->render('admin/intervention/edit.html.twig', [
             'intervention' => $intervention,
             'form' => $form->createView(),
         ]);

@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Service{% endblock %}
+
+{% block body %}
+    <h1>Service</h1>
+
+    <table class="table-responsive">
+        <tbody>
+            <tr>
+                <th>Nom du service</th>
+                <td>{{ service.nomService }}</td>
+            </tr>
+            <tr>
+                <th>Type de service</th>
+                <td>{{ service.idTypeService ? service.idTypeService.serviceType }}</td>
+            </tr>
+            <tr>
+                <th>Numéro</th>
+                <td>{{ service.numeroRueService }}</td>
+            </tr>
+            <tr>
+                <th>Rue</th>
+                <td>{{ service.nomRueService1 }}</td>
+            </tr>
+            <tr>
+                <th>Cmpt d'adresse</th>
+                <td>{{ service.nomRueService2 }}</td>
+            </tr>
+            <tr>
+                <th>Code postal</th>
+                <td>{{ service.cpService }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ service.villeService }}</td>
+            </tr>
+            <tr>
+                <th>Adresse mail</th>
+                <td>{{ service.adresseMailService }}</td>
+            </tr>
+            <tr>
+                <th>Numéro de téléphone</th>
+                <td>{{ service.numeroTelephoneService }}</td>
+            </tr>
+            <tr>
+                <th>Commentaire (optionnel)</th>
+                <td>{{ service.commentaireService }}</td>
+            </tr>
+            <tr>
+                <th>Date de modification</th>
+                <td>{{ service.dateModificationService ? service.dateModificationService|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('service_index') }}">Retour à la liste</a>
+
+    <a class="btn btn-warning" href="{{ path('service_edit', {'id': service.id}) }}">Modifier</a>
+
+    {{ include('admin/service/_delete_form.html.twig') }}
+{% endblock %}

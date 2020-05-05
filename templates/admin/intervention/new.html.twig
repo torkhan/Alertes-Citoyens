@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création d' intervention{% endblock %}
+
+{% block body %}
+<div class="container w-75">
+    <h1 class="text-center">Creation d'interventions</h1>
+
+    {{ include('admin/intervention/_form.html.twig') }}
+
+    <a class="btn btn-primary" href="{{ path('intervention_index') }} ">Retour à la liste</a>
+
+
+</div>
+{% endblock %}

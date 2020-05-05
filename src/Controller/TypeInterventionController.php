@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/type/intervention")
+ * @Route("/admin/type/intervention")
  */
 class TypeInterventionController extends AbstractController
 {
@@ -20,7 +20,7 @@ class TypeInterventionController extends AbstractController
      */
     public function index(TypeInterventionRepository $typeInterventionRepository): Response
     {
-        return $this->render('type_intervention/index.html.twig', [
+        return $this->render('admin/type_intervention/index.html.twig', [
             'type_interventions' => $typeInterventionRepository->findAll(),
         ]);
     }
@@ -42,7 +42,7 @@ class TypeInterventionController extends AbstractController
             return $this->redirectToRoute('type_intervention_index');
         }
 
-        return $this->render('type_intervention/new.html.twig', [
+        return $this->render('admin/type_intervention/new.html.twig', [
             'type_intervention' => $typeIntervention,
             'form' => $form->createView(),
         ]);
@@ -53,7 +53,7 @@ class TypeInterventionController extends AbstractController
      */
     public function show(TypeIntervention $typeIntervention): Response
     {
-        return $this->render('type_intervention/show.html.twig', [
+        return $this->render('admin/type_intervention/show.html.twig', [
             'type_intervention' => $typeIntervention,
         ]);
     }
@@ -72,7 +72,7 @@ class TypeInterventionController extends AbstractController
             return $this->redirectToRoute('type_intervention_index');
         }
 
-        return $this->render('type_intervention/edit.html.twig', [
+        return $this->render('admin/type_intervention/edit.html.twig', [
             'type_intervention' => $typeIntervention,
             'form' => $form->createView(),
         ]);

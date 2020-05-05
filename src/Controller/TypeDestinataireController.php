@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/type/destinataire")
+ * @Route("/admin/type/destinataire")
  */
 class TypeDestinataireController extends AbstractController
 {
@@ -20,7 +20,7 @@ class TypeDestinataireController extends AbstractController
      */
     public function index(TypeDestinataireRepository $typeDestinataireRepository): Response
     {
-        return $this->render('type_destinataire/index.html.twig', [
+        return $this->render('admin/type_destinataire/index.html.twig', [
             'type_destinataires' => $typeDestinataireRepository->findAll(),
         ]);
     }
@@ -42,7 +42,7 @@ class TypeDestinataireController extends AbstractController
             return $this->redirectToRoute('type_destinataire_index');
         }
 
-        return $this->render('type_destinataire/new.html.twig', [
+        return $this->render('admin/type_destinataire/new.html.twig', [
             'type_destinataire' => $typeDestinataire,
             'form' => $form->createView(),
         ]);
@@ -53,7 +53,7 @@ class TypeDestinataireController extends AbstractController
      */
     public function show(TypeDestinataire $typeDestinataire): Response
     {
-        return $this->render('type_destinataire/show.html.twig', [
+        return $this->render('admin/type_destinataire/show.html.twig', [
             'type_destinataire' => $typeDestinataire,
         ]);
     }
@@ -72,7 +72,7 @@ class TypeDestinataireController extends AbstractController
             return $this->redirectToRoute('type_destinataire_index');
         }
 
-        return $this->render('type_destinataire/edit.html.twig', [
+        return $this->render('admin/type_destinataire/edit.html.twig', [
             'type_destinataire' => $typeDestinataire,
             'form' => $form->createView(),
         ]);

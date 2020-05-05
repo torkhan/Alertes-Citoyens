@@ -9,13 +9,15 @@ use App\Repository\DestinataireRepository;
 use App\Repository\ValidationRepository;
 
 use Exception;
-use Swift_Mailer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @route ("/admin/accept")
+ */
 class AcceptController extends AbstractController
 {
     /**
@@ -31,7 +33,7 @@ class AcceptController extends AbstractController
         $destinataires = $destinataireRepository->findAll();
 
 
-        return $this->render('accept/index.html.twig', [
+        return $this->render('admin/accept/index.html.twig', [
             'controller_name' => 'acceptController',
             'form' => $formAccept->createView(),
             'results' => $results,
@@ -48,7 +50,7 @@ class AcceptController extends AbstractController
      * @return RedirectResponse
      * @throws Exception
      */
-    public function validerDestinataire($id, Request $request,Destinataire $destinataire, ValidationRepository $validationRepository, Swift_Mailer $mailer)
+    public function validerDestinataire($id, Request $request,Destinataire $destinataire, ValidationRepository $validationRepository, \Swift_Mailer $mailer)
     {
 
 
@@ -86,7 +88,7 @@ class AcceptController extends AbstractController
      * @return RedirectResponse
      * @throws Exception
      */
-    public function refuserDestinataire($id, Request $request,Destinataire $destinataire, ValidationRepository $validationRepository, Swift_Mailer $mailer)
+    public function refuserDestinataire($id, Request $request,Destinataire $destinataire, ValidationRepository $validationRepository, \Swift_Mailer $mailer)
     {
 
         $destinataire = $this->getDoctrine()->getRepository(Destinataire::class)->find($id);
@@ -127,37 +129,37 @@ class AcceptController extends AbstractController
      *
      * @param DestinataireRepository $destinataireRepository
      * @param ValidationRepository $validationRepository
-     * @param Swift_Mailer $mailer
+     * @param \Swift_Mailer $mailer
      * @return RedirectResponse
      * @throws Exception
      */
-    public function validerAllDestinataire(  Request $request,DestinataireRepository $destinataireRepository, ValidationRepository $validationRepository, Swift_Mailer $mailer)
+    public function validerAllDestinataire(  Request $request,DestinataireRepository $destinataireRepository, ValidationRepository $validationRepository, \Swift_Mailer $mailer)
     {
 
         $destinataires = $destinataireRepository->findAll();
         foreach ($destinataires as $destinataire ) {
-          /*  if((isset($_POST['submit'])===true) && isset($_GET['checkboxes'])===true ){*/
+            /*  if((isset($_POST['submit'])===true) && isset($_GET['checkboxes'])===true ){*/
 
-                $date = new \DateTime('now');
-                $date->setTimezone(new \DateTimeZone('Europe/Paris'));
-                $destinataire->setDateModificationDestinataire($date);
-                $destinataire->setDateValidationDestinataire($date);
-                $validation = $validationRepository->find(2);
-                $destinataire->setIdValidation($validation);
+            $date = new \DateTime('now');
+            $date->setTimezone(new \DateTimeZone('Europe/Paris'));
+            $destinataire->setDateModificationDestinataire($date);
+            $destinataire->setDateValidationDestinataire($date);
+            $validation = $validationRepository->find(2);
+            $destinataire->setIdValidation($validation);
 
-                $nom = $destinataire->getNomDestinataire();
-                $prenom = $destinataire->getPrenomDestinataire();
-                $email = $destinataire->getAdresseMailDestinataire();
-                $messageEnvoye = 'Votre demande de souscription à été acceptée';
+            $nom = $destinataire->getNomDestinataire();
+            $prenom = $destinataire->getPrenomDestinataire();
+            $email = $destinataire->getAdresseMailDestinataire();
+            $messageEnvoye = 'Votre demande de souscription à été acceptée';
 
-                $message = (new \Swift_Message('Réponse à votre demande de souscription à nos alertes'))
-                    ->setTo([$email => $nom . " " . $prenom])
-                    ->setFrom('torkhan2706@gmail.com')
-                    ->setBody("<html lang=><head><meta charset='UTF-8'><title></title></head><body>Envoyé le" . " " . $date->format('d/m/y') . '<br/>' . $messageEnvoye . "</body></html>");
+            $message = (new \Swift_Message('Réponse à votre demande de souscription à nos alertes'))
+                ->setTo([$email => $nom . " " . $prenom])
+                ->setFrom('torkhan2706@gmail.com')
+                ->setBody("<html lang=><head><meta charset='UTF-8'><title></title></head><body>Envoyé le" . " " . $date->format('d/m/y') . '<br/>' . $messageEnvoye . "</body></html>");
 // Send the message
-                $message->setContentType("text/html");
-                $mailer->send($message);
-                $this->getDoctrine()->getManager()->flush();
+            $message->setContentType("text/html");
+            $mailer->send($message);
+            $this->getDoctrine()->getManager()->flush();
 
 
 
@@ -172,11 +174,11 @@ class AcceptController extends AbstractController
      *
      * @param DestinataireRepository $destinataireRepository
      * @param ValidationRepository $validationRepository
-     * @param Swift_Mailer $mailer
+     * @param \Swift_Mailer $mailer
      * @return RedirectResponse
      * @throws Exception
      */
-    public function refuserAllDestinataire( Request $request,DestinataireRepository $destinataireRepository, ValidationRepository $validationRepository, Swift_Mailer $mailer)
+    public function refuserAllDestinataire( Request $request,DestinataireRepository $destinataireRepository, ValidationRepository $validationRepository, \Swift_Mailer $mailer)
     {
 
         $destinataires = $destinataireRepository->findAll();
@@ -211,7 +213,3 @@ class AcceptController extends AbstractController
 
 
 }
-
-
-
-

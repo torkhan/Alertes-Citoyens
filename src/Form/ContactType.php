@@ -86,7 +86,7 @@ class ContactType extends AbstractType
                     ]),
                 ],
             ])
-            /*->add('dateEnvoi', DateType::Class, array('widget' => 'single_text'))*/
+            /*->add('dateEnvoi', DateType::js, array('widget' => 'single_text'))*/
             ->add('envoyer', SubmitType::class)
         ;
     }

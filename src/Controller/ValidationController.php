@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/validation")
+ * @Route("/admin/validation")
  */
 class ValidationController extends AbstractController
 {
@@ -20,9 +20,10 @@ class ValidationController extends AbstractController
      */
     public function index(ValidationRepository $validationRepository): Response
     {
-        return $this->render('validation/index.html.twig', [
+        return $this->render('admin/validation/index.html.twig', [
             'validations' => $validationRepository->findAll(),
         ]);
+
     }
 
     /**
@@ -42,7 +43,7 @@ class ValidationController extends AbstractController
             return $this->redirectToRoute('validation_index');
         }
 
-        return $this->render('validation/new.html.twig', [
+        return $this->render('admin/validation/new.html.twig', [
             'validation' => $validation,
             'form' => $form->createView(),
         ]);
@@ -53,7 +54,7 @@ class ValidationController extends AbstractController
      */
     public function show(Validation $validation): Response
     {
-        return $this->render('validation/show.html.twig', [
+        return $this->render('admin/validation/show.html.twig', [
             'validation' => $validation,
         ]);
     }
@@ -72,7 +73,7 @@ class ValidationController extends AbstractController
             return $this->redirectToRoute('validation_index');
         }
 
-        return $this->render('validation/edit.html.twig', [
+        return $this->render('admin/validation/edit.html.twig', [
             'validation' => $validation,
             'form' => $form->createView(),
         ]);

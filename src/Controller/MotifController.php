@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/motif")
+ * @Route("/admin/motif")
  */
 class MotifController extends AbstractController
 {
@@ -20,7 +20,7 @@ class MotifController extends AbstractController
      */
     public function index(MotifRepository $motifRepository): Response
     {
-        return $this->render('motif/index.html.twig', [
+        return $this->render('admin/motif/index.html.twig', [
             'motifs' => $motifRepository->findAll(),
         ]);
     }
@@ -42,7 +42,7 @@ class MotifController extends AbstractController
             return $this->redirectToRoute('motif_index');
         }
 
-        return $this->render('motif/new.html.twig', [
+        return $this->render('admin/motif/new.html.twig', [
             'motif' => $motif,
             'form' => $form->createView(),
         ]);
@@ -53,7 +53,7 @@ class MotifController extends AbstractController
      */
     public function show(Motif $motif): Response
     {
-        return $this->render('motif/show.html.twig', [
+        return $this->render('admin/motif/show.html.twig', [
             'motif' => $motif,
         ]);
     }
@@ -72,7 +72,7 @@ class MotifController extends AbstractController
             return $this->redirectToRoute('motif_index');
         }
 
-        return $this->render('motif/edit.html.twig', [
+        return $this->render('admin/motif/edit.html.twig', [
             'motif' => $motif,
             'form' => $form->createView(),
         ]);

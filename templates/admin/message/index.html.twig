@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des messages{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Liste des messages</h1>
+    <div class="container w-75">
+
+        <table class="table-responsive">
+            <thead>
+            <tr>
+                <th>Titre du message</th>
+                <th>Intrevention</th>
+                <th>Type d'intervention</th>
+                <th>Contenu du message</th>
+                <th>Date d'envoi</th>
+                <th>Statut du message</th>
+                {# <th>Image1</th>
+                 <th>Image2</th>
+                 <th>Image3</th>#}
+                {# <th>Date de modification</th>#}
+                <th>Commentaire</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for message in messages %}
+                <tr>
+                    <td>{{ message.idTypeMessage.messageType}}</td>
+                    <td>{{ message.idIntervention.nomIntervention }}</td>
+                    <td>{{ message.contenuMessage }}</td>
+                    <td>{{ message.dateEnvoi ? message.dateEnvoi|date('d-m-Y H:i:s') : '' }}</td>
+                    <td>{{ message.statutMessage }}</td>
+                    {#<td>{{ message.image1 }}</td>
+                    <td>{{ message.image2 }}</td>
+                    <td>{{ message.image3 }}</td>#}
+                    {# <td>{{ message.dateModificationMessage ? message.dateModificationMessage|date('d-m-Y H:i:s') : '' }}</td>#}
+                    <td>{{ message.commentaireMessage }}</td>
+                    <td>{{ message.idUtilisateur.nomUtilisateur }}</td>
+                    <td>
+                        <a class="btn btn-info" href="{{ path('message_show', {'id': message.id}) }}">Voir</a>
+                        <a class="btn btn-warning" href="{{ path('message_edit', {'id': message.id}) }}">Editer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="10">Pas encore d'enregistrements</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a class="btn btn-success my-4" href="{{ path('message_new') }}">Créer un nouveau message</a>
+    </div>
+{% endblock %}

@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Message;
 use App\Entity\TypeMessage;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
@@ -18,6 +19,8 @@ class TypeMessageRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, TypeMessage::class);
     }
+
+
 
     // /**
     //  * @return TypeMessage[] Returns an array of TypeMessage objects
