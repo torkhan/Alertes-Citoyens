@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1 class="text-center mb-4">Types de destinataires </h1>
-<div class="container w-75">
+
     <table class="table-responsive">
         <thead>
             <tr>
@@ -30,7 +30,10 @@
         {% endfor %}
         </tbody>
     </table>
+    <div class="p-2 my-4">
+        <a class="btn btn-success mr-4" href="{{ path('type_destinataire_new') }}">Créer un nouveau type de destinataire</a>
+        <a class="btn btn-primary ml-4" href="{{ path('plateforme_admin') }}">Retour plateforme</a>
+    </div>
 
-    <a class="btn btn-success" href="{{ path('type_destinataire_new') }}">Créer un nouveau type de destinataire</a>
-</div>
+
 {% endblock %}

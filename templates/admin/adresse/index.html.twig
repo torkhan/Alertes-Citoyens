@@ -9,7 +9,6 @@
     <table class="table-responsive">
         <thead>
             <tr>
-
                 <th>Ville</th>
                 <th>Cp</th>
                 <th>Departement</th>
@@ -18,7 +17,7 @@
         </thead>
         <tbody>
         {% for adresse in adresses %}
-            <tr>
+            <tr >
 
                 <td>{{ adresse.nomVille }}</td>
                 <td>{{ adresse.cp }}</td>
@@ -35,7 +34,10 @@
         {% endfor %}
         </tbody>
     </table>
+    <div class="p-2 my-4">
+        <a class="btn btn-success my-4 mr-5" href="{{ path('adresse_new') }}">Ajouter une ville</a>
+        <a class="btn btn-primary ml-5" href="{{ path('plateforme_admin') }}">Retour plateforme</a>
+    </div>
 
-    <a class="btn btn-success my-4" href="{{ path('adresse_new') }}">Ajouter une ville</a>
 
 {% endblock %}

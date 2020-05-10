@@ -48,6 +48,9 @@
         {% endfor %}
         </tbody>
     </table>
+    <div class="p-2 my-4">
+        <a class="btn btn-success mr-4" href="{{ path('service_new') }}">Créer un service</a>
+        <a class="btn btn-primary ml-4" href="{{ path('plateforme_admin') }}">Retour plateforme</a>
+    </div>
 
-    <a class="btn btn-success" href="{{ path('service_new') }}">Créer un service</a>
 {% endblock %}

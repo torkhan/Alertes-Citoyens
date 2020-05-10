@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1 class="text-center">Liste des messages</h1>
-    <div class="container w-75">
+
 
         <table class="table-responsive">
             <thead>
@@ -49,7 +49,10 @@
             {% endfor %}
             </tbody>
         </table>
+        <div class="p-2 my-4">
+            <a class="btn btn-success mr-4" href="{{ path('message_new') }}">Créer un nouveau message</a>
+            <a class="btn btn-primary ml-5" href="{{ path('plateforme_admin') }}">Retour plateforme</a>
+        </div>
 
-        <a class="btn btn-success my-4" href="{{ path('message_new') }}">Créer un nouveau message</a>
-    </div>
+
 {% endblock %}
