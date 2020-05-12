@@ -12,17 +12,15 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/destinataire")
- */
+
 class DestinataireController extends AbstractController
 {
     /**
-     * @Route("/", name="destinataire_index", methods={"GET"})
+     * @Route("/admin/destinataire", name="admin/destinataire_index", methods={"GET"})
      */
     public function index(DestinataireRepository $destinataireRepository): Response
     {
-        return $this->render('destinataire/index.html.twig', [
+        return $this->render('admin/destinataire/index.html.twig', [
             'destinataires' => $destinataireRepository->findAll(),
         ]);
     }
@@ -49,7 +47,7 @@ class DestinataireController extends AbstractController
             $entityManager->persist($destinataire);
             $entityManager->flush();
 
-            return $this->redirectToRoute('destinataire_index');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('destinataire/new.html.twig', [
@@ -59,17 +57,17 @@ class DestinataireController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="destinataire_show", methods={"GET"})
+     * @Route("/{id}/admin/show", name="destinataire_show", methods={"GET"})
      */
     public function show(Destinataire $destinataire): Response
     {
-        return $this->render('destinataire/index.html.twig', [
-            'destinataires' => $destinataire,
+        return $this->render('admin/destinataire/show.html.twig', [
+            'destinataire' => $destinataire,
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="destinataire_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="admin/destinataire_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Destinataire $destinataire, ValidationRepository $validationRepository): Response
     {
@@ -105,14 +103,14 @@ class DestinataireController extends AbstractController
 
         }
 
-        return $this->render('destinataire/edit.html.twig', [
+        return $this->render('admin/destinataire/edit.html.twig', [
             'destinataire' => $destinataire,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id}", name="destinataire_delete", methods={"DELETE"})
+     * @Route("/{id}", name="admin/destinataire_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Destinataire $destinataire): Response
     {

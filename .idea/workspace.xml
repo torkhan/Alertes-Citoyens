@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5999bb21-a1de-4801-b02e-0d8edf526ed3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accept_valide/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/adresse/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/adresse/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/intervention/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/intervention/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/message/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/message/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/recherche/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/recherche/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/service/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/service/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/type_destinataire/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/type_destinataire/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/type_intervention/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/type_intervention/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/type_message/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/type_message/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/type_service/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/type_service/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/user/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/destinataire/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/recherche/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/recherche.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/recherche.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DestinataireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DestinataireController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PlateformeAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PlateformeAdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/plateforme_admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/plateforme_admin/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/destinataire/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/destinataire/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/destinataire/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/destinataire/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/destinataire/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/destinataire/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/destinataire/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/destinataire/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/destinataire/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/destinataire/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/destinataire/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,17 +192,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmailsCedric\templates\destinataire" />
+      <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmailsCedric\templates\admin\validation" />
+      <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmailsCedric\templates\admin" />
+      <recent name="$PROJECT_DIR$/public/js" />
+      <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmailsCedric\src\config" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmailsCedric\templates\admin" />
       <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmails\src\Security" />
       <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmails\config\packages\test" />
       <recent name="C:\Users\Torkhan\Desktop\alertEmails\public\images" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/js" />
-      <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmailsCedric\src\config" />
-      <recent name="C:\Users\Torkhan\Documents\GitHub\alertEmails\config\packages" />
-      <recent name="C:\Users\Torkhan\Desktop\alertEmails\public" />
     </key>
   </component>
   <component name="RunManager">
@@ -306,6 +303,7 @@
       <workItem from="1588692641688" duration="46000" />
       <workItem from="1588693936397" duration="375000" />
       <workItem from="1589098170772" duration="5377000" />
+      <workItem from="1589287766942" duration="5647000" />
     </task>
     <servers />
   </component>
@@ -329,6 +327,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="552" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1586234765206" />
+    <state x="641" y="319" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589288895602">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="641" y="319" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080/1920.21.1050.1680@0.0.1920.1080" timestamp="1589288895602" />
     <state x="961" y="268" key="#com.intellij.ide.util.MemberChooser" timestamp="1588339746464">
       <screen x="0" y="22" width="2560" height="1418" />
     </state>

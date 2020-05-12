@@ -9,13 +9,15 @@
             <p>Pour recevoir nos alertes merci de remplir le formulaire ci-dessous.</p>
             <p>Après validation de nos équipes vous recevrez un mail ou sms (selon votre choix) vous confirmant votre inscription</p>
         </div>
-        {{ include('destinataire/_form.html.twig') }}
+        {{ include('admin/destinataire/_form.html.twig') }}
         <p class="vousDevez">(Vous devez accepter les conditions générales pour pouvoir valider votre inscription.)</p>
         <p class="vousDevez">(Vos données seront stockées sur nos serveurs et ne feront jamais l'objet d'un usage autre que ce service)</p>
         {# <a class="btn btn-primary" href="{{ path('destinataire_index') }}">retour à la liste</a>#}
 
+      
 
  {% block stylesheets %}
+
      <script src="{{ asset("js/inscription.js") }}"></script>
      <link rel="stylesheet" href="{{ asset("css/inscription.css") }}">
  {% endblock %}

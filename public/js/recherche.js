@@ -1,6 +1,6 @@
 function triRecherche() {
 
-    [].forEach.call( document.getElementsByClassName("table"), function(tableau) {
+    [].forEach.call( document.getElementsByClassName("table-responsive"), function(tableau) {
         let titre = tableau.getElementsByTagName("tr")[0];
         let xx = 1;
 

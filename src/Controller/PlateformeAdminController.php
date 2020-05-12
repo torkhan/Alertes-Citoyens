@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PlateformeAdminController extends AbstractController
 {
     /**
-     * @Route("/admnin/plateforme/admin", name="plateforme_admin")
+     * @Route("/admin/plateforme/admin", name="plateforme_admin")
      */
     public function index()
     {
