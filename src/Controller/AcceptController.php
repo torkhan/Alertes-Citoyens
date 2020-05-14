@@ -69,7 +69,7 @@ class AcceptController extends AbstractController
 
         $message = (new \Swift_Message('Réponse à votre demande de souscription à nos alertes'))
             ->setTo([$email => $nom." ".$prenom])
-            ->setFrom('torkhan2706@gmail.com')
+            ->setFrom('garou59128@gmail.com')
 
             ->setBody("<html lang=><head><meta charset='UTF-8'><title></title></head><body>Envoyé le" ." ".$date->format('d/m/y').'<br/>'.$messageEnvoye."</body></html>")
         ;

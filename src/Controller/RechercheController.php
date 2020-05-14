@@ -7,6 +7,7 @@ use App\Form\RechercheType;
 use App\Repository\DestinataireRepository;
 use App\Repository\InterventionRepository;
 use App\Repository\MessageRepository;
+use Swift_Mailer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -50,13 +51,13 @@ class RechercheController extends AbstractController
      * @Route("admin/envoyerRecherche", name="envoyerRecherche")
      * @param Request $request
      * @param DestinataireRepository $destinataireRepository
-     * @param \Swift_Mailer $mailer
+     * @param Swift_Mailer $mailer
      * @param MessageRepository $messageRepository
      * @return Response
      */
     function envoyerRecherche(Request $request,
                               DestinataireRepository $destinataireRepository,
-                              \Swift_Mailer $mailer,
+                              Swift_Mailer $mailer,
                               MessageRepository $messageRepository):Response{
         // recupération des données de la page recherche (les ids)
         $idUsers = $request->request->get('idUsers');
@@ -105,7 +106,7 @@ class RechercheController extends AbstractController
                 //envoie des messages
 
                 $message = (new \Swift_Message($nomIntervention))
-                    ->setFrom('torkhan2706@gmail.com')
+                    ->setFrom('garou59128@gmail.com')
                     ->setTo($destinataire['adresseMailDestinataire'])
                     ->setBody($corpsMessage, 'text/html', 'utf-8');
                 $mailer->send($message);

@@ -25,6 +25,28 @@ class DestinataireController extends AbstractController
         ]);
     }
 
+
+
+   /* function uniqueMail(Request $request,
+                              DestinataireRepository $destinataireRepository, Destinataire $destinataire):Response
+    {
+        if (isset($_POST['email_check'])) {
+
+            $sql = $request->request->get('email');
+            $results = $this
+                ->getDoctrine()
+                ->getManager()
+                ->getRepository($destinataire)
+                ->findOneBy($sql);
+            if ($results > 0) {
+                echo "taken";
+            }else{
+                echo 'not_taken';
+            }
+            exit();
+        }
+    }*/
+
     /**
      * @Route("/new", name="destinataire_new", methods={"GET","POST"})
      */
@@ -33,6 +55,8 @@ class DestinataireController extends AbstractController
         $destinataire = new Destinataire();
         $form = $this->createForm(DestinataireType::class, $destinataire);
         $form->handleRequest($request);
+
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();

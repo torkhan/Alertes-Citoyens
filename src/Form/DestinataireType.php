@@ -64,6 +64,7 @@ class DestinataireType extends AbstractType
             ->add('adresseMailDestinataire', EmailType::class,[
                 'required' => true,
                 'label' => 'Email',
+                "help" => "Veuillez saisir au minimum une adresse mail ou un numéro de téléphone",
                 'constraints' => [
 
                 ],
@@ -71,6 +72,7 @@ class DestinataireType extends AbstractType
             ->add('numeroTelephoneDestinataire', TextType::class,[
                 'required' => true,
                 'label' => 'Téléphone portable',
+                "help" => "Veuillez saisir au minimum une adresse mail ou un numéro de téléphone",
                 'constraints' => [
 
                 ],

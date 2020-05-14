@@ -3,12 +3,14 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <div class="container w-75">
-        <h1>Formulaire d'incription </h1>
+
+        <h1 class="text-center">Formulaire d'incription </h1>
         <div class="text-center border rounded mt-5 mb-5">
             <p>Pour recevoir nos alertes merci de remplir le formulaire ci-dessous.</p>
             <p>Après validation de nos équipes vous recevrez un mail ou sms (selon votre choix) vous confirmant votre inscription</p>
         </div>
+    <div id="error_msg"></div>
+    <span></span>
         {{ include('admin/destinataire/_form.html.twig') }}
         <p class="vousDevez">(Vous devez accepter les conditions générales pour pouvoir valider votre inscription.)</p>
         <p class="vousDevez">(Vos données seront stockées sur nos serveurs et ne feront jamais l'objet d'un usage autre que ce service)</p>
@@ -21,5 +23,5 @@
      <script src="{{ asset("js/inscription.js") }}"></script>
      <link rel="stylesheet" href="{{ asset("css/inscription.css") }}">
  {% endblock %}
-    </div>
+
 {% endblock %}

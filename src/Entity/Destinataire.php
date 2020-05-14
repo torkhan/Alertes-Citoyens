@@ -6,10 +6,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\DestinataireRepository")
  */
+
+
 class Destinataire
 {
     /**
@@ -32,6 +34,7 @@ class Destinataire
     private $nomDestinataire;
 
     /**
+
      * @ORM\Column(type="string", length=250, nullable=true)
      * @Assert\Regex(pattern="/^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/", message="Votre mail doit être au format xxxx@yyyy.zz")
      */

@@ -34,16 +34,16 @@ $(".checkboxes").click(function(){
 
 function envoyer(e) {
     e.preventDefault();
-    let idsDestinateurs = [];
+    let idsDestinataires = [];
     let nombreDeCheckboxesChecked = document.querySelectorAll('.checkboxes:checked');
     nombreDeCheckboxesChecked.forEach(function (data) {
         let ids = data.value;
-        idsDestinateurs.push(ids);
+        idsDestinataires.push(ids);
     });
 
     let donneeErreur = document.querySelector("#listeVide");
 
-    if(idsDestinateurs.length == 0){
+    if(idsDestinataires.length == 0){
 
         donneeErreur.classList.remove('d-none');
     }else{
@@ -54,7 +54,7 @@ function envoyer(e) {
             url: "envoyerRecherche",
             method: 'POST',
             data: {
-                "idUsers": idsDestinateurs,
+                "idUsers": idsDestinataires,
                 "idMessage": idMessage
             },
             success: function (data) {
