@@ -30,13 +30,11 @@ class RechercheController extends AbstractController
         $formRecherche = $this->createForm(RechercheType::class, $recherche);
         $formRecherche->handleRequest($request);
 
-
         $nomDestinataire = $recherche->getNomDestinataire();
         $rueDestinataire = $recherche->getNomRueDestinataire1();
         $villeDestinataire = $recherche->getIdAdresse();
 
         $results = $destinataireRepository->RechercheDestinataire($nomDestinataire, $rueDestinataire, $villeDestinataire );
-
 
         return $this->render('admin/recherche/index.html.twig', [
             'controller_name' => 'RechercheController',
@@ -77,7 +75,9 @@ class RechercheController extends AbstractController
 
         // recup message
         $messageRecup = $contentMessage[0]->getContenuMessage();
-        $messageDateEnvoie = $contentMessage[0]->getDateEnvoi();//, "d-M-Y");
+/*        $messageDateEnvoie = $contentMessage[0]->getDateEnvoi();//, "d-M-Y");*/
+        $messageDateEnvoie = new \DateTime('now');
+        $messageDateEnvoie-> setTimezone(new \DateTimeZone('Europe/Paris'));
         $dateformatEnvoie = date_format($messageDateEnvoie, "d-m-Y");
 
         // recup type message
@@ -90,16 +90,13 @@ class RechercheController extends AbstractController
         $dateDebutIntervention = date_format($contentMessage[0]->getIdIntervention()->getDateDebutIntervention(), "d-M-Y") ;
         $dateFinIntervention = date_format($contentMessage[0]->getIdIntervention()->getDateFinIntervention(), "d-M-Y") ;
 
-
         // corps du message
         $corpsMessage= "";
         $corpsMessage = "<h2>".$nomIntervention."</h2>";
         $corpsMessage .= "<p>Date debut de l'intervention : ".$dateDebutIntervention."</p>";
         $corpsMessage .= "<p>Date de fin de l'intervention : ".$dateFinIntervention."</p>";
         $corpsMessage .= "<p>Le type d'intervention concerne ".$messageTypeMessage."</p>";
-        $corpsMessage .= "<p>Attention ce message vous concerne</p><p>".$messageRecup."</p><p>Date d'envoie du message : ".$dateformatEnvoie."</p>";
-
-
+        $corpsMessage .= "<p>Attention ce message vous concerne</p><p>".$messageRecup."</p><p>Date d'envoi du message : ".$dateformatEnvoie."</p>";
 
         foreach ($listeDestinataires as $destinataires) {
             foreach ($destinataires as $key=>$destinataire) {
@@ -112,7 +109,6 @@ class RechercheController extends AbstractController
                 $mailer->send($message);
             }
         }
-
         return $this->json([
             "code" => 200,
             "envoye" => "ok"

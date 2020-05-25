@@ -25,13 +25,10 @@ class AcceptController extends AbstractController
      */
     public function index(Request $request, DestinataireRepository $destinataireRepository, ValidationRepository $validationRepository)
     {
-
-
         $formAccept = $this->createForm(DestinataireType::class);
         $formAccept->handleRequest($request);
         $results = $destinataireRepository->findOneBySomeField($validationRepository->find(1));
         $destinataires = $destinataireRepository->findAll();
-
 
         return $this->render('admin/accept/index.html.twig', [
             'controller_name' => 'acceptController',
@@ -52,8 +49,6 @@ class AcceptController extends AbstractController
      */
     public function validerDestinataire($id, Request $request,Destinataire $destinataire, ValidationRepository $validationRepository, \Swift_Mailer $mailer)
     {
-
-
         $destinataire = $this->getDoctrine()->getRepository(Destinataire::class)->find($id);
         $date = new \DateTime('now');
         $date->setTimezone(new \DateTimeZone('Europe/Paris'));
@@ -84,7 +79,6 @@ class AcceptController extends AbstractController
     /**
      * @Route("utilisateur/{id}/refuser", name="refuser_destinataire")
      * @param Destinataire $destinataire
-     *
      * @return RedirectResponse
      * @throws Exception
      */
@@ -107,7 +101,7 @@ class AcceptController extends AbstractController
         $message = (new \Swift_Message('Réponse à votre demande de souscription à nos alertes'))
             ->setTo([$email => $nom." ".$prenom])
 
-            ->setFrom('torkhan2706@gmail.com')
+            ->setFrom('garou59128@gmail@gmail.com')
 
             ->setBody("<html lang=><head><meta charset='UTF-8'><title></title></head><body>Envoyé le" ." ".$date->format('d/m/y').'<br/>'.$messageEnvoye."</body></html>")
         ;
@@ -138,7 +132,6 @@ class AcceptController extends AbstractController
 
         $destinataires = $destinataireRepository->findAll();
         foreach ($destinataires as $destinataire ) {
-            /*  if((isset($_POST['submit'])===true) && isset($_GET['checkboxes'])===true ){*/
 
             $date = new \DateTime('now');
             $date->setTimezone(new \DateTimeZone('Europe/Paris'));

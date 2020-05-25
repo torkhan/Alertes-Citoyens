@@ -2,7 +2,7 @@
     font-size: 15px;
 }
 
-/*Styling for errors on form*/
+/*Style pour les erreurs*/
 .form_error span {
     width: 80%;
     height: 35px;
@@ -14,7 +14,7 @@
     border: 1px solid #D83D5A;
 }
 
-/*Styling in case no errors on form*/
+/*Style si pas d'erreurs*/
 .form_success span {
     width: 80%;
     height: 35px;

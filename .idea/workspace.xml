@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5999bb21-a1de-4801-b02e-0d8edf526ed3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/alertEmails.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/alertEmails.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/swiftmailer.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/swiftmailer.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/inscription.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/inscription.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/accept.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/accept.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/inscription.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/inscription.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AcceptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AcceptController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DestinataireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DestinataireController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RechercheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RechercheController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ServiceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Destinataire.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Destinataire.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/DestinataireType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/DestinataireType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/service/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/service/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/destinataire/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RechercheType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RechercheType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/forms.fr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/forms.fr.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,6 +295,16 @@
       <workItem from="1589302995763" duration="386000" />
       <workItem from="1589372748719" duration="2666000" />
       <workItem from="1589376989500" duration="13169000" />
+      <workItem from="1589706792110" duration="2748000" />
+      <workItem from="1589790173190" duration="4242000" />
+      <workItem from="1589808622187" duration="13000" />
+      <workItem from="1589808650083" duration="692000" />
+      <workItem from="1589809386392" duration="3444000" />
+      <workItem from="1589874722098" duration="7342000" />
+      <workItem from="1589956697986" duration="8510000" />
+      <workItem from="1590389671073" duration="451000" />
+      <workItem from="1590391592586" duration="5000" />
+      <workItem from="1590391861316" duration="7066000" />
     </task>
     <servers />
   </component>

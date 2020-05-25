@@ -112,7 +112,7 @@ $(document).ready(function(){
     $('#destinataire_idValidation').hide();
 });*/
 
-/*/tentative valide unique mail en ajax=> donne erreur de route
+//tentative valide unique mail en ajax=> donne erreur Warning: Illegal offset type in isset or empty
 $(document).ready(function(){
 
     let email_state = false;
@@ -135,12 +135,12 @@ $(document).ready(function(){
                     email_state = false;
                     $('#destinataire_adresseMailDestinataire').parent().removeClass();
                     $('#destinataire_adresseMailDestinataire').parent().addClass("form_error");
-                    $('#destinataire_adresseMailDestinataire').siblings("span").text('Sorry... Email already taken');
+                    $('#destinataire_adresseMailDestinataire').siblings("span").text('Désolé cette adresse Email est déjà utilisée');
                 }else if (response === 'not_taken') {
                     email_state = true;
                     $('#destinataire_adresseMailDestinataire').parent().removeClass();
                     $('#destinataire_adresseMailDestinataire').parent().addClass("form_success");
-                    $('#destinataire_adresseMailDestinataire').siblings("span").text('Email available');
+                    $('#destinataire_adresseMailDestinataire').siblings("span").text('Adresse Email Valide');
                 }
             }
         });
@@ -151,11 +151,11 @@ $(document).ready(function(){
         let email = $('#destinataire_adresseMailDestinataire').val();
 
         if (email_state === false) {
-            $('#error_msg').text('Fix the errors in the form first');
+            $('#error_msg').text('Merci de revoir les erreurs inqdiquées');
         }else{
             // proceed with form submission
             $.ajax({
-                url: 'destinataire_new',
+                url: 'new',
                 type: 'post',
                 data: {
                     'save' : 1,
@@ -172,6 +172,6 @@ $(document).ready(function(){
         }
     });
 });
-*/
+
 
 

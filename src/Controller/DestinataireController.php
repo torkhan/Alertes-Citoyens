@@ -25,37 +25,54 @@ class DestinataireController extends AbstractController
         ]);
     }
 
-
-
-   /* function uniqueMail(Request $request,
-                              DestinataireRepository $destinataireRepository, Destinataire $destinataire):Response
+    /**
+     * @Route("/uniqueMail", name="uniqueMail", methods={"GET","POST"})
+     * @param DestinataireRepository $destinataireRepository
+     * @param Destinataire $destinataire
+     */
+//done une erreur sur la requête ajax =>Warning: Illegal offset type in isset or empty
+   /* public function uniqueMail(Request $request, DestinataireRepository $destinataireRepository):Response
     {
-        if (isset($_POST['email_check'])) {
+        if (isset($_POST['email_check'])){
 
             $sql = $request->request->get('email');
             $results = $this
                 ->getDoctrine()
                 ->getManager()
-                ->getRepository($destinataire)
+                ->getRepository($destinataireRepository)
                 ->findOneBy($sql);
             if ($results > 0) {
-                echo "taken";
+                return $this->json([
+                    'status' => 'taken',
+                    'message' => 1],
+                    200);
+
             }else{
-                echo 'not_taken';
+                return $this->json([
+                    'status' => 'not_taken',
+                    'message' => 0],
+                    200);
+
             }
-            exit();
-        }
+        } return $this->json([
+        "code" => 200,
+            ], 200);
     }*/
+
+
 
     /**
      * @Route("/new", name="destinataire_new", methods={"GET","POST"})
+     * @param DestinataireRepository $destinataireRepository
+     * @param Destinataire $destinataire
      */
-    public function new(Request $request, ValidationRepository $validationRepository): Response
+
+
+    public function new(Request $request, ValidationRepository $validationRepository, DestinataireRepository $destinataireRepository): Response
     {
         $destinataire = new Destinataire();
         $form = $this->createForm(DestinataireType::class, $destinataire);
         $form->handleRequest($request);
-
 
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -66,7 +83,6 @@ class DestinataireController extends AbstractController
             $destinataire -> setDateEnregistrementDestinataire($date);
             $validation = $validationRepository->find(1);
             $destinataire->setIdValidation($validation);
-
 
             $entityManager->persist($destinataire);
             $entityManager->flush();
@@ -110,20 +126,20 @@ class DestinataireController extends AbstractController
             return $this->redirectToRoute('destinataire_index');
         }else{
 
-                if(isset($_Post['checkboxes'])){
-                    $form->getData();
+            if(isset($_Post['checkboxes'])){
+                $form->getData();
 
-                    $date = new \DateTime('now');
-                    $date->setTimezone(new \DateTimeZone('Europe/Paris'));
-                    $destinataire -> setDateValidationDestinataire($date);
+                $date = new \DateTime('now');
+                $date->setTimezone(new \DateTimeZone('Europe/Paris'));
+                $destinataire -> setDateValidationDestinataire($date);
 
-                    $destinataire ->setIdValidation(2);
-                    $this->getDoctrine()->getManager()->flush();
+                $destinataire ->setIdValidation(2);
+                $this->getDoctrine()->getManager()->flush();
 
 
 
-                    return $this->redirectToRoute('plateforme_index');
-                }
+                return $this->redirectToRoute('plateforme_index');
+            }
 
         }
 
