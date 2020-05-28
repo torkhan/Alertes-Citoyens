@@ -101,7 +101,7 @@ class AcceptController extends AbstractController
         $message = (new \Swift_Message('Réponse à votre demande de souscription à nos alertes'))
             ->setTo([$email => $nom." ".$prenom])
 
-            ->setFrom('garou59128@gmail@gmail.com')
+            ->setFrom('garou59128@gmail.com')
 
             ->setBody("<html lang=><head><meta charset='UTF-8'><title></title></head><body>Envoyé le" ." ".$date->format('d/m/y').'<br/>'.$messageEnvoye."</body></html>")
         ;
@@ -120,7 +120,6 @@ class AcceptController extends AbstractController
      * @Route("utilisateur/valider", name="valider_all_destinataire")
      *
      * @param Request $request
-     *
      * @param DestinataireRepository $destinataireRepository
      * @param ValidationRepository $validationRepository
      * @param \Swift_Mailer $mailer
@@ -130,7 +129,7 @@ class AcceptController extends AbstractController
     public function validerAllDestinataire(  Request $request,DestinataireRepository $destinataireRepository, ValidationRepository $validationRepository, \Swift_Mailer $mailer)
     {
 
-        $destinataires = $destinataireRepository->findAll();
+        $destinataires = $destinataireRepository->findOneBySomeField($validationRepository->find(1));
         foreach ($destinataires as $destinataire ) {
 
             $date = new \DateTime('now');
@@ -154,9 +153,6 @@ class AcceptController extends AbstractController
             $mailer->send($message);
             $this->getDoctrine()->getManager()->flush();
 
-
-
-
         } return $this->redirectToRoute('accept');
     }
 
@@ -164,42 +160,38 @@ class AcceptController extends AbstractController
      * @Route("utilisateur/refuser", name="refuser_all_destinataire")
      *
      * @param Request $request
-     *
      * @param DestinataireRepository $destinataireRepository
      * @param ValidationRepository $validationRepository
      * @param \Swift_Mailer $mailer
      * @return RedirectResponse
      * @throws Exception
      */
-    public function refuserAllDestinataire( Request $request,DestinataireRepository $destinataireRepository, ValidationRepository $validationRepository, \Swift_Mailer $mailer)
+    public function refuserAllDestinataire(  Request $request,DestinataireRepository $destinataireRepository, ValidationRepository $validationRepository, \Swift_Mailer $mailer)
     {
 
-        $destinataires = $destinataireRepository->findAll();
+        $destinataires = $destinataireRepository->findOneBySomeField($validationRepository->find(1));
         foreach ($destinataires as $destinataire ) {
-            if(isset($_POST["checkboxes"])){
 
-                $date = new \DateTime('now');
-                $date->setTimezone(new \DateTimeZone('Europe/Paris'));
-                $destinataire->setDateModificationDestinataire($date);
-                $destinataire->setDateValidationDestinataire($date);
-                $validation = $validationRepository->find(3);
-                $destinataire->setIdValidation($validation);
+            $date = new \DateTime('now');
+            $date->setTimezone(new \DateTimeZone('Europe/Paris'));
+            $destinataire->setDateModificationDestinataire($date);
+            $destinataire->setDateValidationDestinataire($date);
+            $validation = $validationRepository->find(3);
+            $destinataire->setIdValidation($validation);
 
-                $nom = $destinataire->getNomDestinataire();
-                $prenom = $destinataire->getPrenomDestinataire();
-                $email = $destinataire->getAdresseMailDestinataire();
-                $messageEnvoye = 'Votre demande de souscription à été refusée';
+            $nom = $destinataire->getNomDestinataire();
+            $prenom = $destinataire->getPrenomDestinataire();
+            $email = $destinataire->getAdresseMailDestinataire();
+            $messageEnvoye = 'Votre demande de souscription à été refusée';
 
-                $message = (new \Swift_Message('Réponse à votre demande de souscription à nos alertes'))
-                    ->setTo([$email => $nom . " " . $prenom])
-                    ->setFrom('torkhan2706@gmail.com')
-                    ->setBody("<html lang=><head><meta charset='UTF-8'><title></title></head><body>Envoyé le" . " " . $date->format('d/m/y') . '<br/>' . $messageEnvoye . "</body></html>");
+            $message = (new \Swift_Message('Réponse à votre demande de souscription à nos alertes'))
+                ->setTo([$email => $nom . " " . $prenom])
+                ->setFrom('torkhan2706@gmail.com')
+                ->setBody("<html lang=><head><meta charset='UTF-8'><title></title></head><body>Envoyé le" . " " . $date->format('d/m/y') . '<br/>' . $messageEnvoye . "</body></html>");
 // Send the message
-                $message->setContentType("text/html");
-                $mailer->send($message);
-                $this->getDoctrine()->getManager()->flush();
-
-            }
+            $message->setContentType("text/html");
+            $mailer->send($message);
+            $this->getDoctrine()->getManager()->flush();
 
         } return $this->redirectToRoute('accept');
     }

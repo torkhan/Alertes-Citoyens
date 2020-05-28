@@ -21,7 +21,9 @@ class MotifType extends AbstractType
 
                     new Assert\Length([
                         'min' => 3,
+                        'minMessage' => 'Votre motif doit contenir au minimum {{3}} charactères',
                         'max' => 150,
+                        'maxMessage' => 'votre motif ne peux contenir que {{150}} charactères au maximum'
                     ]),
                 ],
             ])

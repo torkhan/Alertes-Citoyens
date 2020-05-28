@@ -54,6 +54,8 @@ class UserType extends AbstractType
             ->add('email', EmailType::class,[
                 'required' => true,
                 'label' => "Email",
+                "help" => "En attente de contrôle",
+
             ])
 
             ->add('password', PasswordType::class,[
@@ -117,6 +119,7 @@ class UserType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
+            'translation_domain' => 'forms'
         ]);
     }
 }

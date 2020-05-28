@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Destinataire;
 use App\Entity\User;
 use App\Form\UserType;
+use App\Repository\DestinataireRepository;
 use App\Repository\UserRepository;
 use App\Security\SecurityAuthenticator;
 use Exception;
@@ -121,5 +123,33 @@ class UserController extends AbstractController
         }
 
         return $this->redirectToRoute('user_index');
+    }
+
+    /**
+     * @Route("/uniqueMailUser", name="uniqueMailUser", methods={"GET","POST"})
+     * @param UserRepository $userRepository
+     * @param User $user
+     */
+
+    public function uniqueMailUser(Request $request, UserRepository $userRepository):Response
+    {
+        $sql = $request->get('email');
+        // dd($sql);
+        $results = $userRepository->findUserByEmail($sql);
+        // dd($results);
+        if (count($results) > 0) {
+            return $this->json(
+                'taken',
+
+                200);
+
+        }else{
+            return $this->json(
+                'not_taken',
+
+                200);
+
+        }
+
     }
 }

@@ -100,4 +100,14 @@ class DestinataireRepository extends ServiceEntityRepository
             ;
     }
 
+    public function findUserByEmail($email)
+    {
+        return $this->createQueryBuilder('d')
+            ->andWhere('d.adresseMailDestinataire = :val')
+            ->setParameter('val', $email)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
 }

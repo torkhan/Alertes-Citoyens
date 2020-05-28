@@ -28,9 +28,9 @@ class InterventionType extends AbstractType
 
                     new Assert\Length([
                         'min' => 3,
-                        'minMessage' => 'Votre rue doit contenir au minimum {{3}} charactères',
+                        'minMessage' => 'Votre nom d\'intervention doit contenir au minimum {{3}} charactères',
                         'max' => 150,
-                        'maxMessage' => 'votre rue ne peux contenir que {{150}} charactères au maximum'
+                        'maxMessage' => 'votre nom d\'intervention ne peux contenir que {{150}} charactères au maximum'
                     ]),
                 ],
             ])
@@ -41,9 +41,9 @@ class InterventionType extends AbstractType
 
                     new Assert\Length([
                         'min' => 3,
-                        'minMessage' => 'Votre rue doit contenir au minimum {{3}} charactères',
+                        'minMessage' => 'Votre nom de rue doit contenir au minimum {{3}} charactères',
                         'max' => 150,
-                        'maxMessage' => 'votre rue ne peux contenir que {{150}} charactères au maximum'
+                        'maxMessage' => 'votre nom de rue ne peux contenir que {{150}} charactères au maximum'
                     ]),
                 ],
             ])

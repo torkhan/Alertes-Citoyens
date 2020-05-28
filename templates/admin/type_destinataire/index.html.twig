@@ -6,10 +6,10 @@
     <h1 class="text-center mb-4">Types de destinataires </h1>
 
     <table class="table-responsive">
-        <thead>
+        <thead class="mb-2">
             <tr>
 
-                <th>Type de destinataire</th>
+                <th class="mr-5">Type de destinataire</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -17,9 +17,9 @@
         {% for type_destinataire in type_destinataires %}
             <tr>
 
-                <td>{{ type_destinataire.destinataireType }}</td>
+                <td >{{ type_destinataire.destinataireType }}</td>
                 <td>
-                    <a class="btn btn-info" href="{{ path('type_destinataire_show', {'id': type_destinataire.id}) }}">Voir</a>
+                    <a class="btn btn-info mr-3" href="{{ path('type_destinataire_show', {'id': type_destinataire.id}) }}">Voir</a>
                     <a class="btn btn-warning" href="{{ path('type_destinataire_edit', {'id': type_destinataire.id}) }}">Editer</a>
                 </td>
             </tr>

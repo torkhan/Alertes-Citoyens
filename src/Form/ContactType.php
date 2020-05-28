@@ -25,7 +25,7 @@ class ContactType extends AbstractType
                 'label' => 'Prénom',
                 'constraints' => [
                     new Assert\NotBlank([
-                        'message' => ['Veuillez renseigner votre prénom']
+                        'message' => 'Veuillez renseigner votre prénom'
                     ]),
                     new Assert\Length([
                         'min' => 3,

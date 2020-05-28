@@ -21,9 +21,9 @@ class TypeMessageType extends AbstractType
 
                     new Assert\Length([
                         'min' => 3,
-                        'minMessage' => 'Votre rue doit contenir au minimum {{3}} charactères',
+                        'minMessage' => 'Votre titre doit contenir au minimum {{3}} charactères',
                         'max' => 150,
-                        'maxMessage' => 'votre rue ne peux contenir que {{150}} charactères au maximum'
+                        'maxMessage' => 'votre titre ne peux contenir que {{150}} charactères au maximum'
                     ]),
                 ],
             ])

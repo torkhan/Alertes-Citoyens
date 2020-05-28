@@ -30,35 +30,28 @@ class DestinataireController extends AbstractController
      * @param DestinataireRepository $destinataireRepository
      * @param Destinataire $destinataire
      */
-//done une erreur sur la requête ajax =>Warning: Illegal offset type in isset or empty
-   /* public function uniqueMail(Request $request, DestinataireRepository $destinataireRepository):Response
+
+    public function uniqueMail(Request $request, DestinataireRepository $destinataireRepository):Response
     {
-        if (isset($_POST['email_check'])){
+        $sql = $request->get('email');
+        // dd($sql);
+        $results = $destinataireRepository->findUserByEmail($sql);
+        // dd($results);
+        if (count($results) > 0) {
+            return $this->json(
+                'taken',
 
-            $sql = $request->request->get('email');
-            $results = $this
-                ->getDoctrine()
-                ->getManager()
-                ->getRepository($destinataireRepository)
-                ->findOneBy($sql);
-            if ($results > 0) {
-                return $this->json([
-                    'status' => 'taken',
-                    'message' => 1],
-                    200);
+                200);
 
-            }else{
-                return $this->json([
-                    'status' => 'not_taken',
-                    'message' => 0],
-                    200);
+        }else{
+            return $this->json(
+                'not_taken',
 
-            }
-        } return $this->json([
-        "code" => 200,
-            ], 200);
-    }*/
+                200);
 
+        }
+
+    }
 
 
     /**
