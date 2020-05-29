@@ -12,7 +12,7 @@
     <div id="error_msg"></div>
     <span></span>
         {{ include('admin/destinataire/_form.html.twig') }}
-        <p class="vousDevez">(Vous devez accepter les conditions générales pour pouvoir valider votre inscription.)</p>
+    <p class="vousDevez"><a href="{{ path('accord_cgu') }}" target="_blank">(Vous devez accepter les conditions générales pour pouvoir valider votre inscription.)</a></p>
         <p class="vousDevez">(Vos données seront stockées sur nos serveurs et ne feront jamais l'objet d'un usage autre que ce service)</p>
 
 

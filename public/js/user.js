@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     let email_state = false;
 
-    $('#user_email').on('blur', function(){
+    $('#user_email').blur (function(){
         let email = $('#user_email').val();
         if (email === '') {
             email_state = false;
@@ -14,7 +14,6 @@ $(document).ready(function(){
             data: {
 
                 'email' : email,
-
             },
             success: function(response){
 

@@ -7,12 +7,7 @@ function triRecherche() {
         [].forEach.call( titre.querySelectorAll("th"), function(Th) {
             Th.addEventListener("click", triTableau, false);
             Th.setAttribute("data-pos", xx);
-            /*if(Th.getAttribute("data-tri")==="1") {
-                Th.innerHTML += "<span class=\"flecheAsc\"></span>";
-            } else {
-                Th.setAttribute("data-tri", "0");
-                Th.innerHTML += "<span class=\"flecheDesc\"></span>";
-            }*/
+
             // Tri par défaut
             if (Th.className==="selection") {
                 Th.click();
@@ -43,8 +38,6 @@ function triTableau() {
 
     this.className = "selection";
 
-
-
     let tbody = this.parentNode.parentNode.parentNode.getElementsByTagName("tbody")[0];
     let ligne = tbody.rows;
     let nbrLigne = ligne.length;
@@ -69,7 +62,7 @@ function triTableau() {
 
     function compareLocale(a, b) {return a[toto-1].localeCompare(b[toto-1]);}
 
-    if (col==0) colonne.reverse();
+    if (col===0) colonne.reverse();
 
 
     for(i = 0; i < nbrLigne; i++){

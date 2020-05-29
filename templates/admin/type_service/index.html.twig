@@ -3,13 +3,12 @@
 {% block title %}Type de services{% endblock %}
 
 {% block body %}
-    <h1 class="text-center mb-4">Types de services </h1>
+    <h1 class="text-center mb-5">Types de services </h1>
 
 
     <table class="table-responsive">
-        <thead>
+        <thead class="mb-4" >
             <tr>
-               {# <th>Id</th>#}
                 <th>ServiceType</th>
                 <th>Actions</th>
             </tr>
@@ -17,10 +16,10 @@
         <tbody>
         {% for type_service in type_services %}
             <tr>
-                {#<td>{{ type_service.id }}</td>#}
+
                 <td>{{ type_service.serviceType }}</td>
                 <td>
-                    <a class="btn btn-info" href="{{ path('type_service_show', {'id': type_service.id}) }}">Voir</a>
+                    <a class="btn btn-info mr-3 ml-3" href="{{ path('type_service_show', {'id': type_service.id}) }}">Voir</a>
                     <a class="btn btn-warning" href="{{ path('type_service_edit', {'id': type_service.id}) }}">Editer</a>
                 </td>
             </tr>
@@ -36,5 +35,7 @@
 
             <a class="btn btn-primary ml-5" href="{{ path('plateforme_admin') }}">Retour plateforme</a>
         </div>
-
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset("css/typeMessage.css") }}">
+    {% endblock %}
 {% endblock %}

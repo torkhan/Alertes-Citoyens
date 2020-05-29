@@ -19,49 +19,28 @@ $(document).ready(function(){
     })
 });
 
-
-$(document).ready(function(){  //coche auto sur recepetion par mail
-    $( "#destinataire_adresseMailDestinataire" ).change(function() {
-        let $inputs = [$('#destinataire_adresseMailDestinataire'), $('#destinataire_okMailDestinataire')];
-
-        if ($inputs[0].val() !== "") {
-            $inputs[1].attr("checked", "checked")
-        }
-    });
-});
-$(document).ready(function(){ //coche auto sur recepetion par sms
+$(document).ready(function(){
 
     $( "#destinataire_numeroTelephoneDestinataire" ).change(function() {
         let $inputs = [$('#destinataire_numeroTelephoneDestinataire'),  $('#destinataire_okSmsDestinataire')];
 
-        if ($inputs[0].val() !== "") {
+        if ($inputs[0].val() !== "") {//coche auto sur recepetion par sms
             $inputs[1].attr("checked", "checked")
         }
-
+        if ($inputs[0].val() === "") {//decoche auto si input tel efface
+            $inputs[1].attr("checked", false)
+        }
     });
-});
 
-
-$(document).ready(function(){  //decoche auto si input mail efface
     $( "#destinataire_adresseMailDestinataire" ).change(function() {
         let $inputs = [$('#destinataire_adresseMailDestinataire'), $('#destinataire_okMailDestinataire')];
 
-        if ($inputs[0].val() === "") {
+        if ($inputs[0].val() !== "") {//coche auto sur recepetion par mail
+            $inputs[1].attr("checked", "checked")
+        }
+        if ($inputs[0].val() === "") {//decoche auto si input mail efface
             $inputs[1].attr("checked", false)
         }
-
-    });
-});
-
-$(document).ready(function(){ //decoche auto si input tel efface
-
-    $( "#destinataire_numeroTelephoneDestinataire" ).change(function() {
-        let $inputs = [$('#destinataire_numeroTelephoneDestinataire'),  $('#destinataire_okSmsDestinataire')];
-
-        if ($inputs[0].val() === "") {
-            $inputs[1].attr("checked", false)
-        }
-
     });
 });
 
@@ -84,9 +63,6 @@ $(document).ready(function(){
     })
 });
 
-
-
-
 //cache le lien de validation si la case accepter les cgu n est pas cochée
 $(document).ready(function(){
     $('#btnInscription').hide();
@@ -104,35 +80,30 @@ $(document).ready(function(){
                 $('.vousDevez').show();
             }
         }
-
     });
-
 });
-/*$(document).ready(function(){
-    $('#destinataire_idValidation').hide();
-});*/
+
 
 
 $(document).ready(function(){
 
     let email_state = false;
-
-    $('#destinataire_adresseMailDestinataire').on('blur', function(){
+// on récupère la perte de focus sur le champ
+    $('#destinataire_adresseMailDestinataire').blur (function(){
+        //on met en variable sa valeur
         let email = $('#destinataire_adresseMailDestinataire').val();
         if (email === '') {
             email_state = false;
             return;
-        }
+        }//pour comparaison via requête
         $.ajax({
             url: "/uniqueMail",
             method: 'POST',
             data: {
-               /* 'email_check' : 1,*/
-                'email' : email,
-
+               'email' : email,
             },
             success: function(response){
-
+                //action sur les champs
                 if (response !== "not_taken") {
                     email_state = false;
                     $('#destinataire_adresseMailDestinataire').parent().removeClass();
