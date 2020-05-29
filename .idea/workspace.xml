@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5999bb21-a1de-4801-b02e-0d8edf526ed3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/typeMessage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alertecitoyen62141cdd.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/accept.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/accept.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/inscription.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/inscription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/recherche.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/recherche.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/type_service/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/type_service/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/destinataire/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/destinataire/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RechercheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RechercheController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/message/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/message/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/message/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/message/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,6 +303,7 @@
       <workItem from="1590669647361" duration="7851000" />
       <workItem from="1590736331823" duration="3854000" />
       <workItem from="1590740202784" duration="2457000" />
+      <workItem from="1590743987938" duration="5006000" />
     </task>
     <servers />
   </component>

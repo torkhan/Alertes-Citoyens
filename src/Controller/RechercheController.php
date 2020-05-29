@@ -75,7 +75,7 @@ class RechercheController extends AbstractController
 
         // recup message
         $messageRecup = $contentMessage[0]->getContenuMessage();
-/*        $messageDateEnvoie = $contentMessage[0]->getDateEnvoi();//, "d-M-Y");*/
+
         $messageDateEnvoie = new \DateTime('now');
         $messageDateEnvoie-> setTimezone(new \DateTimeZone('Europe/Paris'));
         $dateformatEnvoie = date_format($messageDateEnvoie, "d-m-Y");
@@ -92,11 +92,15 @@ class RechercheController extends AbstractController
 
         // corps du message
         $corpsMessage= "";
-        $corpsMessage = "<h2>".$nomIntervention."</h2>";
+        $corpsMessage .= "<H1>Alertes Citoyens vous informe</H1>";
+        $corpsMessage .= "<h2>".$nomIntervention."</h2>";
+        $corpsMessage .= "<p>".$messageTypeMessage."</p>";
         $corpsMessage .= "<p>Date debut de l'intervention : ".$dateDebutIntervention."</p>";
         $corpsMessage .= "<p>Date de fin de l'intervention : ".$dateFinIntervention."</p>";
-        $corpsMessage .= "<p>Le type d'intervention concerne ".$messageTypeMessage."</p>";
-        $corpsMessage .= "<p>Attention ce message vous concerne</p><p>".$messageRecup."</p><p>Date d'envoi du message : ".$dateformatEnvoie."</p>";
+        $corpsMessage .= "<p>".$rueIntervention."</p>";
+        $corpsMessage .= "<p>".$villeIntervention."</p>";
+
+        $corpsMessage .= "<p>".$messageRecup."</p><p>Date d'envoi du message : ".$dateformatEnvoie."</p>";
 
         foreach ($listeDestinataires as $destinataires) {
             foreach ($destinataires as $key=>$destinataire) {

@@ -10,11 +10,11 @@
             <thead>
             <tr>
                 <th>Titre du message</th>
-                <th>Intrevention</th>
+                <th>Intervention</th>
                 <th>Type d'intervention</th>
                 <th>Contenu du message</th>
                 <th>Date d'envoi</th>
-                <th>Statut du message</th>
+                {#<th>Statut du message</th>#}
                 {# <th>Image1</th>
                  <th>Image2</th>
                  <th>Image3</th>#}
@@ -28,9 +28,10 @@
                 <tr>
                     <td>{{ message.idTypeMessage.messageType}}</td>
                     <td>{{ message.idIntervention.nomIntervention }}</td>
+                    <td>{{ message.idIntervention.idTypeIntervention.interventionType }}</td>
                     <td>{{ message.contenuMessage }}</td>
                     <td>{{ message.dateEnvoi ? message.dateEnvoi|date('d-m-Y H:i:s') : '' }}</td>
-                    <td>{{ message.statutMessage }}</td>
+                    {#<td>{{ message.statutMessage }}</td>#}
                     {#<td>{{ message.image1 }}</td>
                     <td>{{ message.image2 }}</td>
                     <td>{{ message.image3 }}</td>#}
