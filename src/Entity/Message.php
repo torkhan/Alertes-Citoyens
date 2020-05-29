@@ -101,6 +101,12 @@ class Message
     private $dateFinIntervention;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\TypeIntervention", inversedBy="interventions")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $idTypeIntervention;
+
+    /**
      * @return int|null
      */
     public function getId(): ?int

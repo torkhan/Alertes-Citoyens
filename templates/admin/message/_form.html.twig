@@ -2,11 +2,11 @@
    {# {{ form_widget(form) }}#}
     {{ form_row(form.idTypeMessage) }}
     {{ form_row(form.idIntervention) }}
-    {#{{ form_row(form.typeIntervention.interventionType) }}#}
+    {{ form_row(form.idTypeIntervention) }}
     {{ form_row(form.dateEnvoi) }}
     {{ form_row(form.contenuMessage) }}
- {{ tinymce_init({'use_callback_tinymce_init': true, 'theme': {'simple': {'menubar': false}}}) }}
-<textarea class="tinymce"></textarea>
+{# {{ tinymce_init({'use_callback_tinymce_init': true, 'theme': {'simple': {'menubar': false}}}) }}
+<textarea class="tinymce"></textarea>#}
     {{ form_row(form.dateDebutIntervention) }}
     {{ form_row(form.dateFinIntervention) }}
     {{ form_row(form.image1) }}

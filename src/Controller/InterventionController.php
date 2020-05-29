@@ -42,7 +42,7 @@ class InterventionController extends AbstractController
             $entityManager->persist($intervention);
             $entityManager->flush();
 
-            return $this->redirectToRoute('admin/intervention_index');
+            return $this->redirectToRoute('intervention_index');
         }
 
         return $this->render('admin/intervention/new.html.twig', [

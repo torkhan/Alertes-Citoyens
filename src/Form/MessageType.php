@@ -47,6 +47,15 @@ class MessageType extends AbstractType
             },
             'choice_label' => 'nomIntervention',
         ])
+            ->add('idTypeIntervention',EntityType::class,[
+                'class' => TypeIntervention::class,
+                'label' => 'Type d\'intervention',
+                'query_builder' => function (TypeInterventionRepository $er) {
+                    return $er->createQueryBuilder('v')
+                        ->orderBy('v.interventionType', 'ASC');
+                },
+                'choice_label' => 'interventionType',
+            ])
             ->add('dateEnvoi', DateType::class,[
                 'required' => true,
                 'label' => "Date d'envoi",
@@ -54,10 +63,10 @@ class MessageType extends AbstractType
             ])
             ->add('contenuMessage', TextareaType::class,[
                 'required' => false,
-                'attr' => array(
+               /* 'attr' => array(
                     'class' => 'tinymce'// Skip it if you want to use default theme
-                ),
-                'label' => "Votre message :",
+                ),*/
+                'label' => "Votre message",
                 'constraints' => [
 
                     new Assert\Length([
@@ -152,6 +161,7 @@ class MessageType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Message::class,
+            'translation_domain' => 'forms'
         ]);
     }
 }

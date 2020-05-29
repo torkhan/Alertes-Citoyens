@@ -82,7 +82,7 @@ class RechercheController extends AbstractController
 
         // recup type message
         $messageTypeMessage = $contentMessage[0]->getIdTypeMessage()->getMessageType();
-
+        $messageTypeIntervention = $contentMessage[0]->getIdIntervention()->getIdTypeIntervention()->getInterventionType();
         // recup info intervention
         $nomIntervention = $contentMessage[0]->getIdIntervention()->getNomIntervention();
         $villeIntervention = $contentMessage[0]->getIdIntervention()->getVilleIntervention();
@@ -94,7 +94,7 @@ class RechercheController extends AbstractController
         $corpsMessage= "";
         $corpsMessage .= "<H1>Alertes Citoyens vous informe</H1>";
         $corpsMessage .= "<h2>".$nomIntervention."</h2>";
-        $corpsMessage .= "<p>".$messageTypeMessage."</p>";
+        $corpsMessage .= "<p>".$messageTypeMessage.": ".$messageTypeIntervention."</p>";
         $corpsMessage .= "<p>Date debut de l'intervention : ".$dateDebutIntervention."</p>";
         $corpsMessage .= "<p>Date de fin de l'intervention : ".$dateFinIntervention."</p>";
         $corpsMessage .= "<p>".$rueIntervention."</p>";

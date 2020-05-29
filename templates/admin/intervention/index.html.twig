@@ -12,6 +12,7 @@
             <tr>
 
                 <th>Nom de l'intervention</th>
+                <th>Type d'intervention</th>
                 <th>Rue(s) concernée(s)</th>
                 <th>Ville(s) concernée(s)</th>
                {# <th>Longitude</th>
@@ -20,7 +21,7 @@
                 <th>Date de fin</th>
                 {#<th>Commentaire</th>
                 <th>Date de modification</th>#}
-                <th>Type d'intervention</th>
+
                 <th>Actions</th>
             </tr>
         </thead>
@@ -29,7 +30,9 @@
             <tr>
 
                 <td>{{ intervention.nomIntervention }}</td>
+                <td>{{ intervention.idTypeIntervention.interventionType }}</td>
                 <td>{{ intervention.rueIntervention }}</td>
+
                 <td>{{ intervention.villeIntervention }}</td>
                 {#<td>{{ intervention.longitude }}</td>
                 <td>{{ intervention.latitude }}</td>#}
@@ -37,7 +40,7 @@
                 <td>{{ intervention.dateFinIntervention ? intervention.dateFinIntervention|date('d-m-Y H:i:s') : '' }}</td>
                {# <td>{{ intervention.commentaireIntervention }}</td>
                 <td>{{ intervention.dateModificationIntervention ? intervention.dateModificationIntervention|date('d-m-Y H:i:s') : '' }}</td>#}
-                <td>{{ intervention.idTypeIntervention.interventionType }}</td>
+
                 <td>
                     <a class="btn btn-info mb-2" href="{{ path('intervention_show', {'id': intervention.id}) }}">Voir</a>
                     <a class="btn btn-warning mb-2" href="{{ path('intervention_edit', {'id': intervention.id}) }}">Editer</a>
