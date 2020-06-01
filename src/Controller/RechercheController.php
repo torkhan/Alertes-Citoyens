@@ -80,6 +80,7 @@ class RechercheController extends AbstractController
         $messageDateEnvoie-> setTimezone(new \DateTimeZone('Europe/Paris'));
         $dateformatEnvoie = date_format($messageDateEnvoie, "d-m-Y");
 
+
         // recup type message
         $messageTypeMessage = $contentMessage[0]->getIdTypeMessage()->getMessageType();
         $messageTypeIntervention = $contentMessage[0]->getIdIntervention()->getIdTypeIntervention()->getInterventionType();
@@ -97,8 +98,8 @@ class RechercheController extends AbstractController
         $corpsMessage .= "<p>".$messageTypeMessage.": ".$messageTypeIntervention."</p>";
         $corpsMessage .= "<p>Date debut de l'intervention : ".$dateDebutIntervention."</p>";
         $corpsMessage .= "<p>Date de fin de l'intervention : ".$dateFinIntervention."</p>";
-        $corpsMessage .= "<p>".$rueIntervention."</p>";
-        $corpsMessage .= "<p>".$villeIntervention."</p>";
+        $corpsMessage .= "<p>Voie concernée :".$rueIntervention."</p>";
+        $corpsMessage .= "<p>Dans la ville de :".$villeIntervention."</p>";
 
         $corpsMessage .= "<p>".$messageRecup."</p><p>Date d'envoi du message : ".$dateformatEnvoie."</p>";
 
