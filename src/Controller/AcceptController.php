@@ -101,7 +101,7 @@ class AcceptController extends AbstractController
         $message = (new \Swift_Message('Réponse à votre demande de souscription à nos alertes'))
             ->setTo([$email => $nom." ".$prenom])
 
-            ->setFrom('garou59128@gmail.com')
+            ->setFrom('xxxx@gmail.com')
 
             ->setBody("<html lang=><head><meta charset='UTF-8'><title></title></head><body>Envoyé le" ." ".$date->format('d/m/y').'<br/>'.$messageEnvoye."</body></html>")
         ;
@@ -146,7 +146,7 @@ class AcceptController extends AbstractController
 
             $message = (new \Swift_Message('Réponse à votre demande de souscription à nos alertes'))
                 ->setTo([$email => $nom . " " . $prenom])
-                ->setFrom('torkhan2706@gmail.com')
+                ->setFrom('xxxx@gmail.com')
                 ->setBody("<html lang=><head><meta charset='UTF-8'><title></title></head><body>Envoyé le" . " " . $date->format('d/m/y') . '<br/>' . $messageEnvoye . "</body></html>");
 // Send the message
             $message->setContentType("text/html");
@@ -186,7 +186,7 @@ class AcceptController extends AbstractController
 
             $message = (new \Swift_Message('Réponse à votre demande de souscription à nos alertes'))
                 ->setTo([$email => $nom . " " . $prenom])
-                ->setFrom('torkhan2706@gmail.com')
+                ->setFrom('xxxx@gmail.com')
                 ->setBody("<html lang=><head><meta charset='UTF-8'><title></title></head><body>Envoyé le" . " " . $date->format('d/m/y') . '<br/>' . $messageEnvoye . "</body></html>");
 // Send the message
             $message->setContentType("text/html");
