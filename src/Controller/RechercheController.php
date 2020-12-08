@@ -108,7 +108,7 @@ class RechercheController extends AbstractController
                 //envoie des messages
 
                 $message = (new \Swift_Message($nomIntervention))
-                    ->setFrom('garou59128@gmail.com')
+                    ->setFrom('xxxxx@gmail.com')
                     ->setTo($destinataire['adresseMailDestinataire'])
                     ->setBody($corpsMessage, 'text/html', 'utf-8');
                 $mailer->send($message);
