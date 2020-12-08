@@ -48,7 +48,7 @@ class ContactController extends AbstractController
 
             $message = (new \Swift_Message($sujet))
                 ->setFrom([$email => $nom." ".$prenom])
-                ->setTo('torkhan2706@gmail.com')
+                ->setTo('xxxxxx@gmail.com')
 
                 ->setBody("<html lang=><head><meta charset='UTF-8'><title></title></head><body>Envoyé le" ." ".$dateEnvoi->format('d/m/y').'<br/>'.$messageEnvoye."</body></html>")
             ;
